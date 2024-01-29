@@ -1,0 +1,20 @@
+<odoo>
+    <record id="class_d_organization_email_template_incomplete" model="mail.template">
+        <field name="name">Organization Form Incomplete Registration Template</field>
+        <field name="model_id" ref="tole_bikash.model_tole_bikash_info"/>
+        <field name="subject">Incomplete Class D Organization Form Registration</field>
+        <field name="email_from">"{{ user.email}}"</field>
+        <field name="email_to">"{{object.tole_bikash_email}}"</field>
+        <field name="body_html" type="html">
+            <div>
+                Dear <t t-out="object.tole_bikash_name_np or ''"></t>,<br/><br/>
+                <p>We have received your organization form registration request, but unfortunately, it is incomplete.</p>
+                <p>Please review the information provided and ensure that all required fields are filled out accurately. Incomplete registrations cannot be processed further.</p>
+                <p>If you have any questions or encounter difficulties in completing the registration, feel free to reach out to our support team for assistance.</p>
+                <p>Your prompt attention to this matter is appreciated.</p>
+                <p>Best regards,<br/></p>
+                <t t-out="object.municipality.palika_name_np"></t>
+            </div>
+        </field>
+    </record>
+</odoo>

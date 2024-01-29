@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="members_formation_view_tree" model="ir.ui.view">
+        <field name="name">members_formation.view.tree</field>
+        <field name="model">upabhokta.samiti.formation.members</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="member_full_name"></field>
+                <field name="samiti_member_designation"></field>
+                <field name="member_address"></field>
+                <field name="member_father_name"></field>
+                <field name="member_grandfather_name"></field>
+                <field name="member_father_name"></field>
+                <field name="member_mobile"></field>
+                <field name="member_telephone_opt"></field>
+                <field name="member_citizenship_number"></field>
+                <field name="member_citizenship_issued_district"></field>
+                <field name="member_citizenship_issued_date_bs"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="members_formation_view_form" model="ir.ui.view">
+        <field name="name">members_formation.view.form</field>
+        <field name="model">upabhokta.samiti.formation.members</field>
+        <field name="arch" type="xml">
+            <form string="Member Form">
+                <sheet>
+                    <group>
+                        <group name="member_personal_info" string="Basic Info">
+                            <field name="member_full_name"></field>
+                            <field name="member_gender"></field>
+                            <field name="samiti_member_designation"></field>
+                            <field name="member_address"></field>
+                        </group>
+
+                        <group name="member_parent_info" string="Parent Info">
+                            <field name="member_father_name"></field>
+                            <field name="member_grandfather_name"></field>
+                        </group>
+
+                        <group name="member_contact_detail" string="Contact Details">
+                            <field name="member_mobile"></field>
+                            <field name="member_telephone_opt"></field>
+                        </group>
+
+                        <group name="member_citizenship_details" string="Citizenship Details">
+                            <field name="member_citizenship_number"></field>
+                            <field name="member_citizenship_issued_date_bs" widget="nepali_datepicker"></field>
+                            <field name="member_citizenship_issued_district"></field>
+                            <field name="member_signature" widget="image"></field>
+                            <field name="member_picture" widget="image"></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

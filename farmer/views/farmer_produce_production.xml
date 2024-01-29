@@ -1,0 +1,53 @@
+<odoo>
+    <!-- Farmer Crop View -->
+    <record id="view_form_farmer_produce_production" model="ir.ui.view">
+        <field name="name">Farmer Produce Production Form</field>
+        <field name="model">farmer.produce.production</field>
+        <field name="arch" type="xml">
+            <form string="Farmer Produce Production View">
+                <sheet>
+                    <group>
+                        <field name="farmer_id" attrs="{'readonly': [('id', '!=', False)]}"/>
+                        <field name="product_id" invisible="1"/>
+                        <field name="farmer_production_ids" domain="[('farmer_id', '=', farmer_id)]" attrs="{'readonly': [('id', '!=', False)]}"/>
+                        <field name="product_template_id" invisible="1"/>
+                        <field name="product_variants" attrs="{'readonly': [('id', '!=', False)]}"/>                
+                        <field name="location_id" invisible="1"/>
+                        <!-- <field name="last_count_date"/> -->
+                        <!-- <field name="available_quantity"/> -->
+                        <!-- <field name="quantity"/> -->
+                        <field name="accounting_date" attrs="{'readonly': [('id', '!=', False)]}"/>
+                        <field name="inventory_quantity" attrs="{'readonly': [('id', '!=', False)]}"/>
+                        <!-- <field name="inventory_diff_quantity"/> -->
+                        <field name="inventory_date" attrs="{'readonly': [('id', '!=', False)]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Farmer Crop Tree View -->
+    <record id="view_tree_farmer_produce_production" model="ir.ui.view">
+        <field name="name">Farmer Produce Production Tree View</field>
+        <field name="model">farmer.produce.production</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <!-- <field name="produce_id"/> -->
+                <field name="location_id"/>
+                <!-- <field name="last_count_date"/> -->
+                <!-- <field name="available_quantity"/> -->
+                <!-- <field name="quantity"/> -->
+                <field name="accounting_date"/>
+                <field name="inventory_quantity"/>
+                <!-- <field name="inventory_quantity_set"/> -->
+                <!-- <field name="inventory_diff_quantity"/> -->
+                <field name="inventory_date"/>
+                <!-- <button name="action_set_inventory_quantity" type="object" string="Set" class="btn btn-link" icon="fa-bullseye" modifiers="{&quot;invisible&quot;: [[&quot;inventory_quantity_set&quot;, &quot;=&quot;, true]]}"/>
+                <button name="action_apply_inventory" groups="stock.group_stock_manager" type="object" string="Apply" class="btn btn-link" icon="fa-save" attrs="{'invisible': [('inventory_quantity_set', '=', False)]}"/> -->
+            </tree>
+            
+        </field>
+    </record>
+</odoo>

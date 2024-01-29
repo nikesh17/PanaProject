@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_transaction_form" model="ir.ui.view">
+        <field name="name">Khalti Payment Form</field>
+        <field name="model">payment.transaction</field>
+        <field name="inherit_id" ref="payment.payment_transaction_form"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button string="Authorize"
+                        type="object"
+                        name="action_khalti_set_auth"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',['provider_code','!=','khalti'],['state','==','authorized']]}"
+                        />
+                <button string="Pending"
+                        type="object"
+                        name="action_khalti_set_pending"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',['provider_code','!=','khalti'],['state','==','pending']]}"
+                        />
+                <button string="Draft"
+                        type="object"
+                        name="action_khalti_set_draft"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',['provider_code','!=','khalti'],['state','==','draft']]}"
+                        />
+                <button string="Confirm"
+                        type="object"
+                        name="action_khalti_set_done"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',['provider_code','!=','khalti'],['state','==','done']]}"
+                        />
+                <button string="Cancel"
+                        type="object"
+                        name="action_khalti_set_canceled"
+                        attrs="{'invisible':['|',['provider_code','!=','khalti'],['state','in',['cancel','error']]]}"
+                        />
+                <button string="Error"
+                        type="object"
+                        name="action_khalti_set_error"
+                        attrs="{'invisible':['|',['provider_code','!=','khalti'],['state','in',['error','cancel']]]}"
+                        />
+
+                <!-- <button string="Pending"
+                        type="object"
+                        name="action_khalti_set_pending"
+                        attrs="{'invisible':[['provider_code','!=','khalti']]}"
+                        /> -->
+            </header>
+        </field>
+    </record>
+
+</odoo>

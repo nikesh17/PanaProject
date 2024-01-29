@@ -1,0 +1,54 @@
+ul {
+  list-style-type: none;
+}
+
+.Heirarchy-tree-ul span {
+  cursor: pointer;
+}
+
+.arrowIcon {
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+}
+.search-container span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  padding: 6px;
+}
+
+#form_container_id {
+  padding: 5px;
+}
+#form_container_id .line {
+  padding: 5px;
+  width: 100%;
+  border-bottom: 0.5px solid gray;
+}
+#form_container_id .line div input {
+  width: 65%;
+}
+#form_container_id .inline {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+#form_container_id .inline div {
+  width: 50%;
+}
+
+.header {
+  font-size: medium;
+}
+
+.disabled {
+  color: gray;
+}
+.disabled input {
+  pointer-events: none;
+}/*# sourceMappingURL=area_conversion_view.css.map */

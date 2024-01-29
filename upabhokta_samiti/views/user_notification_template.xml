@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <template id="user_notification_template" name="Notifications">
+    
+  </template>
+</odoo>

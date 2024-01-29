@@ -1,0 +1,2609 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* upabhokta_samiti
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 07:06+0000\n"
+"PO-Revision-Date: 2024-01-01 07:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"(क) यस योजनाको उपभोक्ता समितिको बैठक आउँदो मिति...............मा बस्ने गरी आजको भेला सम्पन्न भएको निर्णय गरियो ।\n"
+"                (ख) सरोकारवाला तथा आयोजनाका सधियार समेतको उपस्थितिमा उपभोक्ता समिति गठन गरिएको जानकारी भेलामा उपस्थित सबैमा भयो ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+msgid "(दफा ११ को उपदफा (१) सँगसम्बन्धित )"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "(दफा ९ को उपदफा (१) सँग सम्बन्धित )"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+",\n"
+"                    ठेगाना"
+msgstr "ठेगाना"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "1. योजना सम्बन्धि उपभेक्ताहरुलाई जानाकारी गराउने सम्बन्धमा"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "2. उपभोक्ता समिति गठन बारेमा:"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "3. योजना अनुगमन समिति गठन बारेमा:"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "4. योजनाको छाप र लेटरप्याड तयार गर्ने बारेमा:"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "5. बैंक खाता संचालन गर्ने बारेमा:"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "6. योजना सम्झैता गर्न पठाउने बारेमा:"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "7. अन्य विविध विषयमा:"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+msgid "<b>उपभोक्ता समिति दर्ता निवेदन</b>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid "<b>उपभोक्ता समिति दर्ता प्रमाण पत्र</b>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<b>तपसिल:</b>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"<br/>\n"
+"                        <span>अध्यक्षता: श्री </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"<br/>\n"
+"                        <span>नगरपालिकाको प्रतिनिधिः श्री</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"<br/>\n"
+"                        <span>बैठकमा उपस्थित संख्या: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"<br/>\n"
+"                        <span>विशेष अतिथि: श्री </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model:mail.template,body_html:upabhokta_samiti.upbhokta_samiti_email_template_verified
+msgid ""
+"<div>\n"
+"            <h1>Hi,Karuna</h1>\n"
+"        </div>\n"
+"    "
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid ""
+"<i class=\"fa fa-bell\" aria-hidden=\"true\"/>\n"
+"                                            <span class=\"icon-button__badge\" id=\"counter-badge\">0</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+msgid ""
+"<i class=\"fa fa-download\" aria-hidden=\"true\"/>\n"
+"                                            डाउनलोड गर्नुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<i class=\"fa-regular fa-user pe-2\"/> Auth"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<i class=\"fa-solid fa-file-lines pe-2\"/> Pages"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<i class=\"fa-solid fa-list pe-2\"/> Dashboard"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<i class=\"fa-solid fa-share-nodes pe-2\"/> Multi Dropdown"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<i class=\"fa-solid fa-sliders pe-2\"/> Posts"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid ""
+"<option disabled=\"true\" selected=\"true\">\n"
+"                                                    छान्नुहोस्...</option>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+msgid "<option disabled=\"true\" selected=\"true\"> छान्नुहोस्...</option>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+msgid "<option disabled=\"true\" selected=\"true\">छान्नुहोस्...</option>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "<span class=\"field-title\">अन्य विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid ""
+"<span class=\"field-title\">अभिभावक विवरण\n"
+"                                        </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+msgid ""
+"<span class=\"field-title\">अभिभावक विवरण\n"
+"                                    </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+msgid "<span class=\"field-title\">आयोजनाको प्रस्तावहरु </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "<span class=\"field-title\">नागरिकता विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "<span class=\"field-title\">योजनाको विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "<span class=\"field-title\">व्यक्तिगत विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "<span class=\"field-title\">सभाको विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "<span class=\"field-title\">समितिको आधारभूत विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "<span class=\"field-title\">सम्पर्क विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "<span class=\"field-title\">सम्पर्क व्यक्तिको विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "<span class=\"field-title\">स्थान सम्बन्धि विवरण </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span> गते </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span> महिना </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span> समय: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span> साल </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>(क) जम्मा परिवार संख्या: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>(ख) जम्मा जनसंख्या: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>(ग) आदिवासी जनजातिको परिवार संख्या: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>(घ) दलित वर्गको परिवार संख्या: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>(ङ) बालबालिकाको जनसंख्या: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>(च) अन्य वर्गको परिवार संख्या: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<span>अनुगनम समितिको विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>आज मिति </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<span>आयोजनाका प्रस्तावहरु </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<span>उपभोक्ता समिति विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>पुरुष: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>भेलाको उद्देश्यः </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>महिला: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<span>लाभग्रहिको विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<span>सदस्यहरुको विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<span>सभा विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "<span>सहभागीहरुको विवरण</span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "<span>स्थान: </span>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"<sup style=\"color:red; font-weight:bold;\">*</sup>नोटः <b>निर्णय गराउन छुट "
+"भएका प्रस्ताव तथा निर्णयहरु गराउने निर्णय गरिएको पानाको अन्त्यमा उपभोक्ता "
+"समिति र अनुगमन समितिबाट दस्तखत गरी निर्णय बन्द गर्नु पर्नेछ ।</b>"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"<sup style=\"color:red;\">*</sup>नोटः- उपभोक्ता समिति गठन गर्दा कम्तिमा ७ "
+"देखि ११ जना सम्मको उपभोक्ता समिति गठन गर्ने । समितिका अध्यक्ष, सचिव र "
+"कोषाध्यक्ष मध्ये १ जना महिला अनिवार्य सहित कम्तिमा ३३ प्रतिशत महिला र "
+"आदिवासी जनजाती दलित अपाङ्ग तथा अल्पसंख्यकबाट प्रतिनिधित्व हुने व्यवस्था "
+"मिलाउनु पर्नेछ ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"<sup style=\"color:red;\">*</sup>नोटः- उपभोक्ताहरुको पहिलो भेलामा उपस्थित "
+"उपभोक्ताहरुको सबैको सम्पर्क नम्बर सहित अनिवार्य उपस्थिति भएको हुनुपर्नेछ। "
+"यसको छुट्टै अभिलेख उपभोक्ता समितिको निर्णय पुस्तिका खडा गरी समेत राख्नु "
+"पर्नेछ ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.beneficiary_category_action
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.organization_budget_type_action
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.organization_yojana_type_action
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.upabhokta_samiti_action
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.upabhokta_samiti_beneficiary_action
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.upabhokta_samiti_category_action
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.upabhokta_samiti_formation_members_action
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.upabhokta_samiti_members
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.upabhokta_samiti_organization_designation_organization_action
+#: model_terms:ir.actions.act_window,help:upabhokta_samiti.upabhokta_samiti_organization_designation_representative_action
+msgid "Add New"
+msgstr "नयाँ थप्नुहोस"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__member_address
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_address
+msgid "Address"
+msgstr "ठेगाना"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Admin Elements"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__anugaman_member_designation
+msgid "Anugaman Member Designation"
+msgstr "अनुगमन सदस्यको पद"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Anugaman Team"
+msgstr "अनुगमन टोलि"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+msgid ""
+"Anugaman Team\n"
+"                                Members"
+msgstr "अनुगमन टोलि सदस्य"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__anugaman_teamref_id
+msgid "Anugaman Teamref"
+msgstr "अनुगमन टोलि"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Applicant Portal (आवेदक पोर्टल)"
+msgstr "आवेदक पोर्टल"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Approve"
+msgstr "अनुमोदन"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_info__upabhokta_samiti_status__approved
+msgid "Approved"
+msgstr "स्वीकृत"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__attendees_id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__attendees
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Attendees"
+msgstr "सहभागीहरु"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_attendees_Form_view
+msgid "Attendees Detail"
+msgstr "सहभागीहरुको विवरण"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_attendees
+msgid "Attendees Details"
+msgstr "सहभागीहरुको विवरण"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__total_attendees
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__total_attendees
+msgid "Attendees Number"
+msgstr "बैठकमा उपस्थित संख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__bank_account
+msgid "Bank Account"
+msgstr "बैंक खाता"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__bank_details_id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__bank_details
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Bank Details"
+msgstr "बैंक विवरण"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__bank_details_ref
+msgid "Bank Details Ref"
+msgstr "बैंक विवरण सन्दर्भ"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__bank_location
+msgid "Bank Location"
+msgstr "बैंक स्थान"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__bank_name
+msgid "Bank Name"
+msgstr "बैंकको नाम"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.members_formation_view_form
+msgid "Basic Info"
+msgstr "साधारण विवरण"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Beneficiary"
+msgstr "लाभार्थी"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.act_window,name:upabhokta_samiti.upabhokta_samiti_beneficiary_action
+msgid "Beneficiary Action"
+msgstr "लाभार्थी कार्य"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.act_window,name:upabhokta_samiti.beneficiary_category_action
+#: model:ir.ui.menu,name:upabhokta_samiti.org_beneficiary_category_configurations
+msgid "Beneficiary Category"
+msgstr "लाभार्थी वर्ग"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_master__category_name
+msgid "Beneficiary Category Name"
+msgstr "लाभार्थी कोटिको नाम"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__beneficiary_ref
+msgid "Beneficiary Record"
+msgstr "लाभार्थी रेकर्ड"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_budget_type__budget_type
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__yojana_budget_type
+#: model:ir.ui.menu,name:upabhokta_samiti.org_budget_type_configurations
+msgid "Budget Type"
+msgstr "बजेटको प्रकार"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__category
+msgid "Category"
+msgstr "प्रकार"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__sabha_chairman_fullname
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__sabha_chairman_fullname
+msgid "Chairman"
+msgstr "अध्यक्ष"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__chief_guest
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__chief_guest
+msgid "Chief Guest"
+msgstr "प्रमुख अतिथि"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__children_female_population
+msgid "Children Female Population"
+msgstr "बालिका जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__children_male_population
+msgid "Children Male Population"
+msgstr "बाल जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.members_formation_view_form
+msgid "Citizenship Details"
+msgstr "नागरिकता विवरण"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__member_citizenship_issued_district
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_citizenship_issued_district
+msgid "Citizenship Issued District"
+msgstr "नागरिकता जारि गरिएको जिल्ला"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__member_citizenship_number
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_citizenship_number
+msgid "Citizenship Number"
+msgstr "नागरिकता नं."
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__comments
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Comments"
+msgstr "टिप्पणीहरु"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Comments here..."
+msgstr "टिप्पणीहरू यहाँ..."
+
+#. module: upabhokta_samiti
+#: model:ir.ui.menu,name:upabhokta_samiti.upabhokta_samiti_configurations
+msgid "Configurations"
+msgstr "कन्फिगरेसन"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.members_formation_view_form
+msgid "Contact Details"
+msgstr "सम्पर्क विवरण "
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Contact Person Details"
+msgstr "सम्पर्क व्यक्तिको विवरण "
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_budget_type__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_yojana_type__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_organization__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_representative__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_master__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_category__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_config__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_decisions__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__create_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__create_uid
+msgid "Created by"
+msgstr "द्वारा सिर्जना गरिएको"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_budget_type__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_yojana_type__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_organization__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_representative__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_master__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_category__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_config__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_decisions__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__create_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__create_date
+msgid "Created on"
+msgstr "मा सिर्जना गरिएको"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__dalit_family_number
+msgid "Dalit Family Population"
+msgstr "मा सिर्जना गरियो"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__dalit_female_population
+msgid "Dalit Female Population"
+msgstr "दलित महिला जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__dalit_male_population
+msgid "Dalit Male Population"
+msgstr "दलित पुरुष जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.report,name:upabhokta_samiti.action_Darta_Nibedan_report
+msgid "Darta Nibedan"
+msgstr "दर्ता निवेदन"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "Dashboard"
+msgstr "ड्यासबोर्ड"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_view_form
+msgid "Date and Time"
+msgstr "मिति र समय"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__palika_representative_designation
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__palika_representative_designation
+msgid "Designation"
+msgstr "पद"
+
+#. module: upabhokta_samiti
+#: model:ir.ui.menu,name:upabhokta_samiti.upabhokta_samiti_designation_configurations
+msgid "Designations"
+msgstr "पदहरु"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_budget_type__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_yojana_type__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_organization__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_representative__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_master__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_category__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_config__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_decisions__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__display_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__display_name
+msgid "Display Name"
+msgstr "प्रदर्शन नाम"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__district
+msgid "District"
+msgstr "जिल्ला"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__document_name
+msgid "Document Name"
+msgstr "कागजात नाम"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Download PDF"
+msgstr "pdf डाउनलोड गर्नुहोस्"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__contact_person_email_
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "Email"
+msgstr "इमेल"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__category_family_numbers
+msgid "Family Number"
+msgstr "परिवार संख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_father_name
+msgid "Father Name"
+msgstr "बुबाको नाम"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_anugaman_team__member_gender__female
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_attendees__gender__female
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_formation_members__member_gender__female
+msgid "Female"
+msgstr "महिला"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__category_female_population
+msgid "Female Population"
+msgstr "महिला जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Forgot Password"
+msgstr "पासवर्ड भुल्नु भयो"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__full_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__full_name
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_full_name
+msgid "Full Name"
+msgstr "पुरा नाम"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "Full name"
+msgstr "पुरा नाम"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__member_gender
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__gender
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_gender
+msgid "Gender"
+msgstr "लिङ्ग"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.report,name:upabhokta_samiti.action_house_master_report
+msgid "General Master Report"
+msgstr "सामान्य मास्टर रिपोर्ट"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_grandfather_name
+msgid "Grandfather Name"
+msgstr "हजुरबुबाको नाम"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,help:upabhokta_samiti.field_upabhokta_samiti_info__sabha_time
+#: model:ir.model.fields,help:upabhokta_samiti.field_upabhokta_samiti_sabha_details__sabha_time
+msgid "HH:mm"
+msgstr "HH:mm"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_budget_type__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_yojana_type__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_organization__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_representative__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_master__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_category__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_config__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_decisions__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__id
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__id
+msgid "ID"
+msgstr "ID"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_info__upabhokta_samiti_status__in_review
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "समीक्षामा"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_info__upabhokta_samiti_status__incomplete_submitted
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Incomplete Submitted"
+msgstr "अपूर्ण पेस गरियो"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Insufficient Data"
+msgstr "अपर्याप्त डाटा"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__member_citizenship_issued_date_bs
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_citizenship_issued_date_bs
+msgid "Issued Date(BS)"
+msgstr "जारी मिति (वि.स.)"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.report,name:upabhokta_samiti.action_karyabidi_dafa_pramadpatra_report
+msgid "Karyabidi Dafa Darta Pramad Patra"
+msgstr "कार्यविधि दफा दार्ता प्रमाण पत्र"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_budget_type____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_yojana_type____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_organization____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_representative____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_master____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_category____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_config____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_decisions____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal____last_update
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details____last_update
+msgid "Last Modified on"
+msgstr "पछिल्लो पटक परिमार्जित"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_budget_type__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_yojana_type__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_organization__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_representative__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_master__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_category__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_config__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_decisions__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__write_uid
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__write_uid
+msgid "Last Updated by"
+msgstr "द्वारा पछिल्लो अपडेट"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_budget_type__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_yojana_type__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_organization__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_representative__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_bank_account__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_master__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_category__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_config__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_decisions__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__write_date
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__write_date
+msgid "Last Updated on"
+msgstr "पछिल्लो अपडेट"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid ""
+"Level\n"
+"                                                1"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Level 1.1"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Level 1.2"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Location"
+msgstr "स्थान"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Login"
+msgstr "लग-इन"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_anugaman_team__member_gender__male
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_attendees__gender__male
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_formation_members__member_gender__male
+msgid "Male"
+msgstr "पुरुष"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__category_male_population
+msgid "Male Population"
+msgstr "पुरुष जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.members_formation_view_form
+msgid "Member Form"
+msgstr "सदस्य फारम"
+
+#. module: upabhokta_samiti
+#: model:ir.ui.menu,name:upabhokta_samiti.upabhokta_samiti_budget_menu
+msgid "Members"
+msgstr "सदस्यहरू"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.act_window,name:upabhokta_samiti.upabhokta_samiti_formation_members_action
+msgid "Members Action"
+msgstr "सदस्यहरू कार्य"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "Members Detail"
+msgstr "सदस्य विवरण"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__message
+msgid "Message"
+msgstr "सन्देश"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__member_mobile
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_mobile
+msgid "Mobile"
+msgstr "मोबाइल"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__mobile
+msgid "Mobile Number"
+msgstr "मोबाइल नम्बर"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Multi Level Menu"
+msgstr "बहु-स्तर मेनु"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__municipality
+msgid "Municipality"
+msgstr "नगर/गाँउ पालिका"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__contact_person_name_
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__palika_representative_name
+msgid "Name"
+msgstr "नाम"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__notebook_reference_id
+msgid "Notebook Reference"
+msgstr "नोटबुक"
+
+#. module: upabhokta_samiti
+#: model:website.menu,name:upabhokta_samiti.upabhokta_samiti_web_user_notification
+msgid "Notification"
+msgstr "सूचना"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__sabha_number
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__sabha_number
+#: model:ir.model.fields,help:upabhokta_samiti.field_upabhokta_samiti_info__sabha_number
+#: model:ir.model.fields,help:upabhokta_samiti.field_upabhokta_samiti_sabha_details__sabha_number
+msgid "Nth Sabha/Nagar Program"
+msgstr "औं सभा/नगर कार्यक्रम"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.act_window,name:upabhokta_samiti.organization_budget_type_action
+msgid "Organization Budget"
+msgstr "संगठन बजेट"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.act_window,name:upabhokta_samiti.upabhokta_samiti_organization_designation_organization_action
+#: model:ir.actions.act_window,name:upabhokta_samiti.upabhokta_samiti_organization_designation_representative_action
+msgid "Organization Designation"
+msgstr "संगठन पद"
+
+#. module: upabhokta_samiti
+#: model:ir.ui.menu,name:upabhokta_samiti.upabhokta_samiti_designation_org_configurations
+msgid "Organization Designations"
+msgstr "संगठन पद"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__upabhokta_samiti_type
+msgid "Organization Type"
+msgstr "संगठन प्रकार"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.act_window,name:upabhokta_samiti.organization_yojana_type_action
+msgid "Organization Yojana"
+msgstr "संगठन योजना "
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__other_community_family_number
+msgid "Other Community Family Numbers"
+msgstr "अन्य सामुदायिक परिवार नम्बरहरू"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__other_community_female_population
+msgid "Other Community Female Population"
+msgstr "अन्य समुदाय महिला जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__other_community_male_population
+msgid "Other Community Male Population"
+msgstr "अन्य समुदायको पुरुष जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Other Details"
+msgstr "अन्य विवरण"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_view_form
+msgid "Other Info"
+msgstr "अन्य विवरण"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_anugaman_team__member_gender__others
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_attendees__gender__others
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_formation_members__member_gender__others
+msgid "Others"
+msgstr "अन्य"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_picture
+msgid "PP Sized Picture"
+msgstr "पीपी साइज फोटो"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Page 1"
+msgstr "पृष्ठ १"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Page 2"
+msgstr "पृष्ठ 2"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary_record__page_ref
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__page_ref
+msgid "Page Ref"
+msgstr "पृष्ठ"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__palika_representative_name
+msgid "Palika Representative Name"
+msgstr "पालिका प्रतिनिधि नाम"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.members_formation_view_form
+msgid "Parent Info"
+msgstr "अभिभावक जानकारी"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__contact_person_phone_
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.signup_page
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "Phone"
+msgstr "फोन"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_farmer_group_poc__phone
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_member__phone
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_res_users__phone
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_warehouse_location_poc__phone
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.signup_page
+msgid "Phone Number"
+msgstr "फोन"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Post 1"
+msgstr "पोस्ट एक"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Post 2"
+msgstr "पोस्ट दुई"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Post 3"
+msgstr "पोस्ट तीन"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__project_proposal_page
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__proposal_text
+msgid "Project Proposal"
+msgstr "परियोजना प्रस्ताव"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Project Proposals"
+msgstr "परियोजना प्रस्ताव"
+
+#. module: upabhokta_samiti
+#: model:ir.ui.menu,name:upabhokta_samiti.upabhokta_samiti_proposal_menu
+msgid "Projects"
+msgstr "परियोजनाहरू"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+msgid "Proposal"
+msgstr "प्रस्ताव"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__province
+msgid "Province"
+msgstr "प्रदेश"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "Register"
+msgstr "दर्ता गर्नुहोस्"
+
+#. module: upabhokta_samiti
+#: model:website.menu,name:upabhokta_samiti.upabhokta_samiti_menu
+#: model:website.menu,name:upabhokta_samiti.upabhokta_samiti_web_menu
+msgid "Register Upabhokta Samiti"
+msgstr "उपभोक्ता समिति दर्ता गर्नुहोस्"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__registration_date_bs
+msgid "Registration Date(BS)"
+msgstr "दर्ता मिति"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "Registration Form"
+msgstr "दर्ता फारम"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Reject"
+msgstr "अस्वीकार गर्नुहोस्"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields.selection,name:upabhokta_samiti.selection__upabhokta_samiti_info__upabhokta_samiti_status__rejected
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Rejected"
+msgstr "अस्वीकार गरियो"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__remarks
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__remarks
+msgid "Remarks"
+msgstr "टिप्पणीहरू"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_representative__organization_representative_designations
+msgid "Representative Designation"
+msgstr "प्रतिनिधिको पद"
+
+#. module: upabhokta_samiti
+#: model:ir.ui.menu,name:upabhokta_samiti.upabhokta_samiti_designation_representative_configurations
+msgid "Representative Designations"
+msgstr "प्रतिनिधिको पद"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_view_form
+msgid "Representative Details"
+msgstr "प्रतिनिधिको विवरण"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid ""
+"Sabha\n"
+"                                Details"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__sabha_date_bs
+msgid "Sabha Date(BS)"
+msgstr "सभा मिति"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__sabha_day
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__sabha_day
+msgid "Sabha Day"
+msgstr "सभाको दिन "
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__upabhokta_samiti_sabha_details_ref
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Sabha Details"
+msgstr "सभा विवरण"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__sabha_month
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__sabha_month
+msgid "Sabha Month"
+msgstr "सभाको महिना "
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__sabha_time
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__sabha_time
+msgid "Sabha Time(HH:mm)"
+msgstr "सभा समय(HH:mm)"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__sabha_year
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__sabha_year
+msgid "Sabha Year"
+msgstr "सभाको वर्ष"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__samiti_formation_members_reference_page_id
+msgid "Samiti Formation Members Reference Page"
+msgstr "समिति गठन सदस्य सन्दर्भ पृष्ठ"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_designation_organization__organization_samiti_designations
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__samiti_member_designation
+msgid "Samiti Member Designation"
+msgstr "समिति सदस्य पद"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__upabhokta_samiti_members_ref
+msgid "Samiti Members"
+msgstr "समिति सदस्य"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__samiti_sabha_details_reference_page_id
+msgid "Samiti Sabha Details Reference Page"
+msgstr "समिति सभा विवरण सन्दर्भ पृष्ठ"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__sent_by
+msgid "Sent By"
+msgstr "द्वारा पठाइयो"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__sent_to
+msgid "Sent To"
+msgstr "लाई पठाइयो"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__sent_at
+msgid "Sent at"
+msgstr "मा पठाइयो"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_attendees__signature
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_signature
+msgid "Signature"
+msgstr "दस्तखत"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_project_proposal__signed_document
+msgid "Signed Document"
+msgstr "हस्ताक्षर गरिएको फाइल"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_notification__status
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_tree
+msgid "Status"
+msgstr "स्थिति"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_anugaman_team__member_telephone_opt
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__member_telephone_opt
+msgid "Telephone"
+msgstr "टेलिफोन"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__tole
+msgid "Tole"
+msgstr "टोल"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__total_child_population
+msgid "Total Child Population"
+msgstr "कुल बाल जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__total_family_numbers
+msgid "Total Family Numbers"
+msgstr "कुल परिवार संख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__total_female_population
+msgid "Total Female Population"
+msgstr "कुल महिला जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__total_male_population
+msgid "Total Male Population"
+msgstr "कुल पुरुष जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__total_population
+msgid "Total Population"
+msgstr "कुल जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__tribal_family_number
+msgid "Tribal Family Number"
+msgstr "आदिवासी परिवार संख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__tribal_female_population
+msgid "Tribal Female Population"
+msgstr "आदिवासी महिला जनसङ्ख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__tribal_male_population
+msgid "Tribal Male Population"
+msgstr "आदिवासी पुरुष जनसंख्या"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__user_id
+msgid "UerID"
+msgstr "प्रयोगकर्ता ID"
+
+#. module: upabhokta_samiti
+#: model:ir.ui.menu,name:upabhokta_samiti.upabhokta_samiti_backend_menu
+msgid "Upabhokta Samiti"
+msgstr "उपभोक्ता समिति"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_anugaman_team
+msgid "Upabhokta Samiti Anugaman Team Model"
+msgstr "उपभोक्ता समिति अनुगमन टोली मोडेल"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_bank_account
+msgid "Upabhokta Samiti Bank Account"
+msgstr "उपभोक्ता समिति बैंक खाता"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_view_form
+msgid "Upabhokta Samiti Beneficiary Form"
+msgstr "उपभोक्ता समिति लाभार्थी फारम"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_view_tree
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Upabhokta Samiti Beneficiary Tree"
+msgstr "उपभोक्ता समिति लाभार्थी तालिका"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.act_window,name:upabhokta_samiti.upabhokta_samiti_category_action
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_farmer_group_poc__upabhokta_samiti_category
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_organization_member__upabhokta_samiti_category
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_res_users__upabhokta_samiti_category
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_category__category
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__upabhokta_samiti_category
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_warehouse_location_poc__upabhokta_samiti_category
+#: model:ir.ui.menu,name:upabhokta_samiti.upabhokta_samiti_category_configurations
+msgid "Upabhokta Samiti Category"
+msgstr "उपभोक्ता समिति तह"
+
+#. module: upabhokta_samiti
+#: model:website.menu,name:upabhokta_samiti.upabhokta_samiti_web_dashboard_menu
+msgid "Upabhokta Samiti Dashboard"
+msgstr "उपभोक्ता समिति ड्यासबोर्ड"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Upabhokta Samiti Details"
+msgstr "उपभोक्ता समिति विवरण"
+
+#. module: upabhokta_samiti
+#: model:mail.template,subject:upabhokta_samiti.upbhokta_samiti_email_template_verified
+msgid "Upabhokta Samiti Form Request Accepted "
+msgstr "उपभोक्ता समिति फारम अनुरोध स्वीकृत"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_formation_members
+msgid "Upabhokta Samiti Formation Members model"
+msgstr "उपभोक्ता समिति गठन सदस्य मोडेल"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_tree
+msgid "Upabhokta Samiti Info"
+msgstr "उपभोक्ता समिति जानकारी"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_info
+msgid "Upabhokta Samiti Info Model"
+msgstr "उपभोक्ता समिति जानकारी मोडेल"
+
+#. module: upabhokta_samiti
+#: model:ir.actions.act_window,name:upabhokta_samiti.upabhokta_samiti_action
+#: model:ir.actions.act_window,name:upabhokta_samiti.upabhokta_samiti_members
+msgid "Upabhokta Samiti List"
+msgstr "उपभोक्ता समिति सूची"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__upabhokta_samiti_members
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Upabhokta Samiti Members"
+msgstr "उपभोक्ता समिति सदस्यहरू"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__upabhokta_samiti_name
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "Upabhokta Samiti Name"
+msgstr "उपभोक्ता समितिको नाम"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_beneficiary__upabhokta_samiti_notebook_page_reference_id
+msgid "Upabhokta Samiti Notebook Page Reference"
+msgstr "उपभोक्ता समिति नोटबुक पृष्ठ सन्दर्भ"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_project_decisions
+msgid "Upabhokta Samiti Project Decision model"
+msgstr "उपभोक्ता समिति परियोजना निर्णय मोडेल"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_project_proposal
+msgid "Upabhokta Samiti Project Proposal model"
+msgstr "उपभोक्ता समिति परियोजना प्रस्ताव मोडेल"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__upabhokta_samiti_status
+msgid "Upabhokta Samiti Status"
+msgstr "उपभोक्ता समिति स्थिति"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_beneficiary
+msgid "Upabhokta Samiti beneficiary model"
+msgstr "उपभोक्ता समिति लाभार्थी मोडेल"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_config
+msgid "Upabhokta Samiti configurations"
+msgstr "उपभोक्ता समिति कन्फिगरेसन"
+
+#. module: upabhokta_samiti
+#: model:mail.template,name:upabhokta_samiti.upbhokta_samiti_email_template_verified
+msgid "Upabhokta Samiti form Request Template"
+msgstr "उपभोक्ता समिति फारम अनुरोध टेम्प्लेट"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_beneficiary_master
+msgid "Upabhokta samiti beneficiary master"
+msgstr "उपभोक्ता समिति लाभार्थी मास्टर"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_beneficiary_record
+msgid "Upabhokta samiti beneficiary model"
+msgstr "उपभोक्ता समिति लाभार्थी मोडेल"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "Update"
+msgstr "अपडेट गर्नुहोस्"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__upabhokta_samiti_logo
+msgid "Upload Logo"
+msgstr "लोगो अपलोड गर्नुहोस्"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "Uploaded Image"
+msgstr "फोटो अपलोड गर्नुहोस्"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_res_users
+msgid "User"
+msgstr "प्रयोगकर्ता"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_formation_members__user_id
+msgid "UserId"
+msgstr "प्रयोगकर्ता आईडी"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__ward
+msgid "Ward"
+msgstr "वार्ड"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__week
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_sabha_details__week
+msgid "Week"
+msgstr "हप्ता"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__yojana_budget_npr
+msgid "Yojana Budget(NPR)"
+msgstr "योजना बजेट (NPR)"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__yojana_name
+msgid "Yojana Name"
+msgstr "योजनाको नाम"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "Yojana Name and Purpose"
+msgstr "योजना नाम र उद्देश्य"
+
+#. module: upabhokta_samiti
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_org_yojana_type__yojana_type
+#: model:ir.model.fields,field_description:upabhokta_samiti.field_upabhokta_samiti_info__yojana_type
+#: model:ir.ui.menu,name:upabhokta_samiti.org_yojana_type_configurations
+msgid "Yojana Type"
+msgstr "योजना प्रकार"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_info_view_form
+msgid "approved"
+msgstr "स्वीकृत"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "breadcrumb"
+msgstr "ब्रेडक्रम्ब"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid "logo"
+msgstr "लोगो"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_org_budget_type
+msgid "org.budget.type"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_org_yojana_type
+msgid "org.yojana.type"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_organization_designation_organization
+msgid "organization.designation.organization"
+msgstr "संगठन। पदनाम। संगठन"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_organization_designation_representative
+msgid "organization.designation.representative"
+msgstr "संगठन। पदनाम। प्रतिनिधि"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "page_first"
+msgstr "पृष्ठ_पहिलो"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "page_four"
+msgstr "पृष्ठ_चार"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "page_second"
+msgstr "पृष्ठ_दोस्रो"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "page_third"
+msgstr "पृष्ठ_तेस्रो"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_category
+msgid "upabhokta.samiti.category"
+msgstr "उपभोक्ता.समिति.सभा.श्रेणी"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_notification
+msgid "upabhokta.samiti.notification"
+msgstr "उपभोक्ता.समिति.सभा.सूचना"
+
+#. module: upabhokta_samiti
+#: model:ir.model,name:upabhokta_samiti.model_upabhokta_samiti_sabha_details
+msgid "upabhokta.samiti.sabha.details"
+msgstr "उपभोक्ता.समिति.सभा.विवरण"
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "अक्षरुपी"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+msgid "अध्यक्ष"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "अध्यक्ष श्री"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "अध्यक्षको नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid ""
+"अनुगमन\n"
+"                                            टोलीको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid ""
+"अनुगमन\n"
+"                                        टोलीको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+msgid "अनुगमन टोलीको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+msgid "अनुगमन समिति सदस्यहरुको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid "अनुसूची- ३"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "अनुसूची-१"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+msgid "अनुसूची-२"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "अन्तर्गत टोल/क्षेत्र"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "अन्य"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid ""
+"अपडेट\n"
+"                                            गर्नुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid ""
+"आयोजनाको\n"
+"                                            प्रस्तावहरु"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid ""
+"आयोजनाको\n"
+"                                        प्रस्तावहरु"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+msgid "आयोजनाको प्रस्तावहरु"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "इमेल"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "उपभोक्ता समिति गठन गर्ने निर्णय गरियो ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "उपभोक्ता समिति गठन सम्बन्धी विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "उपभोक्ता समिति दर्ता फारम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "उपभोक्ता समिति बैठकको संख्या"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "उपभोक्ता समिति सदस्यहरुको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+msgid ""
+"उपभोक्ता समिति सदस्यहरुको विवरण\n"
+"                            अपडेट"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+msgid "उपाध्यक्ष"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+msgid "एक्सन"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"औं\n"
+"                        नगरसभा / नगर\n"
+"                        कार्यपालिकाबाट स्विकृत"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "का दिन मध्यपुरथिमि नगरपालिकाका"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid "कार्य गर्नका लागि मिति"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid ""
+"कार्य गर्नका लागि समिति दर्ता\n"
+"                            गर्ने निर्णय भएकोले उपभोक्ता समिति दर्ता प्रमाणपत्र प्रदान गरिएको छ ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid "कार्यविधिको दफा ११ को उपदफा (२) सँग सम्बन्धित"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+msgid "कार्यालय"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "कैफियत"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "को उपस्थितिमा भएको यस वडा नं"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "को नगरसभा/ नगरकार्यपालिको निर्णयानुसार यस नपाको वडा नं."
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "को नयाँ"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid "को निर्णयानुसार"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid ""
+"को वैठकको निर्णयबाट समिति\n"
+"                            दर्ताको लागि निवेदन प्राप्त भएको हुँदा मिति"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "कोषध्यक्ष/सदस्य श्री"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+msgid "क्र.स."
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "गर्ने कार्यका लागि रु"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "जारि गरिएको जिल्ला"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "जारि मिति"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "जारी जिल्ला"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "जारी मिति"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "जिल्ला"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "टेलिफोन"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "टेलिफोन नं."
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "टोल"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "ठेगाना"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "डिलेट गर्नुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "तह"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid ""
+"दर्ता\n"
+"                                                निवेदन"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+msgid "दस्तखत"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "दस्तखत अपलोड गर्नुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+msgid "दस्तखत गरेको फाइल"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "दस्तखत भेटिएन"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid "नगर कार्यपालिका को कार्यालय"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "नगर/गाँउ पालिका"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"नगरपालिकाबाट प्राप्त योजना कार्यक्रम बापतको सहयोग तथा उपभोक्ताहरुको थप "
+"सहभागिताबाट योजना कार्यक्रम निर्माण वा संचालनका लागि देहायको"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"नगरपालिकाबाट सहयोग रकम निकासा तथा निर्माण कार्य तत्काल शुरु गराउन उपभोक्ता "
+"समितिका तर्फबाट"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "ना.प्र.नं"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "ना.प्र.नं."
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "नागरिकता नं."
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "नाम थर"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "निर्णयहरु"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "पछाडी जानुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "पद"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid "परिवार संख्या"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "पालिका प्रतिनिधिको नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "पालिका प्रतिनिधिको पद"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "पासपोर्ट साईज फोटो"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "पुरा नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+msgid "पुरा नाम(नागरिकता न.)"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "पुरुष"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid "पुरुष संख्या"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "प्रदेश"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "प्रस्तावहरु:"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "बाजेको नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "बुबाको नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "बुवाको नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "बैंकको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "बैठकमा उपस्थित संख्या"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "भएको योजनाको छाप र लेटर प्याड तयार गर्ने निर्णय गरियो ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "महिला"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid "महिला संख्या"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"मा उपभोक्ता\n"
+"                        समितिका अध्यक्ष/सचिव/कोषाध्यक्षको संयुक्त दस्तखतमा खाता संचालन हुने गरी बैंक खाता खोल्ने निर्णय गरियो ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "मा मध्यपुर थिमि नगरपालिकाको"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"मा रहेको\n"
+"                        श्री"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid ""
+"मा सम्बन्धित उपभोक्ताको भेलाबाट\n"
+"                            उपभोक्ता समिति गठन गर्ने निर्णय भए बमोजिम उपभोक्ता समितिको मिति"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+msgid ""
+"मा सम्बन्धित उपभोक्ताको भेलाबाट\n"
+"                            उपभोक्ता समिति गठन गर्ने निर्णय भएको र उक्त निर्णय बमोजिम उपभोक्ता समिति\n"
+"                            दर्ताको यो निवेदन पेश गरेका छौं ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid "मिति:"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "मोबाइल"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "मोबाइल नं."
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.karyabidi_dafa_pramadpatra
+msgid "यस नगरपालिकाको वडा नं"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "योजना निर्माण तथा संचालन गर्दा पत्राचार गर्न उपभोक्ता समितिको नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"योजना निर्माण तथा संचालनका लागि प्राप्त हुने सहयोग तथा हुने खर्चहरुको रकमलाई बैंक मार्फत भुक्तानी हुने व्यवस्था\n"
+"                        मिलाउन"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"योजना निर्माणको नियमित अनुगमन गरी निर्माण उपभोक्ता समितिलाई राय सुझाव दिन "
+"तथा कार्यमा भईरहेको खर्चको नियमित रेखदेख गर्न साथै कार्य सम्पन्न पश्चात हुने"
+" आम्दानी तथा खर्च सार्वजनिकीकरण कार्यमा सहयोग पुऱ्याउने कार्यका लागि तपसिल "
+"अनुसारको योजना अनुगमन समिति गठन गर्ने निर्णय गरियो ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"योजना/कार्यक्रम सञ्चालनार्थ\n"
+"                        उपभोक्ता समिति गठन गर्न भेला भइयो ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "योजनाको नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "योजनाको प्रकार"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "योजनाको लागत"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "योजनाको लागत प्रकार"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "र लोगो"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid ""
+"रद्द\n"
+"                                            गर्नुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+msgid "रद्द गर्नुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "रिसेट गर्नुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"लाई नगरपालिका/वडा कार्यालयमा गई योजना सम्झौता गर्न तथा पेश गरिएका "
+"कागजातहरुमा केही थपघट गर्नु परेमा सो समेत गर्न पाउने गरी अधिकार प्रत्यायोजन "
+"गर्ने निर्णय गरियो ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid ""
+"लाभग्राहिहरुको\n"
+"                                            विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid "लाभग्राहिहरुको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid "लाभार्थीको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "लिङ्ग"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "वडा"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid "वर्ग"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "विशेष अतिथिको नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "श्री"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+msgid "श्री प्रमुख प्रशासकीय अधिकृतज्यू"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "श्री मध्यपुर थिमि नगरपालिकाको मिति"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.Darta_Nibedan
+msgid "सचिव"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "सचिव श्री"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "सभा बैठकको संख्या"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "सभा मिति"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "सभा समय(HH:mm)"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid ""
+"सभाको\n"
+"                                            विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid ""
+"सभाको\n"
+"                                        विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "सभाको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.dashboard_template
+msgid ""
+"समिति\n"
+"                                                गठन"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+msgid ""
+"समितिको\n"
+"                                            विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid ""
+"समितिको\n"
+"                                            सदस्य विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+msgid ""
+"समितिको\n"
+"                                        सदस्य विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "समितिको लोगो"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid "समितिको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "सम्पर्क"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "सम्पर्क न."
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "सम्पर्क नं."
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid ""
+"सहभागीहरुको\n"
+"                                            विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid ""
+"सहभागीहरुको\n"
+"                                        विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+msgid "सहभागीहरुको विवरण"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+msgid "सहमति छ"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid ""
+"सहयोग गर्ने निर्णय भएको थाहा हुन आएको हुँदा यस योजना निर्माणका लागि सबै "
+"उपभोक्ताहरु मिलेर कार्य गर्ने निर्णय गरियो ।"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "सि.नं."
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_beneficiary_template
+msgid "सेभ"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_register_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_sabha_details_template
+msgid ""
+"सेभ\n"
+"                                            गर्नुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_anugaman_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_attendees_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_project_proposals_template
+msgid ""
+"सेभ\n"
+"                                        गर्नुहोस"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_update_template
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.upabhokta_samiti_members_view_details_template
+msgid "हजुरबुबाको नाम"
+msgstr ""
+
+#. module: upabhokta_samiti
+#: model_terms:ir.ui.view,arch_db:upabhokta_samiti.general_upabhokta_catalog
+msgid "१.१ आयोजनाबाट लाभान्वित हुने"
+msgstr ""

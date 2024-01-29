@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST" target="_blank">
+        <input type="text" name="amount"  value="30"/>
+        <input type="text" name="tax_amount"   value="0"/>
+        <input type="text" name="total_amount"   value="30"/>
+        <input type="text" name="transaction_uuid" value="S00198"/>
+        <input type="text" name="product_code"  value="S00198"/>
+        <input type="text" name="product_service_charge"   value="0"/>
+        <input type="text" name="product_delivery_charge"  value="0" />
+        <input type="text" name="success_url"  value="http://google.com"/>
+        <input type="text" name="failure_url"  value="http://youtube.com"/>
+        <input type="text" name="signed_field_names"  value="signed_field_names"/>
+        <input type="text" name="signature"  value="i45fZsPyPBvrJ+2FrfhMZ/W5Wvi2X9cVl9zZijfRYz4="/>
+        <input type="text" name="secret"  value="8gBm/:&EnhH.1/q"/>
+        <input type="submit" value="Submit">
+    </form>
+    <body>
+        <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
+        <input type="text" id="amount" name="amount" value="100">
+        <input type="text" id="tax_amount" name="tax_amount" value ="10">
+        <input type="text" id="total_amount" name="total_amount" value="110">
+        <input type="text" id="transaction_uuid" name="transaction_uuid">
+        <input type="text" id="product_code" name="product_code" value ="EPAYTEST">
+        <input type="text" id="product_service_charge" name="product_service_charge" value="0">
+        <input type="text" id="product_delivery_charge" name="product_delivery_charge" value="0">
+        <input type="text" id="success_url" name="success_url" value="https://esewa.com.np">
+        <input type="text" id="failure_url" name="failure_url" value="https://google.com">
+        <input type="text" id="signed_field_names" name="signed_field_names" value="amount,total_amount,transaction_uuid,product_code">
+        <input type="text" id="signature" name="signature">
+        <input value="Submit" type="submit">
+        </form>
+
+        <body>
+            <form action="https://uat.esewa.com.np/epay/main" method="POST">
+            <input value="100" name="tAmt" type="hidden">
+            <input value="90" name="amt" type="hidden">
+            <input value="5" name="txAmt" type="hidden">
+            <input value="2" name="psc" type="hidden">
+            <input value="3" name="pdc" type="hidden">
+            <input value="EPAYTEST" name="scd" type="hidden">
+            <input value="ee2c3ca1-696b-4cc5-a6be-2c40d929d453" name="pid" type="hidden">
+            <input value="http://merchant.com.np/page/esewa_payment_success?q=su" type="hidden" name="su">
+            <input value="http://merchant.com.np/page/esewa_payment_failed?q=fu" type="hidden" name="fu">
+            <input value="Submit" type="submit">
+            </form>
+        </body> 
+       </body>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1
+/crypto-js.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1
+/hmac-sha256.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1
+/enc-base64.min.js"></script>
+<script>
+ var hash = CryptoJS.HmacSHA256("total_amount=30,transaction_uuid=S00198,product_code=S00198", "8gBm/:&EnhH.1/q");
+ var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+ console.log(hashInBase64)
+
+ function generateSignature() {
+            var currentTime = new Date();
+            var formattedTime = currentTime.toISOString().slice(2, 10).replace(/-/g, '') + '-' + currentTime.getHours() +
+                currentTime.getMinutes() + currentTime.getSeconds();
+            document.getElementById("transaction_uuid").value = formattedTime;
+            var total_amount = document.getElementById("total_amount").value;
+            var transaction_uuid = document.getElementById("transaction_uuid").value;
+            var product_code = document.getElementById("product_code").value;
+            var secret = document.getElementById("secret").value;
+
+            var hash = CryptoJS.HmacSHA256(
+                `total_amount=${total_amount},transaction_uuid=${transaction_uuid},product_code=${product_code}`,
+                `${secret}`);
+            var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+            document.getElementById("signature").value = hashInBase64;
+        }
+</script>
+ 
+</body>
+</html>
+
+i45fZsPyPBvrJ+2FrfhMZ/W5Wvi2X9cVl9zZijfRYz4=
+i45fZsPyPBvrJ+2FrfhMZ/W5Wvi2X9cVl9zZijfRYz4=

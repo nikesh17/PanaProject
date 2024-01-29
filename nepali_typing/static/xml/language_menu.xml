@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="nepali_typing.keyboard_opt" owl="1">
+        <!-- <a class="dropdown-item o_menu_brand d-none d-md-block" role="menuitem" tabindex="0" href="#" data-menu-xmlid="farmer.menu_farmer" data-section="286"><t t-esc="company.currentCompany.name"/></a> -->
+        <a class="dropdown-item o_menu_brand d-none d-md-block" role="menuitem" tabindex="0" href="#" data-menu-xmlid="farmer.menu_farmer" data-section="286"><i class="fa fa-globe"/></a>
+         
+    </t>
+
+</templates>

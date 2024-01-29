@@ -1,0 +1,13 @@
+<odoo> 
+    <!-- inherite form view of account.move -->
+    <record id="view_account_move_preview_hide" model="ir.ui.view">
+        <field name="name">Account Move</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="///div[@class='o_attachment_preview']" position="replace">
+            <div class='d-none'></div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

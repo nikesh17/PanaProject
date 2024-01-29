@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+        id="organization_menu_backend"
+        name="Organization"
+    />
+
+    <menuitem
+        id="organization_menu_backend_action"
+        name="organization Information"
+        sequence="11"
+        parent="organization_menu_backend"
+        action="organization_action"
+    />
+
+    <record id="organization_action" model="ir.actions.act_window">
+        <field name="name">organization</field>
+        <field name="res_model">organization.information</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                No Content Available. Add New
+            </div>
+        </field>
+    </record>
+   
+    <!-- Collaborative Organization Master category -->
+    <record id="organization_collaborative_org_action" model="ir.actions.act_window">
+        <field name="name"> Collaborative Organization</field>
+        <field name="res_model">collaborative.org.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+     <!--  Organization Member Qualification category -->
+    <record id="organization_member_qualification_action" model="ir.actions.act_window">
+        <field name="name"> Organization Member Qualification</field>
+        <field name="res_model">member.qualification.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+    <!--  Organization Member Quota category -->
+    <record id="organization_quota_action" model="ir.actions.act_window">
+        <field name="name"> Quota Master</field>
+        <field name="res_model">quota.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+     <!--  Organization Asset Master   -->
+    <record id="organization_asset_action" model="ir.actions.act_window">
+        <field name="name"> Asset Master</field>
+        <field name="res_model">org.asset.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+     <!--  Organization Asset Master   -->
+    <record id="organization_designation_action" model="ir.actions.act_window">
+        <field name="name"> Organization Representative Designation Master</field>
+        <field name="res_model">org.representative.designation</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+    <menuitem
+    id="organization_configuration"
+    name="Configurations"
+    parent="organization_menu_backend"
+    sequence="21" />
+    
+    <menuitem
+       id="organization_member_configuration"
+       name="Member Master Configuration"
+       parent="organization_configuration"
+       sequence="30"
+   />
+    <menuitem
+        id="organization_collaborative_org_configurations"
+        name="Collaborative Organization "
+        parent="organization_configuration"
+        action="organization_collaborative_org_action"
+        sequence="28"
+    />
+    <menuitem
+        id="organization_member_qualification_configurations"
+        name=" Member Qualification"
+        parent="organization_member_configuration"
+        action="organization_member_qualification_action"
+        sequence="29"
+    />
+    <menuitem
+        id="organization_quota_configurations"
+        name="Quota Master"
+        parent="organization_member_configuration"
+        action="organization_quota_action"
+        sequence="30"
+    />
+    <menuitem
+        id="organization_asset_configurations"
+        name="Asset Master"
+        parent="organization_configuration"
+        action="organization_asset_action"
+        sequence="31"
+    /> 
+    <menuitem
+        id="organization_member_designation_configurations"
+        name="Member Designation Master"
+        parent="organization_member_configuration"
+        action="organization_designation_action"
+        sequence="32"
+    />
+</odoo>

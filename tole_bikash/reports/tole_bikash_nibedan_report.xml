@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Define the paper format -->
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Define the report action -->
+    <record id="tole_bikash_nibedan" model="ir.actions.report">
+        <field name="name">Tole Bikash Nibedan</field>
+        <field name="model">tole.bikash.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tole_bikash.tole_bikash_nibedan_report</field>
+        <field name="binding_model_id" ref="model_tole_bikash_info" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <!-- Define the template for the report -->
+    <template id="tole_bikash_nibedan_report">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    .centered {
+                        text-align: center;
+                    }
+
+                    h3 {
+                        font-size: 22px;
+                        font-weight: bold;
+                    }
+
+                    h4 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+
+                    td span {
+                        font-size: 16px;
+                    }
+                      h2{
+                        font-size:24px;
+                        font-weight:bold;
+                    }
+                </style>
+
+                <!-- Loop through records -->
+                <t t-foreach="docs" t-as="o">
+                    <br/>
+
+                    <!-- Header section -->
+                    <div class="centered">
+                        <h2>अनुसूची-१</h2>
+                        <h3>टोल विकास संस्थालाई गाउँपालिकामा दर्ता गर्ने</h3>
+                        <h3>निवेदनको नमुना</h3>
+                    </div><br/>
+
+                    <!-- Date section -->
+                    <div class="date" style="text-align:right;">
+                        <p>मिति: <!-- <span t-field="o.registration_date_bs"/> --></p>
+                    </div><br/>
+
+                    <div>
+                        <p>श्रीमान प्रमुख प्रशासकिय अधिकृत ज्यू,</p>
+                        <p><span t-esc="o.municipality.palika_name_np" /></p>
+                        <p><span t-esc="o.district.district_name_np"/>, <span t-esc="o.province.name_np"/></p>
+                    </div><br/>
+
+                    <!-- Centered section -->
+                    <div class="centered">
+                        <h4 style=" text-decoration: underline">विषय : टोल विकास संस्था दर्ता गर्ने सम्वन्धमा ।</h4>
+                        <br />
+                    </div><br/>
+
+                    <!-- Main body section -->
+                    <div class="main_body" style="line-height:2.5; padding-bottom:60px;">
+                        <p>
+                            प्रस्तुत विषयमा यस गाउँपालिकाद्धारा सञ्चालित वडा नं <span t-esc="o.ward"/> को टोलमा गठन गरिएको  <span t-esc="o.tole_bikash_name_np" /> टोल विकास संस्थालाई <span t-esc="o.municipality.palika_name_np"/> कार्यालयमा दर्ता/सूचिकृत गरिदिनुहुन अनुरोध गर्दछु । यस  <span t-esc="o.tole_bikash_name_np" />टोल विकास संस्थाको क्षेत्र निम्न अनुसारको चार कित्ता भित्र समिति रहनेछ ।
+                        </p>
+                        <p>पूर्व सिमानाः <span t-esc="o.east" /></p>
+                        <p>पश्चिम सिमाना: <span t-esc="o.west" /></p>
+                        <p>उत्तर सिमानाः <span t-esc="o.north" /></p>
+                        <p>दक्षिण सिमानाः <span t-esc="o.south" /></p>
+                    </div>
+
+                    <div>
+                        <p>अध्यक्षको नामः <t t-foreach="o.members" t-as="member">
+                            <t t-if="member.member_designation.organization_samiti_designations == 'President'">
+                                <span t-esc="o.member_name" />
+                            </t>
+                        </t>
+                        </p>
+                        <p>टोल विकास संस्थाको नामः <span t-esc="o.tole_bikash_name_np" /></p>
+                        <p>ठेगानाः <span t-esc="o.municipality.palika_name_np"/>, <span t-esc="o.district.district_name_np"/>, <span t-esc="o.province.name_np"/> </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Organization Info Tree View -->
+    <record id="organization_info_view_tree" model="ir.ui.view">
+        <field name="name">Organization Data</field>
+        <field name="model">organization.information</field>
+        <field name="arch" type="xml">
+            <tree string="Organization Information">
+                <field name="org_name_en"/>
+                <field name="org_name_np"/>
+                <field name="org_shortcut_name"/>
+                <field name="org_province"/>
+                <field name="org_district"/>
+                <field name="org_municipality"/>
+                <field name="org_ward"/>
+                <field name="org_email"/>
+                <field name="org_telephone"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Organization Info Form View -->
+    <record id="organization_info_view_form" model="ir.ui.view">
+        <field name="name">organization_information.view.form</field>
+        <field name="model">organization.information</field>
+        <field name="arch" type="xml">
+            <form string="Organization Information">
+                <header>
+                    <field name="organization_status" widget="statusbar" nolabel="1"
+                        statusbar_visible="in_review,incomplete_submitted,approved,rejected"
+                        default="in_review" />
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" attrs="{'invisible': [('organization_status', '!=', 'in_review')]}"
+                        title="In Review" bg_color="bg-info" />
+                    <widget name="web_ribbon" attrs="{'invisible': [('organization_status', '!=', 'incomplete_submitted')]}"
+                        title="Incomplete Submitted" bg_color="bg-warning" />
+                    <widget name="web_ribbon" attrs="{'invisible': [('organization_status', '!=', 'approved')]}"
+                        title="Approved" bg_color="bg-success" />
+                    <widget name="web_ribbon" attrs="{'invisible': [('organization_status', '!=', 'rejected')]}"
+                        title="Rejected" bg_color="bg-danger" />
+                    <group>
+                        <group name="organization_info" string="Organization Basic Details">
+                            <field name="org_name_en"/>
+                            <field name="org_name_np"/>
+                            <field name="org_shortcut_name"/>
+                            <field name="organization_type"/>
+                            <!-- <field name="organization_category"/> -->
+                        </group>
+                        
+                        <group name="Location" string="Location">
+                            <field name="org_province"/>
+                            <field name="org_district"/>
+                            <field name="org_municipality"/>
+                            <field name="org_ward"/>
+                            <field name="org_tole"/>
+                        </group>
+                        <group name="Contact Details" string="Contact Details">
+                            <field name="org_email"/>
+                            <field name="org_telephone"/>
+                            <field name="org_postbox_number"/>
+                            <field name="org_fax_number"/>
+                        </group>
+                        <group name="Contact Person Details" string="Contact Person Details">
+                            <field name="contact_person_name_"/>
+                            <field name="contact_person_phone_"/>
+                            <field name="contact_person_email_"/>
+                            <field name="contact_person_designation"/>
+                        </group>
+                        <group name="Other Details" string="Other Details">
+                            <field name="org_house_number"/>
+                            <field name="org_website_url"/>
+                            <field name="organization_logo" widget="image"/>
+                            <field name="election_date" widget="nepali_datepicker"/>
+                            <field name="committee_member_tenure"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <!-- Bhela details Page -->
+                        <page name="bhela_details" string="Bhela Details">
+                            <field name="organization_bhela_details">
+                                <tree>
+                                    <field name="sabha_date_bs" />                               
+                                    <field name="chief_guest"></field>
+                                    <field name="total_attendees"></field>
+                                    <field name="sabha_number"></field>
+                                </tree>
+                            </field>
+                        </page>
+                        <!-- Proposal Page -->
+                        <page name="Organization_purpose" string="Organization Purpose">
+                            <field name="organization_purpose">
+                                <tree>
+                                    <field name="document_name" />                               
+                                    <field name="purpose_text"></field>
+                                </tree>
+                            </field>
+                        </page>
+                        <!-- Organization Members Page -->
+                        <page name="organization_formation_members" string="Organization Members">
+                            <field name="organization_members_ref" string="Organization Members">
+                                <tree>
+                                    <field name="member_full_name"/>
+                                    <field name="organization_member_designation"/>
+                                    <field name="member_address"/>
+                                    <field name="member_mobile"/>
+                                    <field name="member_citizenship_number"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <!-- Attendees Page -->
+                        <page name="organization_attendees" string="Attendees">
+                            <field name="attendees">
+                                <tree>
+                                    <field name="full_name"/>
+                                    <field name="gender"/>
+                                    <field name="mobile"/>
+                                    <field name="signature" class="tree-image" widget="image"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="organization_fix_assets" string="Organization Fix Assets">
+                            <field name="fix_assets_ref">
+                                <tree>
+                                    <field name="asset_name"/>
+                                    <field name="asset_number"/>
+                                    <field name="asset_total_cost"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <!-- Renewal Detail Page -->
+                        <page name="organization_renewal_detail" string="Renewal Detail">
+                            <field name="organization_renewal_ref">
+                                <tree>
+                                    <field name="org_reg_number"/>
+                                    <field name="issued_district"/>
+                                    <field name="issued_office"/>
+                                    <field name="nabikaran_awadi"/>
+                                    <!-- <field name="last_nabikaran_date"  /> -->
+                                </tree>
+                                <form string="Organization Renewal Detail Form">
+                                    <group>
+                                        <group>
+                                            <field name="org_reg_number" />
+                                            <field name="issued_province" />
+                                            <field name="issued_district" />
+                                            <field name="issued_palika" />
+                                        </group>
+                                        <group>
+                                            <field name="issued_office" />
+                                            <field name="org_registration_date" />
+                                            <field name="nabikaran_awadi" />
+                                            <field name="last_nabikaran_date" />
+                                        </group>
+                                        
+                                        
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                         <page name="organization_beneficiary_record" string="Beneficiary">
+                            <field name="beneficiary_ref">
+                                <tree string="Organization Beneficiary Tree">
+                                    <field name="category" />
+                                    <field name="category_male_population" />
+                                    <field name="category_female_population" />
+                                    <field name="category_family_numbers" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="organization_program_record" string="Program Details">
+                            <field name="program_ref">
+                                <tree string="Organization Beneficiary Tree">
+                                    <field name="program_name" />
+                                    <field name="program_chairman_fullname" />
+                                    <field name="program_location" />
+                                    <field name="program_start_time" />
+                                    <field name="program_end_time" />
+                                    <field name="program_collaborative_organization" />
+                                </tree>
+                                
+                            </field>
+                        </page>
+
+                        <page name="quota_ref" string="Quota">
+                            <field name="quota_ref">
+                                <tree string="Quota">
+                                    <field name="category" />
+                                    <field name="category_total_numbers" />
+                                </tree>
+                                
+                            </field>
+                        </page>
+                    </notebook>
+                    <group string="Comments">
+                        <field name="comments" string="" placeholder="Comments here..."
+                            class="comments-field"></field>
+                    </group>
+                    <nav class="col-12 button-container">
+                        <button string="Reject" name="set_state_rejected" type="object"
+                            class="oe_highlight btn btn-danger" />
+                        <button string="Insufficient Data" name="set_state_incomplete_submitted" type="object"
+                            class="oe_highlight btn btn-warning" />
+                        <button string="In Review" name="set_state_in_review" type="object"
+                            class="oe_highlight btn btn-info" />
+                        <button string="Approve" name="set_state_verified" type="object"
+                            class="oe_highlight btn btn-success" />
+                    </nav>
+                </sheet>
+                <div class="oe_chatter" >
+                    <field name="message_follower_ids" widget="mail_followers" ></field>
+                    <field name="activity_ids" widget="mail_activity" ></field>
+                    <field name="message_ids" widget="mail_thread" ></field>
+                </div>
+            </form>
+        </field>
+    </record>
+</odoo>

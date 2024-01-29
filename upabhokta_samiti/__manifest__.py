@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+{
+    "name": "Upabhokta Samiti",
+    "summary": "",
+    "description": "",
+    "author": "Bibek Shrestha, Karuna Pandey",
+    "website": "",
+    "category": "",
+    "version": "0.1",
+    "application": True,
+    "sequence": 0,
+    "depends": ["base","web","website","auth_signup","mail", "farmer", "nepali_date_widget", "nepali_typing"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/upabhokta_samiti_menu.xml",
+        "views/views.xml",
+        "views/templates.xml",
+        "views/upabjokta_samiti_info_definition.xml",
+        "views/upabhokta_samiti_beneficiary_definition.xml",
+        "views/upabhokta_samiti_attendees.xml",
+        "views/upabhokta_samiti_sabha_details_definition.xml",
+        "views/upabhokta_samiti_formation_members.xml",
+        "views/upabhokta_samiti_anugaman_team.xml",
+        "views/test.xml",
+        "views/upabhokta_samitibank_account.xml",
+        "reports/reports.xml",
+        "reports/darta_nibedan.xml",
+        "reports/karyabidi_dafa_nibedan.xml",
+        "views/website_menu.xml",
+        "views/login_inherit.xml",
+        # "views/portal_inherit.xml",
+        "email_templates/verified_email_template.xml",
+        "views/user_notification_template.xml"
+    ],
+    "assets": {
+        "web.assets_backend": [
+            "upabhokta_samiti/static/src/css/style.scss",
+        ],
+        "web.assets_frontend": [
+            "upabhokta_samiti/static/src/css/frontend.scss",
+            "upabhokta_samiti/static/src/css/nepali.datepicker.v4.0.1.min.css",
+            "upabhokta_samiti/static/src/css/global.scss",
+            "upabhokta_samiti/static/src/js/nepali.datepicker.v4.0.1.min.js",
+            "upabhokta_samiti/static/src/js/upabhokta_samiti_index.js",
+            "/upabhokta_samiti/static/src/js/beneficiary_index.js",
+        ],
+    },
+}

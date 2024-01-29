@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+
+    <!-- Organization Renewal Form View -->
+    <record id="organization_renewal_view_form" model="ir.ui.view">
+    <field name="name">organization.program.record.view.form</field>
+    <field name="model">organization.program.record</field>
+    <field name="arch" type="xml">
+        <form string="Organization Program Detail Form">
+            <group>
+                <group>
+                    <field name="program_name" />
+                    <field name="program_location" />
+                    <field name="program_start_time" />
+                    <field name="program_purpose" />
+               
+
+
+                </group>
+                <group>
+                    <field name="program_chairman_fullname" />
+                    <field name="program_collaborative_organization" />
+                    <field name="program_end_time" />
+                    <field name="program_budget"/>
+
+
+                </group>
+            </group>
+        </form>
+    </field>
+</record>
+
+</odoo>

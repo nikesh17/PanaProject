@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="tax_measurement.HouseAreaConversion_View" owl="1">
+        <div class="d-flex">
+            <Many2OneField t-props="props"/>
+            <span>
+                <button t-on-click="openTree" class="btn btn-outline-primary btn-sm"><i class="fa fa-sitemap" aria-hidden="true"></i></button>
+            </span>
+        </div>
+    </t>
+</templates>

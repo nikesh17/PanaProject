@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="organization_members_formation_view_tree" model="ir.ui.view">
+        <field name="name">organization_members_formation.view.tree</field>
+        <field name="model">organization.formation.members</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="member_full_name"></field>
+                <field name="organization_member_designation"></field>
+                <field name="member_address"></field>
+                <field name="member_father_name"></field>
+                <field name="member_grandfather_name"></field>
+                <field name="member_father_name"></field>
+                <field name="member_mobile"></field>
+                <field name="member_telephone_opt"></field>
+                <field name="member_citizenship_number"></field>
+                <field name="member_citizenship_issued_district"></field>
+                <field name="member_citizenship_issued_date_bs"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="organization_members_formation_view_form" model="ir.ui.view">
+        <field name="name">organization_members_formation.view.form</field>
+        <field name="model">organization.formation.members</field>
+        <field name="arch" type="xml">
+            <form string=" Organization Member Form">
+                <sheet>
+                    <group>
+                        <group name="member_personal_info" string="Basic Info">
+                            <field name="member_full_name"></field>
+                            <field name="member_gender"></field>
+                            <field name="organization_member_designation"></field>
+                            <field name="member_address"></field>
+                            <field name="qualification_level_"></field>
+                        </group>
+                        <group name="Profile" string="Profile">
+                            <field name="member_picture" widget="image"></field>
+                        </group>
+
+                        <group name="member_parent_info" string="Parent Info">
+                            <field name="member_father_name"></field>
+                            <field name="member_mother_name"></field>
+                            <field name="member_grandfather_name"></field>
+                        </group>
+
+                        <group name="member_contact_detail" string="Contact Details">
+                            <field name="member_mobile"></field>
+                            <field name="member_telephone_opt"></field>
+                            <field name="member_email"></field>
+                        </group>
+
+                        <group name="member_citizenship_details" string="Citizenship Details">
+                            <field name="member_citizenship_number"></field>
+                            <field name="member_citizenship_issued_date_bs"
+                                widget="nepali_datepicker"></field>
+                            <field name="member_citizenship_issued_district"></field>
+                            <field name="citizenship_front_image"></field>
+                            <field name="citizenship_back_image"></field>
+                        </group>
+                        <group name="Signature" string="Signature">
+                            <field name="member_signature" widget="image"></field>
+                        </group>
+                        <group name="Other Information" string="Tenure Information">
+                            <field name="comitte_member_tenure"></field>
+                            <field name="member_type"></field>
+                            <field name="status"></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

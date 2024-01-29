@@ -1,0 +1,22 @@
+<odoo>
+    <record id="class_d_organization_email_template_verified" model="mail.template">
+    <field name="name">Organization form Request Template</field>
+    <field name="model_id" ref="tole_bikash.model_tole_bikash_info"/>
+    <field name="subject">Class D Organization Form Request Accepted </field>
+    <field name="email_from">"{{user.email}}"</field>
+    <field name="email_to">"{{object.tole_bikash_email}}"</field>    
+    <field name="report_template" ref="tole_bikash.report_tole_bikash_praman_patra"></field>
+    <field name="report_name">Report1</field>
+    <field name="body_html" type="html">
+        <div>
+                 Dear <t t-out="object.tole_bikash_name_np or ''"></t>,<br/><br/>
+                <p>We are pleased to inform you that your class D organization form registration request has been accepted.
+                 The verification process is complete and your verification number is: <span t-esc="object.get_registration_number()" /></p>
+                <p>Thank you for choosing our services. If you have any further inquiries or need assistance, please feel free to contact us.</p>
+                <p>Best regards,<br/></p>
+                <t t-out="object.municipality.palika_name_np"></t>
+                
+            </div>
+    </field>
+</record>
+</odoo>

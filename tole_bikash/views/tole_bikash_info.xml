@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="tole_bikash_info_view_tree" model="ir.ui.view">
+        <field name="name">tole_bikash_info.view.tree</field>
+        <field name="model">tole.bikash.info</field>
+        <field name="arch" type="xml">
+            <tree string="Tole Bikash Information">
+                
+                <field name="tole_bikash_name_en" />
+                <field name="tole_bikash_name_np" />
+                <field name="province" />
+                <field name="district" />
+                <field name="municipality" />
+                <field name="ward" />
+                <field name="tole" />
+                <field name="contact_person_name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="tole_bikash_info_view_form" model="ir.ui.view">
+        <field name="name">tole_bikash_info.view.form</field>
+        <field name="model">tole.bikash.info</field>
+        <field name="arch" type="xml">
+            <form string="Tole Bikash Information">
+                <header>
+                    <field name="tole_bikash_status" widget="statusbar" nolabel="1"
+                        statusbar_visible="in_review,incomplete_submitted,approved,rejected"
+                        default="in_review" />
+                </header>
+                
+                <sheet>
+                     <widget name="web_ribbon" attrs="{'invisible': [('tole_bikash_status', '!=', 'in_review')]}"
+                        title="In Review" bg_color="bg-info" />
+                    <widget name="web_ribbon" attrs="{'invisible': [('tole_bikash_status', '!=', 'incomplete_submitted')]}"
+                        title="Incomplete Submitted" bg_color="bg-warning" />
+                    <widget name="web_ribbon" attrs="{'invisible': [('tole_bikash_status', '!=', 'approved')]}"
+                        title="Approved" bg_color="bg-success" />
+                    <widget name="web_ribbon" attrs="{'invisible': [('tole_bikash_status', '!=', 'rejected')]}"
+                        title="Rejected" bg_color="bg-danger" />    
+                    <group >
+                        <group string="Tole Bikash Basic Details" name="Tole Bikash Basic Details">
+                            <field name="tole_bikash_name_en" />
+                            <field name="tole_bikash_name_np" />
+                            <field name="Tole_bikash_category" />
+                            <field name="tole_bikash_type" />
+                        </group>
+
+                        <group string="Logo" name="Logo">
+                            <field name="tole_bikash_logo" widget="image" />
+                        </group>    
+
+                        <group string="Location" name="Location">
+                            <field name="province" />
+                            <field name="district" />
+                            <field name="municipality" />
+                            <field name="ward" />
+                            <field name="tole" />
+                        </group>
+
+                        <group string="Border" name="Border">
+                            <field name="east" />
+                            <field name="west" />
+                            <field name="north" />
+                            <field name="south" />
+                        </group>
+
+                        <group string="Contact Details" name="Contact details">
+                            <field name="tole_bikash_email" />
+                            <field name="tole_bikash_telephone" />
+                            <field name="tole_bikash_postbox_number" />
+                            <field name="tole_bikash_fax_number" />
+                        </group>
+
+                        <group string="Contact Person Details" >
+                            <field name="contact_person_name"  />
+                            <field name="contact_person_phone" />
+                            <field name="contact_person_email"/>
+                            <field name="contact_person_location"/>
+                            <field name="contact_person_designation" />                            
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="tole_bikash_member_view_tree" string="Members">
+                            <field name="members" />
+                        </page>
+                        <page name="tole_bikash_proposal_view_tree" string="Proposals">
+                            <field name="proposals" />
+                        </page>
+                        <page name="tole_bikash_decision_view_tree" string="Decisions">
+                            <field name="decisions" />
+                        </page>
+                        <page name="tole_bikash_attendees_view_tree" string="Attendees">
+                            <field name="attendees" />
+                        </page>
+                        <page name="tole_bikash_meetings_view_tree" string="Meetings">
+                            <field name="meetings" />
+                        </page>
+                    </notebook>
+                     <group string="Comments">
+                        <field name="comments" string="" placeholder="Comments here..."
+                            class="comments-field"></field>
+                    </group>
+                    <nav class="col-12 button-container">
+                        <button string="Reject" name="set_state_rejected" type="object"
+                            class="oe_highlight btn btn-danger" />
+                        <button string="Insufficient Data" name="set_state_incomplete_submitted" type="object"
+                            class="oe_highlight btn btn-warning" />
+                        <button string="In Review" name="set_state_in_review" type="object"
+                            class="oe_highlight btn btn-info" />
+                        <button string="Approve" name="set_state_verified" type="object"
+                            class="oe_highlight btn btn-success" />
+                    </nav>
+                </sheet>
+                <div class="oe_chatter" >
+                    <field name="message_follower_ids" widget="mail_followers" ></field>
+                    <field name="activity_ids" widget="mail_activity" ></field>
+                    <field name="message_ids" widget="mail_thread" ></field>
+                </div>
+            </form>
+        </field>
+    </record>
+</odoo>

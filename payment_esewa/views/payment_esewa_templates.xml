@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="redirect_form">
+
+    <form action="https://uat.esewa.com.np/epay/main" method="POST">
+            <input t-att-value="total_amount" name="tAmt" type="text" />
+            <input t-att-value="amount" name="amt" type="text" />
+            <input t-att-value="tax_amount" name="txAmt" type="text" />
+            <input t-att-value="product_service_charge" name="psc" type="text" />
+            <input t-att-value="product_delivery_charge" name="pdc" type="text" />
+            <input t-att-value="merchant_code" name="scd" type="text" />
+            <input t-att-value="transaction_uuid" name="pid" type="text" />
+            <input t-att-value="success_url" name="su" type="text" />
+            <input t-att-value="failure_url" name="fu" type="text" />
+    </form>
+
+    </template>
+</odoo>

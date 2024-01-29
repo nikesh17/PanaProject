@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user_keyboard_base,access_user_keyboard_base,model_user_keyboard,base.group_user,1,0,0,0
+access_user_keyboard_super_admin,access_user_keyboard_super_admin,model_user_keyboard,farmer.group_super_admin_access,1,1,1,1

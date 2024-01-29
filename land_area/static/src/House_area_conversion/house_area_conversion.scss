@@ -1,0 +1,23 @@
+ul{
+    list-style-type: none;
+  }
+  .Heirarchy-tree-ul span{
+    cursor: pointer;
+  }
+  
+  .arrowIcon{
+    margin-right: 6px;
+    cursor: pointer;
+  }
+  
+  .search-container{
+    display: flex;
+    span{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 6px;
+      padding: 6px;
+    }
+   
+  }

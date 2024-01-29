@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- Attendees Form View -->
+    <record id="upabhokta_attendees_Form_view" model="ir.ui.view">
+        <field name="name">Upabhokta Samiti Meeting Attendees</field>
+        <field name="model">upabhokta.samiti.attendees</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="attendees" string="Attendees Detail">
+                        <group>
+                            <field name="full_name" />
+                            <field name="gender" />
+
+                        </group>
+                        <group>
+                            <field name="mobile" />
+                            <field name="signature" widget="image" />
+                            <field name="remarks" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

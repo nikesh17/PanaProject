@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="org_detail_report" model="ir.actions.report">
+        <field name="name">Organization Detail report</field>
+        <field name="model">organization.information</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nep_organization.organization_detail_report</field>
+        <field name="binding_model_id" ref="model_organization_information" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <template id="organization_detail_report">
+            <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+                <t t-call="web.html_container">
+                    <t t-call="web.basic_layout">
+                        <style>
+                             @font-face {
+                                font-family: 'kalimati-regular';
+                                src: url('organization_module/static/description/font/kalimati_regular.otf') format('truetype');
+                                font-weight: normal;
+                                font-style: normal;
+                            }
+                            * {
+                                font-family: kalimati-regular !important;
+                            }
+                            .centered{
+                                text-align:center;
+                            }
+                             h3{
+                                font-size:22px;
+                                <!-- font-weight:bold -->
+                            }
+                            h4{
+                                font-size:18px;
+                            }
+                            p{
+                                font-size:14px;
+                            }
+                             * {
+                                 line-height: 2;
+                             }
+                             td span{
+                                    font-size:14px;
+                                }
+                                    
+                          
+                        </style>
+                        <t t-foreach="docs" t-as="o">
+                            <br/>
+                            <div class="centered" >
+                                <h3 >अनुसूचि 4</h3>
+                                <h3>परिच्छेद 6 नियम 28.1 (5) बमोजिम</h3>
+                                <h3>संस्थागत विवरण</h3> 
+                            </div>
+                            <br /><br />
+                            <div>
+                                <h4>१) संस्थाको नाम</h4>
+                                <p>नेपालीमा : <span t-field="o.org_name_np" /></p>
+                                <p>अंग्रेजीमा : <span t-field="o.org_name_en" /></p>
+                                <p>छोटकरीमा : <span t-field="o.org_shortcut_name" /></p>
+                                
+                            </div>
+                            <br /><br />
+                            <div class="container-fluid">
+                                <h4>२) संस्थाको ठेगाना :    क) केन्द्रीय कार्यालय</h4>
+
+                                <div class="row" style="text-align:left">
+
+                                    <div class="col-6" style="text-align:left">
+                                        <p> प्रदेश : <span t-field="o.org_province.name_np" /></p>
+                                        <p>जिल्ला : <span t-field="o.org_district.district_name_np" /></p>
+                                        <p>पालिका : <span t-field="o.org_municipality.palika_name_np" /></p>
+                                        <p>वडा : <span t-field="o.org_ward" /></p>
+                                        <p>टोल : <span t-field="o.org_tole" /></p>
+                                         <p>फ्याक्स नं : <span t-field="o.org_fax_number" /></p>
+                                        <p>पोष्ट बक्स : <span t-field="o.org_postbox_number" /></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>टेलिफोन नं : <span t-field="o.org_telephone" /></p>
+                                        <p>इमेल : <span t-field="o.org_email" /></p>
+                                        <p>वेबसाइट : <span t-field="o.org_website_url" /></p>
+                                        <p>सम्पर्क व्यक्तिको नाम : <span t-field="o.contact_person_name_" /></p>
+                                        <p>पद : <span t-field="o.contact_person_designation" /></p>
+                                        <p> सम्पर्क व्यक्तिको टेलिफोन/मो नं : <span t-field="o.contact_person_phone_" /></p>
+                                        <p> सम्पर्क व्यक्तिको टेलिफोन/मो नं : <span t-field="o.contact_person_email_" /></p>
+
+                                       
+                                        
+                                    </div>
+                                    
+                                </div>
+                                
+                            
+                            </div>
+                            <br /><br />
+                            <div>
+                                <h4>३) प्रारम्भिक साधारण  सभा भएको मिति :<span t-field="o.organization_bhela_details.sabha_date_bs" /></h4>
+                                <br /><br />
+
+                                <h4>४) संस्थाका सदस्यहरुको विवरण :</h4>
+                                <h6>सदस्य संख्या :</h6>
+                                <div class ='container-fluid'>
+                                    <div class='row'>
+                                        <div class="col-3">
+                                            <p>महिला: 521</p> 
+    
+
+                                        </div>
+                                        <div class="col-3">
+                                            <p>पुरुष: 652</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p>तेश्रो लिङ्गी: 65</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <!-- <p>जम्मा : <span t-field="o.member_total_numbers" /></p>  -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                            <h6>सदस्यताको प्रकार :</h6>               
+                    <table class="table table-bordered full-width-table">
+                        <thead>
+                            <tr>
+                                <th scope="col-1">सि.नं.</th>
+                                <th scope="col-2">वर्ग</th>
+                                <th scope="col-2">जम्मा संख्या</th>
+                            </tr>
+                        </thead>
+                        <tbody style="border-top:none;">
+                            <t t-set="i" t-value="1" />
+                            <t t-foreach="o.quota_ref" t-as="member_type">
+                                <tr>
+                                    <td><span t-esc="i" /><t t-set="i" t-value="i+1" /></td>
+                                    <td><span class="data" t-field="member_type.category" /></td>
+                                    <td><span class="data" t-field="member_type.category_total_numbers" /></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                <br /><br />
+
+                                <h4>5) संस्थाको कार्यक्षेत्र (विषय र विशेषज्ञताको रुपमा): <span t-field="o.org_municipality.palika_name_np" /></h4>
+                                <br /><br />
+
+                                <h4>6) संस्थाको कार्यक्षेत्र (भौगोलिक रुपमा): <span t-field="o.org_municipality.palika_name_np" /> </h4>
+                                <br /><br />
+
+                                <h4>7) कार्य समितिको निर्वाचन मिति : 
+                                    <span t-field="o.election_date" />
+                                   
+
+                               </h4>
+                                <h4>8) कार्य समितिको कार्य अवधि : <span t-field="o.committee_member_tenure" /></h4>
+                                <h4>9)  कार्य समितिको विवरण :</h4>
+                                      <div class="main_body" style="line-height:2; padding-bottom:60px;">
+                        <!-- Table start -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">त्र.स .</th>
+                                    <th rowspan="2">नाम थर </th>
+                                    <th rowspan="2">बुबाको नाम</th>
+                                    <th rowspan="2">आमाको नाम</th>
+                                    <th rowspan="2">बजेको नाम</th>
+                                    <th rowspan="2">लिङ्ग</th>
+                                    <th rowspan="2">पद </th>
+                                    <th rowspan="2">एस्थई ठेगाना </th>
+                                    <th rowspan="2">शैछिक योग्यता </th>
+                                    <th rowspan="2">दस्तखत </th>
+                                </tr>
+                            </thead>
+                            <tbody style="border-top:none; font-size:12px; ">
+                                <t t-set="i" t-value="1" />
+                                <!-- Loop through organization members -->
+                                <t t-foreach="o.organization_members_ref" t-as="member">
+                                    <tr>
+                                        <td><span t-esc="i" /><t t-set="i" t-value="i+1" /></td>
+                                        <td><span t-field="member.member_full_name" /></td>
+                                        <td><span t-field="member.member_father_name" /></td>
+                                        <td><span t-field="member.member_mother_name" /></td>
+                                        <td><span t-field="member.member_grandfather_name" /></td>
+                                        <td><span t-field="member.member_gender" /></td>
+                                        <td><span t-field="member.organization_member_designation" /></td>
+                                        <td><span t-field="member.member_address" /></td>
+                                        <td><span t-field="member.qualification_level_" /></td>
+
+                                        <td>
+                                            <t t-if="member.member_signature">
+                                                <img class="dynamic-img f-center"
+                                                    t-attf-src="data:image/*;base64,{{member.member_signature}}"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <!-- Table End -->
+                    </div>
+                    <!-- Table Complete -->
+                    <h4>10) संस्थाको अचल सम्पति </h4>
+             
+                    <t t-if="o.fix_assets_ref and o.fix_assets_ref.filtered(lambda asset: asset.asset_name.org_asset_type == 'house')">
+                        <h4>भवन (भवन संख्या, तला, कोठा संख्या)</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>त्र.सं.</th>
+                                    <th>विवरण</th>
+                                    <th>भवन संख्या</th>
+                                    <th>जम्मा मुल्य</th>
+                                    <th>तला</th>
+                                    <th>कोठा संख्या</th>
+                                    <th>क्षेत्र</th>
+                                </tr>
+                            </thead>
+
+                            <tbody style="border-top:none; font-size:12px; ">
+                                <t t-set="i" t-value="1" />
+                                <t t-foreach="o.fix_assets_ref.filtered(lambda asset: asset.asset_name.org_asset_type == 'house')" t-as="asset">
+                                    <tr>
+                                        <td><span t-esc="i" /><t t-set="i" t-value="i+1" /></td>
+                                        <td><span t-field="asset.asset_name" /></td>
+                                         <td><span t-field="asset.asset_number" /></td>
+                                        <td><span t-field="asset.asset_total_cost" /></td>
+                                        <td><span t-field="asset.house_block_number" /></td>
+                                        <td><span t-field="asset.no_of_rooms" /></td>
+                                        <td><span t-field="asset.location_of_asset" /></td>
+
+                                       
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                    <t t-if="o.fix_assets_ref and o.fix_assets_ref.filtered(lambda asset: asset.asset_name.org_asset_type == 'vehicle')">
+                        <h4>सवारी साधन (प्रकार, संख्या)</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>त्र.सं.</th>
+                                    <th>विवरण</th>
+                                    <th> संख्या</th>
+                                    <th>जम्मा मुल्य</th>
+                                    <th>प्रकार</th>
+                                    <th>क्षेत्र</th>
+                                </tr>
+                            </thead>
+
+                            <tbody style="border-top:none; font-size:12px; ">
+                                <t t-set="i" t-value="1" />
+                                <t t-foreach="o.fix_assets_ref.filtered(lambda asset: asset.asset_name.org_asset_type == 'vehicle')" t-as="asset">
+                                    <tr>
+                                        <td><span t-esc="i" /><t t-set="i" t-value="i+1" /></td>
+                                        <td><span t-field="asset.asset_name" /></td>
+                                         <td><span t-field="asset.asset_number" /></td>
+                                        <td><span t-field="asset.asset_total_cost" /></td>
+                                        <td><span t-field="asset.vehicle_type" /></td>
+                                        <td><span t-field="asset.location_of_asset" /></td>
+
+                                       
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                    <t t-if="o.fix_assets_ref and o.fix_assets_ref.filtered(lambda asset: asset.asset_name.org_asset_type == 'land')">
+                        <h4>जग्गा (क्षेत्रफल)</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>त्र.सं.</th>
+                                    <th>विवरण</th>
+                                    <th>संख्या/परिणाम</th>
+                                    <th>क्षेत्रफल</th>
+                                    <th>जम्मा मुल्य</th>
+                                    <th>क्षेत्र</th>
+                                </tr>
+                            </thead>
+
+                            <tbody style="border-top:none; font-size:12px; ">
+                                <t t-set="i" t-value="1" />
+                                <t t-foreach="o.fix_assets_ref.filtered(lambda asset: asset.asset_name.org_asset_type == 'land')" t-as="asset">
+                                    <tr>
+                                        <td><span t-esc="i" /><t t-set="i" t-value="i+1" /></td>
+                                        <td><span t-field="asset.asset_name" /></td>
+                                        <td><span t-field="asset.asset_number" /></td>
+                                        <td><span t-field="asset.total_kitta_number" /></td>
+                                        <td><span t-field="asset.asset_total_cost" /></td>                        
+                                        <td><span t-field="asset.location_of_asset" /></td>
+
+                                       
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                     <t t-if="o.fix_assets_ref and o.fix_assets_ref.filtered(lambda asset: asset.asset_name.org_asset_type not in ['house', 'land', 'vehicle'])">
+                        <h4>अन्य</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>त्र.सं.</th>
+                                    <th>विवरण</th>
+                                    <th>संख्या//परिणाम</th>
+                                    <th>जम्मा मुल्य</th>
+                                    <th>क्षेत्र</th>
+                                </tr>
+                            </thead>
+
+                            <tbody style="border-top:none; font-size:12px; ">
+                                <t t-set="i" t-value="1" />
+                                    <t t-foreach="o.fix_assets_ref.filtered(lambda asset: asset.asset_name.org_asset_type not in ['house', 'land', 'vehicle'])" t-as="asset">                                    <tr>
+                                        <td><span t-esc="i" /><t t-set="i" t-value="i+1" /></td>
+                                        <td><span t-field="asset.asset_name" /></td>
+                                         <td><span t-field="asset.asset_number" /></td>
+                                        <td><span t-field="asset.asset_total_cost" /></td>
+                                        <td><span t-field="asset.location_of_asset" /></td>
+
+                                       
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+    </template>
+
+</odoo>

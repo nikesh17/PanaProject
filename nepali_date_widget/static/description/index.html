@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nepali Date Picker Widget</title>
+    <style>
+        ol>li{
+            margin-bottom:4px;
+        }
+    </style>
+</head>
+<body>
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Nepali Date Time Picker Widget</h2>
+        <div class="oe_demo oe_picture oe_screenshot">
+            <img src="banner.png">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Steps for Usage</h2>
+        <div class="oe_span6 text-justify oe_mt32">
+           <h4>Steps to Install the module and populate english and nepali date fields with computation logic. Alternatively, you can use the final step to just add the widget</h4>
+            <ol style="padding:10px">
+                <li>Activate the nepali_date_widget module<br><img src="activate.png"/></li>
+                <li>Add this module as a depends on the module you are trying to use it<br><img src="manifestfile.png"/></li>
+                <li>On the model you are trying to implement english and nepali date and its conversion inherit the abstract model "nepalidate.mixin" <br><img src="modelinheritance.png"/></li>
+                <li>In the view for the bs_date field(automatically added by the mixin) add the widget "nepali_datepicker"<br><img src="xmlcode.png"/></li>
+                <li>Alternatively you can just add the widget to any field that you want to populate with nepali datepicker</li>
+            </ol>
+        </div>
+        <div class="oe_span6">
+            <img class="oe_picture oe_screenshot" src="formview.png">
+        </div>
+    </div>
+</section>
+
+
+<section class="oe_container oe_separator">
+    <p>Special Thanks to Sajan Maharjan for his jquery nepali datetime picker</p>
+</section>
+</body>
+</html>

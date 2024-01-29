@@ -1,0 +1,463 @@
+<odoo>
+
+
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="dpi">90</field>
+    </record>
+ 
+ 
+    <record id="action_house_master_report" model="ir.actions.report">
+        <field name="name">General Master Report</field>
+        <field name="model">upabhokta.samiti.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">upabhokta_samiti.general_upabhokta_catalog</field>
+        <field name="binding_model_id" ref="model_upabhokta_samiti_info"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view"/>
+    </record>
+ 
+ 
+    <template id="general_upabhokta_catalog">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <style>
+                    @font-face {
+                        font-family: 'kalimati-regular';
+                        src: url('/upabhokta_samiti/static/src/fonts/kalimati_regular.otf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                     }
+                     *{
+                        font-family:kalimati-regular !important;
+                     }
+ 
+                    .heading {
+                        text-align: left;
+                        margin-top: 10px;
+                        font-weight: bold;
+                    }
+ 
+                    .proposals li{
+                        font-size:14px;
+                    }
+ 
+ 
+                    * {
+                        line-height: 2;
+                    }
+ 
+ 
+                    .data {
+                        padding: 0px 10px;
+                        <!-- border-bottom: 1px dotted grey; -->
+                        font-weignt:bold;
+                    }
+ 
+ 
+                    h6 {
+                        font-weight: bold;
+                    }
+                    p{
+                        text-align:left;
+                    }
+                    .dynamic-img{
+                        display:block;
+                        max-width:80px;
+                        aspect-ratio:4/3;
+                    }
+                    .table-data{
+                        font-size:12px;
+                    }
+                    .f-center{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    td{
+                        font-size:12px;
+                    }
+                </style>
+
+                <div style="text-align:center;">
+                    <h3>अनुसूची-१</h3>
+                    <h4>(दफा ९ को उपदफा (१) सँग सम्बन्धित )</h4>
+                    <h4>उपभोक्ता समिति गठन सम्बन्धी विवरण</h4>
+                </div>
+                <hr/>
+                <t t-foreach="docs" t-as="o">
+                    <p>
+                        <span>आज मिति </span> <span t-esc="o.sabha_year"/>
+                        <span> साल </span><span t-esc="o.sabha_month"/> <span> महिना </span>
+                        <span t-esc="o.sabha_day"/><span> गते </span> <span t-field="o.week"/>का दिन मध्यपुरथिमि नगरपालिकाका <span t-field="o.palika_representative_designation"/> श्री
+                        <span t-field="o.sabha_chairman_fullname"/> को उपस्थितिमा भएको यस वडा नं <span t-field="o.ward"/>
+                        अन्तर्गत टोल/क्षेत्र <span t-field="o.tole"/>मा मध्यपुर थिमि नगरपालिकाको <span t-field="o.sabha_number"/>औं
+                        नगरसभा / नगर
+                        कार्यपालिकाबाट स्विकृत <span t-field="o.yojana_name"/> योजना/कार्यक्रम सञ्चालनार्थ
+                        उपभोक्ता समिति गठन गर्न भेला भइयो ।
+                    </p>
+                    <!-- try -->
+                    <table class="table table-bordered">
+                        <thead style="background-color:#e9ecef;">
+                            <tr>
+                                <th scope="col-1">सि.नं.</th>
+                                <th scope="col-2">नाम थर</th>
+                                <th scope="col-2">लिङ्ग</th>
+                                <th scope="col-2">दस्तखत</th>
+                                <th scope="col-2">सम्पर्क</th>
+                                <th scope="col-3">कैफियत</th>
+                            </tr>
+                        </thead>
+                        <tbody style="border-top:none; ">
+                            <t t-set="i" t-value="1"/>
+                            <t t-foreach="o.attendees" t-as="attendee">
+                                <tr>
+                                    <td>
+                                        <span t-esc="i" />
+                                        <t t-set="i" t-value="i+1"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="attendee.full_name" />
+                                    </td>
+                                    <td>
+                                        <span t-field="attendee.gender"/>
+                                    </td>
+                                    <td class="f-center">
+                                        <t t-if="attendee.signature">
+                                            <img class="dynamic-img f-center" t-attf-src="data:image/*;base64,{{attendee.signature}}"/>
+                                        </t>
+                                        <t t-else="">
+                                            दस्तखत भेटिएन  
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <span t-field="attendee.mobile"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="attendee.remarks"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+ 
+                    <!-- end of table -->
+                    <div class="row" style="text-align: left; ">
+                        <div class="col-8">
+                            <span>स्थान: </span> <span class="data" t-field="o.district"/>, <span
+                                class="data" t-field="o.province"/>
+                        </div>
+                        <div class="col-4">
+                            <span> समय: </span> <span t-field="o.sabha_time"/>
+                        </div>
+                        <br/>
+                    </div><br/>
+                    <!-- end of first row -->
+                    <!-- start of second row -->
+                    <div class="row " style="text-align: left;  ">
+                        <span>भेलाको उद्देश्यः </span><span class="data" t-field="o.upabhokta_samiti_name"/> <br/>
+                        <span>अध्यक्षता: श्री </span><span class="data" t-field="o.sabha_chairman_fullname"/> <br/>
+                        <span>नगरपालिकाको प्रतिनिधिः श्री</span><span class="data"
+                            t-field="o.sabha_chairman_fullname"/> <br/>
+                        <span>विशेष अतिथि: श्री </span><span class="data" t-field="o.chief_guest"/> <br/>
+                        <span>बैठकमा उपस्थित संख्या: </span><span class="data" t-field="o.total_attendees"/> <br/>
+                    </div>
+                    <!-- end of second row -->
+                    <!-- 1.1 first div -->
+                    <h5 class="heading">१.१ आयोजनाबाट लाभान्वित हुने</h5>
+                     <t t-set="i" t-value="1"/>
+                    <t t-foreach="o.beneficiary" t-as="b">
+                        <div class="row">
+                            <div class="col-6">
+                                <span>(क) जम्मा परिवार संख्या: </span>
+                                <span class="data" t-field="b.total_family_numbers"/>
+                            </div>
+                            <div class="col-3">
+                                <span>महिला: </span>
+                                <span class="data" t-field="b.total_female_population"/>
+                            </div>
+                            <div class="col-3">
+                                <span>पुरुष: </span>
+                                <span class="data" t-field="b.total_male_population"/>
+                            </div>
+                        </div>
+                        <!-- End of 1.1 first div -->
+                        <div class="row">
+                            <div class="col-6">
+                                <span>(ख) जम्मा जनसंख्या: </span>
+                                <span class="data" t-field="b.total_population"/>
+                            </div>
+                            <div class="col-3">
+                                <span>महिला: </span>
+                                <span class="data" t-field="b.total_female_population"/>
+                            </div>
+                            <div class="col-3">
+                                <span>पुरुष: </span>
+                                <span class="data" t-field="b.total_male_population"/>
+                            </div>
+                        </div>
+ 
+ 
+                        <!-- End of 1.1 second div -->
+                        <div class="row">
+                            <div class="col-6">
+                                <span>(ग) आदिवासी जनजातिको परिवार संख्या: </span>
+                                <span class="data" t-field="b.tribal_family_number"/>
+                            </div>
+                            <div class="col-3">
+                                <span>महिला: </span>
+                                <span class="data" t-field="b.tribal_female_population"/>
+                            </div>
+                            <div class="col-3">
+                                <span>पुरुष: </span>
+                                <span class="data" t-field="b.tribal_male_population"/>
+                            </div>
+                        </div>
+ 
+ 
+                        <!-- End of 1.1 third div -->
+                        <div class="row">
+                            <div class="col-6">
+                                <span>(घ) दलित वर्गको परिवार संख्या: </span>
+                                <span class="data" t-field="b.dalit_family_number"/>
+                            </div>
+                            <div class="col-3">
+                                <span>महिला: </span>
+                                <span class="data" t-field="b.dalit_female_population"/>
+                            </div>
+                            <div class="col-3">
+                                <span>पुरुष: </span>
+                                <span class="data" t-field="b.dalit_male_population"/>
+                            </div>
+                        </div>
+                        <!-- End of 1.1 fourth div -->
+                        <div class="row">
+                            <div class="col-6">
+                                <span>(ङ) बालबालिकाको जनसंख्या: </span>
+                                <span class="data" t-field="b.total_child_population"/>
+                            </div>
+                            <div class="col-3">
+                                <span>महिला: </span>
+                                <span class="data" t-field="b.children_female_population"/>
+                            </div>
+                            <div class="col-3">
+                                <span>पुरुष: </span>
+                                <span class="data" t-field="b.children_male_population"/>
+                            </div>
+                        </div>
+ 
+ 
+                        <!-- End of 1.1 fifth div -->
+                         <div class="row">
+                            <div class="col-6">
+                                <span>(च) अन्य वर्गको परिवार संख्या: </span>
+                                <span class="data" t-field="b.other_community_family_number"/>
+                            </div>
+                            <div class="col-3">
+                                <span>महिला: </span>
+                                <span class="data" t-field="b.other_community_female_population"/>
+                            </div>
+                            <div class="col-3">
+                                <span>पुरुष: </span>
+                                <span class="data" t-field="b.other_community_male_population"/>
+                            </div>
+                        </div> <br /> 
+                        <!-- End of 1.1 sixth div -->
+                    </t>
+                    <p><sup style="color:red;">*</sup>नोटः- उपभोक्ताहरुको पहिलो भेलामा उपस्थित उपभोक्ताहरुको सबैको सम्पर्क नम्बर सहित अनिवार्य उपस्थिति भएको हुनुपर्नेछ। यसको छुट्टै अभिलेख उपभोक्ता समितिको निर्णय पुस्तिका खडा गरी समेत राख्नु पर्नेछ ।</p>
+                    <hr />
+                    <!-- End of आयोजनाबाट लाभान्वित हुने -->
+                    <!-- Prastab haru -->
+                    <h5 class="heading">प्रस्तावहरु: </h5>
+                    <div class="proposals" >
+                        <span t-field="o.project_proposal"/>
+                    </div>
+                    <!-- For निर्णयहरु : -->
+                    <h4 class="heading">निर्णयहरु</h4>
+                    <div class="nirnaya">
+                        <h6> 1. योजना सम्बन्धि उपभेक्ताहरुलाई जानाकारी गराउने सम्बन्धमा</h6>
+                        <p>श्री मध्यपुर थिमि नगरपालिकाको मिति <span class="data" t-field="o.registration_date_bs"/> को नगरसभा/ नगरकार्यपालिको निर्णयानुसार यस नपाको वडा नं.  <span class="data" t-field="o.ward"/>टोल <span class="data" t-field="o.tole"/>को नयाँ <span class="data" t-field="o.yojana_type"/> गर्ने कार्यका लागि रु <span class="data" t-field="o.yojana_budget_npr"/> अक्षरुपी <span class="data" t-field="o.yojana_budget_type"/> सहयोग गर्ने निर्णय भएको थाहा हुन आएको हुँदा यस योजना निर्माणका लागि सबै उपभोक्ताहरु मिलेर कार्य गर्ने निर्णय गरियो ।</p>
+                    </div>
+                    <!-- end of point 1 -->
+                    <div class="yojana">
+                        <h6>2. उपभोक्ता समिति गठन बारेमा:</h6>
+                        <p>नगरपालिकाबाट प्राप्त योजना कार्यक्रम बापतको सहयोग तथा उपभोक्ताहरुको थप सहभागिताबाट योजना कार्यक्रम निर्माण वा संचालनका लागि देहायको <span class="data" t-field="o.upabhokta_samiti_name"/>
+                            उपभोक्ता समिति गठन गर्ने निर्णय गरियो ।</p>
+                    </div>
+                                        <!-- Table 2 -->
+                    <table class="table table-bordered">
+                        <thead style="background-color:#e9ecef;" >
+                            <tr>
+                                <th scope="col-1">सि.नं.</th>
+                                <th scope="col-2">नाम थर</th>
+                                <th scope="col-2">पद</th>
+                                <th scope="col-2">ठेगाना</th>
+                                <th scope="col-2">बुवाको नाम </th>
+                                <th scope="col-2">बाजेको नाम</th>
+                                <th scope="col-3">सम्पर्क नं.</th>
+                                <th scope="col-2"> ना.प्र.नं </th>
+                                <th scope="col-1">जारी जिल्ला</th>
+                                <th scope="col-3">जारी मिति</th>
+                            </tr>
+                        </thead>
+                        <tbody style="border-top:none;">
+                        <t t-set="i" t-value="1" />
+                        <t t-foreach="o.upabhokta_samiti_members_ref" t-as="f">
+                            <tr>
+                                <td>
+                                    <span t-esc="i" />
+                                    <t t-set="i" t-value="i+1"/>
+                                </td>
+                                <td >
+                                    <span t-field="f.member_full_name" />
+                                </td>
+                                <td >
+                                    <span t-field="f.member_designation" />
+                                </td>
+                                <td>
+                                    <span t-field="f.member_address"/>
+                                </td>
+                                <td>
+                                    <span t-field="f.member_father_name"/>
+    
+    
+                                </td>
+                                <td>
+                                    <span t-field="f.member_grandfather_name"/>
+                                </td>
+                                <td>
+                                    <span t-field="f.member_mobile"/>
+                                </td>
+                                <td>
+                                    <span t-field="f.member_citizenship_number"/>
+                                </td>
+                                <td>
+                                    <span t-field="f.member_citizenship_issued_district"/>
+                                </td>
+                                <td>
+                                    <span t-field="f.member_citizenship_issued_date_bs"/>
+                                </td>
+                            </tr>
+                        </t>
+                        </tbody>
+                    </table>
+ <!-- End of table 2 -->
+                    <p><sup style="color:red;">*</sup>नोटः- उपभोक्ता समिति गठन गर्दा कम्तिमा ७ देखि ११ जना सम्मको उपभोक्ता समिति गठन गर्ने । समितिका अध्यक्ष, सचिव र कोषाध्यक्ष मध्ये १ जना महिला अनिवार्य सहित कम्तिमा ३३ प्रतिशत महिला र आदिवासी जनजाती दलित अपाङ्ग तथा अल्पसंख्यकबाट प्रतिनिधित्व हुने व्यवस्था मिलाउनु पर्नेछ ।</p>
+                    <!-- end of 2 -->
+                    <div class="yojana_Anugaman">
+                        <h6>3. योजना अनुगमन समिति गठन बारेमा:</h6>
+                        <p>योजना निर्माणको नियमित अनुगमन गरी निर्माण उपभोक्ता समितिलाई राय सुझाव दिन तथा कार्यमा भईरहेको खर्चको नियमित रेखदेख गर्न साथै कार्य सम्पन्न पश्चात हुने आम्दानी तथा खर्च सार्वजनिकीकरण कार्यमा सहयोग पुऱ्याउने कार्यका लागि तपसिल अनुसारको योजना अनुगमन समिति गठन गर्ने निर्णय गरियो ।</p>
+                        <p><b>तपसिल:</b></p>
+                    </div>
+                    <!-- Table Start -->
+                    <!-- try -->
+                <table class="table table-bordered">
+                    <thead style="background-color:#e9ecef;" >
+                        <tr>
+                                <th scope="col-1">सि.नं.</th>
+                                <th scope="col-2"> पद</th>
+                                <th scope="col-2">नाम थर </th>
+                                <th scope="col-2">लिङ्ग</th>
+                                <th scope="col-2">ठेगाना</th>
+                                <th scope="col-2">सम्पर्क नं.</th>
+                                <th scope="col-3">ना.प्र.नं.</th>
+                                <th scope="col-2">जारी मिति</th>
+                                <th scope="col-3">जारी जिल्ला</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border-top:none; ">
+                    <t t-set="i" t-value="1" />
+                    <t t-foreach="o.anugaman_teamref_id" t-as="anugaman">
+                        <tr>
+                            <td>
+                                <span t-esc="i" />
+                                <t t-set="i" t-value="i+1"/>
+                            </td>
+                            <td >
+                                <span t-field="anugaman.anugaman_member_designation" />
+                            </td>
+                            <td>
+                                <span t-field="anugaman.full_name"/>
+                            </td>
+                            <td>
+                                <span t-field="anugaman.member_gender"/>
+                            </td>
+                            <td>
+                                <span t-field="anugaman.member_address"/>
+                            </td>
+                            <td>
+                                <span t-field="anugaman.member_mobile"/>
+                            </td>
+                            <td>
+                                <span t-field="anugaman.member_citizenship_number"/>
+                            </td>
+                            <td>
+                                <span t-field="anugaman.member_citizenship_issued_district"/>
+                            </td>
+                            <td>
+                                <span t-field="anugaman.member_citizenship_issued_date_bs"/>
+                            </td>
+                        </tr>
+                    </t>
+                    </tbody>
+                </table>
+ <!-- Table End -->
+                    <!--  End 3 -->
+                                    <!-- four:योजनाको छाप र लेटरप्याड तयार गर्ने बारेमा: -->
+                <div class="yojana_chhap">
+                    <h6>4. योजनाको छाप र लेटरप्याड तयार गर्ने बारेमा:</h6>
+                    <p>योजना निर्माण तथा संचालन गर्दा पत्राचार गर्न उपभोक्ता समितिको नाम<span class="data" t-field="o.upabhokta_samiti_name"/>,
+                    ठेगाना<span class="data" t-field="o.municipality"/>,<span class="data" t-field="o.district"/>,<span class="data" t-field="o.province"/>र लोगो<img style="width:40px;height:40px;display:inline-block;" t-attf-src="data:image/*;base64,{{o.upabhokta_samiti_logo}}"/> भएको योजनाको छाप र लेटर प्याड तयार गर्ने निर्णय गरियो ।</p>
+                </div>
+                <!-- bank opening -->
+                <div class="bank">
+                    <h6>5. बैंक खाता संचालन गर्ने बारेमा:</h6>
+                    <p>
+                        योजना निर्माण तथा संचालनका लागि प्राप्त हुने सहयोग तथा हुने खर्चहरुको रकमलाई बैंक मार्फत भुक्तानी हुने व्यवस्था
+                        मिलाउन 
+                        <span class="data" t-field="o.bank_details.bank_location"/> मा रहेको
+                        श्री <span class="data" t-field="o.bank_details.bank_name"/>मा उपभोक्ता
+                        समितिका अध्यक्ष/सचिव/कोषाध्यक्षको संयुक्त दस्तखतमा खाता संचालन हुने गरी बैंक खाता खोल्ने निर्णय गरियो ।
+                    </p>
+                </div>
+                    <!-- end of 4 -->
+                    <!-- Try  -->
+                    <!-- to send yojana samjauta -->
+                <div class="yojana_samjauta">
+                <h6>6. योजना सम्झैता गर्न पठाउने बारेमा:</h6>
+                <p>नगरपालिकाबाट सहयोग रकम निकासा तथा निर्माण कार्य तत्काल शुरु गराउन उपभोक्ता समितिका तर्फबाट<t t-foreach="o.upabhokta_samiti_members_ref" t-as="samiti_member">
+                        <t t-if="samiti_member.member_designation == 'chairperson_president' ">अध्यक्ष श्री<span class="data" t-field="samiti_member.member_full_name"/>,
+                        </t><t t-if="samiti_member.member_designation == 'secretary' ">सचिव श्री<span class="data" t-field="samiti_member.member_full_name"/>,
+                        </t><t t-if="samiti_member.member_designation == 'treasurer' ">कोषध्यक्ष/सदस्य श्री<span class="data" t-field="samiti_member.member_full_name"/>
+                        </t>
+                    </t>
+                लाई नगरपालिका/वडा कार्यालयमा गई योजना सम्झौता गर्न तथा पेश गरिएका कागजातहरुमा केही थपघट गर्नु परेमा सो समेत गर्न पाउने गरी अधिकार प्रत्यायोजन गर्ने निर्णय गरियो ।</p>
+                </div>
+                <!-- others -->
+                <div class="others">
+                <h6>7. अन्य विविध विषयमा:</h6>
+                <p>(क) यस योजनाको उपभोक्ता समितिको बैठक आउँदो मिति...............मा बस्ने गरी आजको भेला सम्पन्न भएको निर्णय गरियो ।
+                (ख) सरोकारवाला तथा आयोजनाका सधियार समेतको उपस्थितिमा उपभोक्ता समिति गठन गरिएको जानकारी भेलामा उपस्थित सबैमा भयो ।</p>
+                </div>
+                <p><sup style="color:red; font-weight:bold;">*</sup>नोटः <b>निर्णय गराउन छुट भएका प्रस्ताव तथा निर्णयहरु गराउने निर्णय गरिएको पानाको अन्त्यमा उपभोक्ता समिति र अनुगमन समितिबाट दस्तखत गरी निर्णय बन्द गर्नु पर्नेछ ।</b></p>
+                <!-- End -->
+                    <!--  -->
+                </t>
+            </t>
+        </t>
+    </template>
+ 
+ 
+ </odoo>
+ 
+ 
+ 
+ 
+ 

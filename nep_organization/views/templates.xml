@@ -1,0 +1,3358 @@
+<odoo>
+	<data>
+		<!-- Dashboard -->
+		<template id="org_dashboard_template_" name="Organization Registration | Dashboard">
+			<t t-call="website.layout">
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" />
+				<script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous">
+				</script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js">
+				</script>
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+				</script>
+				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+				</script>
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+				</script>
+				<div class="wrapper">
+					<div class="grey-bg container-fluid px-5 template-wrapper ">
+						<div class="col-12 notification-badge-container">
+							<div class="dropdown show">
+								<div class="dropdown">
+									<button type="button" class="icon-button" data-toggle="dropdown">
+										<i class="fa fa-bell" aria-hidden="true">
+										</i>
+										<span class="icon-button__badge" id="counter-badge">
+											0
+										</span>
+									</button>
+									<div class="dropdown-menu notifications-container mt-1" aria-labelledby="dropdownMenuButton">
+										<t t-foreach="notifications" t-as="notification">
+											<a class="dropdown-item notification-counter" t-attf-href="/upabhokta-samiti/user/notification">
+												<div class="notification-item px-1 py-2">
+													<div class="notification-title">
+														<!--
+														<span t-raw="notification.message"
+														style="line-height:0.1" />
+														-->
+													</div>
+													<div class="notification-datetime">
+														<!-- <span t-raw="notification.sent_at" /> -->
+													</div>
+												</div>
+											</a>
+										</t>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 mt-3">
+							<h4 class="text-uppercase">
+								Applicant Portal(आवेदक पोर्टल)
+							</h4>
+						</div>
+						<div class="mb-3" style="display:flex;justify-content:end;">
+							<div class="dropdown show">
+								<div class="dropdown">
+									<a class="btn btn-sm dropdown-toggle" style="border:1px solid grey;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Download PDF
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" t-attf-href="/upabhokta-samiti/darta-nibedan/">
+											दर्ता
+											निवेदन
+										</a>
+										<!--
+										<a class="dropdown-item"
+										t-attf-href="/upabhokta-samiti/pramadpatra-report/{{upabhokta_samiti_info.id}}">प्रमाण
+										पत्र </a>
+										-->
+										<!--
+										<a class="dropdown-item"
+										t-attf-href="/upabhokta-samiti/pramadpatra-report/{{upabhokta_samiti_info.id}}">समितिको
+										लगत </a>
+										-->
+										<a class="dropdown-item" t-attf-href="/upabhokta-samiti/pramadpatra-report/">
+											समिति
+											गठन
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/organization/basic-details">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/form.png" />
+												</div>
+												<span>
+													संस्थाको विवरण
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/organization/sabha-details">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/details.png" />
+												</div>
+												<span>
+													भेला विवरण
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/organization/project-proposals">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/proposal.png" />
+												</div>
+												<span>
+													आयोजनाका प्रस्तावहरु
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/organization/member-details">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/anugaman.jpg" />
+												</div>
+												<span>
+													सदस्यहरुको विवरण
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/organization/attendee-details">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/attendees.png" />
+												</div>
+												<span>
+													सहभागीहरुको विवरण
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/organization/beneficiary">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/benificary.png" />
+												</div>
+												<span>
+													लाभग्रहिको विवरण
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript" src="/nep_organization/static/src/js/dashboard.js" />
+			</t>
+		</template>
+		<!-- Basic details -->
+		<template id="org_basic_details_template" name="Organization Basic Details">
+			<t t-call="website.layout">
+				<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Basic Details
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							समितिको विवरण
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+										समितिको विवरण
+									</a>
+									<a t-attf-href="/organization/meeting-details" class="multisteps-form__progress-btn" type="button" title="page_third">
+										भेलाको विवरण
+									</a>
+									<a t-attf-href="/organization/purposes" class="multisteps-form__progress-btn" type="button" title="page_third">
+										आयोजनाको प्रस्तावहरु
+									</a>
+									<a t-attf-href="/organization/member-details" class="multisteps-form__progress-btn " type="button" title="page_second">
+										समितिको सदस्य विवरण
+									</a>
+									<a t-attf-href="/organization/attendee-details" class="multisteps-form__progress-btn " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/organization/beneficiary" class="multisteps-form__progress-btn" type="button" title="page_four">
+										सदस्यताको प्रकारको विवरण
+									</a>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									<a t-attf-href="/organization/fix-assets">
+										संस्थाको अचल सम्पति
+									</a>
+								</button>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+										कार्यक्रमको  विवरण
+									</button>
+								</div>
+							</div>
+						</div>
+						<t t-if="check_if_organization_exists">
+							<form class="form-content" t-attf-action="/organization/basic-details" method="POST" enctype="multipart/form-data">
+								<div class="form-page active-form-page">
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											संस्थाको आधारभूत विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="organization_name_en" class="form-label required">
+												नाम(अंग्रेजीमा)
+											</label>
+											<input type="text" class="form-control" name="organization_name_en" id="organization_name_en" placeholder="Organization Name in English" required="true" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_name_np" class="form-label required">
+												नाम(नेपालीमा)
+											</label>
+											<input type="text" class="form-control" name="organization_name_np" id="organization_name_np" placeholder="Organization Name in Nepali" required="true" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_short_form_name" class="form-label required">
+												नाम(छोटकरीमा)
+											</label>
+											<input type="text" class="form-control" name="organization_short_form_name" id="organization_short_form_name" placeholder="Short Form Name" required="true" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_category" class="form-label required">
+												तह
+											</label>
+											<select class="form-select" name="organization_category" id="organization_category">
+												<option value="1">
+													Select
+												</option>
+												<!--
+												<option
+												t-attf-value="#{org_external_details['org_category_id']}"
+												>
+												<t
+												t-esc="org_external_details['org_category_name']" />
+												</option>
+												-->
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="organization_type" class="form-label required">
+												प्रकार
+											</label>
+											<select id="organization_type" name="organization_type" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['organization_categories']" t-as="organization_categories">
+													<option t-attf-value="#{organization_categories.id}">
+														<t t-esc="organization_categories.type" />
+													</option>
+												</t>
+											</select>
+										</div>
+									</fieldset>
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सम्पर्क व्यक्तिको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="organization_contact_person_name" class="form-label required">
+												नाम
+											</label>
+											<input type="text" class="form-control" name="contact_person_name_" id="organization_contact_person_name" t-attf-value="#{org_external_details['contact_person_name_']}" readonly="readonly" />
+										</div>
+										<div class="col-md-6">
+											<label for="contact_person_designation" class="form-label required">
+												पद
+											</label>
+											<select id="contact_person_designation" name="contact_person_designation" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['contact_person_designation']" t-as="contact_person_designation">
+													<option t-attf-value="#{contact_person_designation.id}">
+														<t t-esc="contact_person_designation.organization_samiti_designations" />
+													</option>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="organization_contact_person_phone_" class="form-label required">
+												सम्पर्क न.
+											</label>
+											<input type="text" class="form-control" name="contact_person_phone_" id="organization_contact_person_phone_" t-attf-value="#{org_external_details['contact_person_phone_']}" readonly="readonly" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_contact_person_email_" class="form-label required">
+												इमेल
+											</label>
+											<input type="text" class="form-control" name="contact_person_email_" id="organization_contact_person_email_" t-attf-value="#{org_external_details['contact_person_email_']}" readonly="readonly" />
+										</div>
+									</fieldset>
+									<fieldset class="form-fieldset row g-3">
+										<!-- TODO:Show district, palika according to selected province -->
+										<span class="field-title">
+											स्थान सम्बन्धि विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="gathan_pradesh" class="form-label required">
+												प्रदेश
+											</label>
+											<select id="gathan_pradesh" name="gathan_pradesh" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['provinces']" t-as="province">
+													<option t-attf-value="#{province.id}" t-field="province.name_np" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="gathan_district" class="form-label required">
+												जिल्ला
+											</label>
+											<select id="gathan_district" name="gathan_district" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['districts']" t-as="district">
+													<option t-attf-value="#{district.id}" t-field="district.district_name_np" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="gathan_palika" class="form-label required">
+												नगर/गाँउ पालिका
+											</label>
+											<select id="gathan_palika" name="gathan_palika" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['palika']" t-as="palika">
+													<option t-attf-value="#{palika.id}" t-field="palika.palika_name_np" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-3">
+											<label for="gathan_ward" class="form-label required">
+												वडा
+											</label>
+											<input type="text" class="form-control" name="gathan_ward" id="gathan_ward" required="true" placeholder="वडा" />
+										</div>
+										<div class="col-md-3">
+											<label for="gathan_tole" class="form-label required">
+												टोल
+											</label>
+											<input type="text" class="form-control" name="gathan_tole" id="gathan_tole" required="true" placeholder="टोल" />
+										</div>
+									</fieldset>
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सम्पर्क विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="org_email" class="form-label required">
+												इमेल
+											</label>
+											<input type="text" class="form-control" name="org_email" id="org_email" required="true" placeholder="Email" />
+										</div>
+										<div class="col-md-6">
+											<label for="org_telephone" class="form-label required">
+												टेलिफोन
+											</label>
+											<input type="text" class="form-control" name="org_telephone" id="org_telephone" required="true" placeholder="Telephone" />
+										</div>
+										<div class="col-md-3">
+											<label for="org_post_box" class="form-label required">
+												पोस्ट बक्स नम्बर
+											</label>
+											<input type="text" class="form-control" name="org_post_box" id="org_post_box" required="true" placeholder="Post box" />
+										</div>
+										<div class="col-md-3">
+											<label for="org_fax" class="form-label required">
+												फ्याक्स नम्बर
+											</label>
+											<input type="text" class="form-control" name="org_fax" id="org_fax" required="true" placeholder="Fax" />
+										</div>
+									</fieldset>
+									<!-- Other Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="org_website" class="form-label required">
+												वेबसाइट
+											</label>
+											<input type="text" class="form-control" name="org_website" id="org_website" required="true" placeholder="e.g. https://www.example.com/" />
+										</div>
+										<div class="col-md-6">
+											<label for="org_house_number" class="form-label required">
+												घर नम्बर
+											</label>
+											<input type="text" class="form-control" name="org_house_number" id="org_house_number" required="true" placeholder="House number" />
+										</div>
+										<div class="col-md-6">
+											<label for="org_election_date" class="form-label required">
+												चुनाव मिति
+											</label>
+											<input type="text" class="form-control" name="org_election_date" id="nepali-datepicker" required="true" placeholder="Election Date" />
+										</div>
+										<div class="col-md-6">
+											<label for="member_tenure" class="form-label required">
+												सदस्य कार्यकाल
+											</label>
+											<select id="member_tenure" name="member_tenure" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['fiscal_year']" t-as="fy">
+													<option t-attf-value="#{fy.id}">
+														<t t-esc="fy.fiscal_year" />
+													</option>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="org_logo" class="form-label">
+												संगठनको लोगो
+											</label>
+											<input type="file" class="form-control mb-4" name="org_logo" id="org_logo" placeholder="संगठनको लोगो " accept=".png, .jpg, .jpeg" t-attf-value="#{org_logo or ''}" />
+											<img src="" alt="Uploaded Image" id="imagePreview" style="display: none; max-width:150px;" />
+										</div>
+									</fieldset>
+									<div class="col-12">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="gridCheck" />
+											<label class="form-check-label required" for="gridCheck">
+												सहमति छ
+											</label>
+										</div>
+									</div>
+									<div class="col-12 mt-4 form-button-container">
+										<button type="submit" class="btn btn-custom-primary">
+											सेभ
+											गर्नुहोस
+										</button>
+									</div>
+								</div>
+							</form>
+						</t>
+						<t t-else="">
+							<form class="form-content" t-attf-action="/organization/basic-details" method="POST" enctype="multipart/form-data">
+								<div class="form-page active-form-page">
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											संस्थाको आधारभूत विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="organization_name_en" class="form-label required">
+												नाम(अंग्रेजीमा)
+											</label>
+											<input type="text" class="form-control" name="organization_name_en" id="organization_name_en" placeholder="Organization Name in English" required="true" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_name_np" class="form-label required">
+												नाम(नेपालीमा)
+											</label>
+											<input type="text" class="form-control" name="organization_name_np" id="organization_name_np" placeholder="Organization Name in Nepali" required="true" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_short_form_name" class="form-label required">
+												नाम(छोटकरीमा)
+											</label>
+											<input type="text" class="form-control" name="organization_short_form_name" id="organization_short_form_name" placeholder="Short Form Name" required="true" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_category" class="form-label required">
+												तह
+											</label>
+											<select class="form-select" name="organization_category" id="organization_category">
+												<option value="1">
+													Select
+												</option>
+												<!--
+												<option
+												t-attf-value="#{org_external_details['org_category_id']}"
+												>
+												<t
+												t-esc="org_external_details['org_category_name']" />
+												</option>
+												-->
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="organization_type" class="form-label required">
+												प्रकार
+											</label>
+											<select id="organization_type" name="organization_type" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['organization_categories']" t-as="organization_categories">
+													<option t-attf-value="#{organization_categories.id}">
+														<t t-esc="organization_categories.type" />
+													</option>
+												</t>
+											</select>
+										</div>
+									</fieldset>
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सम्पर्क व्यक्तिको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="organization_contact_person_name" class="form-label required">
+												नाम
+											</label>
+											<input type="text" class="form-control" name="contact_person_name_" id="uorganization_contact_person_name" t-attf-value="#{org_external_details['contact_person_name_']}" readonly="readonly" />
+										</div>
+										<div class="col-md-6">
+											<label for="contact_person_designation" class="form-label required">
+												पद
+											</label>
+											<select id="contact_person_designation" name="contact_person_designation" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['contact_person_designation']" t-as="contact_person_designation">
+													<option t-attf-value="#{contact_person_designation.id}">
+														<t t-esc="contact_person_designation.organization_samiti_designations" />
+													</option>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="organization_contact_person_phone_" class="form-label required">
+												सम्पर्क न.
+											</label>
+											<input type="text" class="form-control" name="contact_person_phone_" id="organization_contact_person_phone_" t-attf-value="#{org_external_details['contact_person_phone_']}" readonly="readonly" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_contact_person_email_" class="form-label required">
+												इमेल
+											</label>
+											<input type="text" class="form-control" name="contact_person_email_" id="organization_contact_person_email_" t-attf-value="#{org_external_details['contact_person_email_']}" readonly="readonly" />
+										</div>
+									</fieldset>
+									<fieldset class="form-fieldset row g-3">
+										<!-- TODO:Show district, palika according to selected province -->
+										<span class="field-title">
+											स्थान सम्बन्धि विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="gathan_pradesh" class="form-label required">
+												प्रदेश
+											</label>
+											<select id="gathan_pradesh" name="gathan_pradesh" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['provinces']" t-as="province">
+													<option t-attf-value="#{province.id}" t-field="province.name_np" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="gathan_district" class="form-label required">
+												जिल्ला
+											</label>
+											<select id="gathan_district" name="gathan_district" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['districts']" t-as="district">
+													<option t-attf-value="#{district.id}" t-field="district.district_name_np" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="gathan_palika" class="form-label required">
+												नगर/गाँउ पालिका
+											</label>
+											<select id="gathan_palika" name="gathan_palika" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['palika']" t-as="palika">
+													<option t-attf-value="#{palika.id}" t-field="palika.palika_name_np" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-3">
+											<label for="gathan_ward" class="form-label required">
+												वडा
+											</label>
+											<input type="text" class="form-control" name="gathan_ward" id="gathan_ward" required="true" placeholder="वडा" />
+										</div>
+										<div class="col-md-3">
+											<label for="gathan_tole" class="form-label required">
+												टोल
+											</label>
+											<input type="text" class="form-control" name="gathan_tole" id="gathan_tole" required="true" placeholder="टोल" />
+										</div>
+									</fieldset>
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सम्पर्क विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="org_email" class="form-label required">
+												इमेल
+											</label>
+											<input type="text" class="form-control" name="org_email" id="org_email" required="true" placeholder="Email" />
+										</div>
+										<div class="col-md-6">
+											<label for="org_telephone" class="form-label required">
+												टेलिफोन
+											</label>
+											<input type="text" class="form-control" name="org_telephone" id="org_telephone" required="true" placeholder="Telephone" />
+										</div>
+										<div class="col-md-3">
+											<label for="org_post_box" class="form-label required">
+												पोस्ट बक्स नम्बर
+											</label>
+											<input type="text" class="form-control" name="org_post_box" id="org_post_box" required="true" placeholder="Post box" />
+										</div>
+										<div class="col-md-3">
+											<label for="org_fax" class="form-label required">
+												फ्याक्स नम्बर
+											</label>
+											<input type="text" class="form-control" name="org_fax" id="org_fax" required="true" placeholder="Fax" />
+										</div>
+									</fieldset>
+									<!-- Other Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="org_website" class="form-label required">
+												वेबसाइट
+											</label>
+											<input type="text" class="form-control" name="org_website" id="org_website" required="true" placeholder="e.g. https://www.example.com/" />
+										</div>
+										<div class="col-md-6">
+											<label for="org_house_number" class="form-label required">
+												घर नम्बर
+											</label>
+											<input type="text" class="form-control" name="org_house_number" id="org_house_number" required="true" placeholder="House number" />
+										</div>
+										<div class="col-md-6">
+											<label for="org_election_date" class="form-label required">
+												चुनाव मिति
+											</label>
+											<input type="text" class="form-control" name="org_election_date" id="nepali-datepicker" required="true" placeholder="Election Date" />
+										</div>
+										<div class="col-md-6">
+											<label for="member_tenure" class="form-label required">
+												सदस्य कार्यकाल
+											</label>
+											<select id="member_tenure" name="member_tenure" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['fiscal_year']" t-as="fy">
+													<option t-attf-value="#{fy.id}" t-field="fy.fiscal_year" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="org_logo" class="form-label">
+												संगठनको लोगो
+											</label>
+											<input type="file" class="form-control mb-4" name="org_logo" id="org_logo" placeholder="संगठनको लोगो " accept=".png, .jpg, .jpeg" t-attf-value="#{org_logo or ''}" />
+											<img src="" alt="Uploaded Image" id="imagePreview" style="display: none; max-width:150px;" />
+										</div>
+									</fieldset>
+									<div class="col-12">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="gridCheck" />
+											<label class="form-check-label required" for="gridCheck">
+												सहमति छ
+											</label>
+										</div>
+									</div>
+									<div class="col-12 mt-4 form-button-container">
+										<button type="submit" class="btn btn-custom-primary">
+											सेभ
+											गर्नुहोस
+										</button>
+									</div>
+								</div>
+							</form>
+						</t>
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload = function () {
+					mainInput=document.getElementById("nepali-datepicker");mainInput.nepaliDatePicker();
+					const
+					org_logo=document.getElementById("org_logo");imagePreview=document.getElementById("imagePreview"),org_logo.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview.src=t.result,imagePreview.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview.src="",imagePreview.style.display="none"}});
+					};
+				</script>
+			</t>
+		</template>
+		<!-- Bela Details -->
+		<template id="org_meeting_details_template" name="Bhela Details">
+			<t t-call="website.layout">
+				<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript">
+				</script>
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Bhela
+								Details
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							भेलाको विवरण
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a t-attf-href="/organization/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+										समितिको विवरण
+									</a>
+									<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+										भेलाको विवरण
+									</button>
+									<a t-attf-href="/organization/purposes" class="multisteps-form__progress-btn" type="button" title="page_third">
+										आयोजनाको प्रस्तावहरु
+									</a>
+									<a t-attf-href="/organization/member-details" class="multisteps-form__progress-btn " type="button" title="page_second">
+										समितिको सदस्य विवरण
+									</a>
+									<a t-attf-href="/organization/attendee-details" class="multisteps-form__progress-btn " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/organization/beneficiary" class="multisteps-form__progress-btn" type="button" title="page_four">
+										सदस्यताको प्रकारको विवरण
+									</a>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									<a t-attf-href="/organization/fix-assets">
+										संस्थाको अचल सम्पति
+									</a>
+								</button>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+										कार्यक्रमको  विवरण
+									</button>
+								</div>
+							</div>
+						</div>
+						<t t-if="sabha_details">
+							<form class="form-content" t-attf-action="/organization/meeting-details" method="POST" enctype="multipart/form-data">
+								<div class="form-page active-form-page">
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											संस्थाको वैठक
+										</span>
+										<div class="col-md-6">
+											<label for="organization_nth" class="form-label required">
+												उपभोक्ता समिति बैठकको संख्या
+											</label>
+											<input type="text" class="form-control" name="upabhokta_samiti_nth" id="upabhokta_samiti_nth" required="true" t-attf-value="#{sabha_details.sabha_number}" placeholder="सभा बैठकको संख्या" />
+										</div>
+										<div class="col-md-6">
+											<label for="nepali-datepicker" class="form-label required">
+												सभा मिति
+											</label>
+											<input type="text" class="form-control" name="sabha_date_bs" id="nepali-datepicker" required="true" t-attf-value="#{sabha_details.sabha_date_bs}" placeholder="सभा मिति" />
+										</div>
+										<div class="col-md-6">
+											<label for="sabha_time" class="form-label required">
+												सभा समय(HH:mm)
+											</label>
+											<input type="time" class="form-control" name="sabha_time" id="sabha_time" required="true" t-attf-value="#{sabha_details.sabha_time}" placeholder="सभा समय(HH:mm)" />
+										</div>
+									</fieldset>
+									<!-- Other Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="upabhokta_samiti_guest_chairman" class="form-label required">
+												अध्यक्षको नाम
+											</label>
+											<input type="text" class="form-control" name="upabhokta_samiti_guest_chairman" id="upabhokta_samiti_guest_chairman" required="true" t-attf-value="#{sabha_details.sabha_chairman_fullname}" placeholder=" अध्यक्षको नाम" />
+										</div>
+										<div class="col-md-6">
+											<label for="bisesh_athiti_full_name" class="form-label required">
+												विशेष अतिथिको नाम
+											</label>
+											<input type="text" class="form-control" name="bisesh_athiti_full_name" id="bisesh_athiti_full_name" required="true" t-attf-value="#{sabha_details.chief_guest}" placeholder="विशेष अतिथिको नाम" />
+										</div>
+										<div class="col-md-6">
+											<label for="sabha_attendees_number" class="form-label required">
+												बैठकमा उपस्थित संख्या
+											</label>
+											<input type="text" class="form-control" name="sabha_attendees_number" id="sabha_attendees_number" required="true" t-attf-value="#{sabha_details.total_attendees}" placeholder="बैठकमा उपस्थित संख्या" />
+										</div>
+									</fieldset>
+									<div class="col-12 mt-4 form-button-container">
+										<button class="btn add-btn" id="add-btn" type="reset">
+											रिसेट गर्नुहोस
+										</button>
+										<a t-attf-href="/organization/dashboard" class="btn btn-variant-six">
+											रद्द
+											गर्नुहोस
+										</a>
+										<button type="submit" class="btn btn-custom-primary">
+											सेभ
+											गर्नुहोस
+										</button>
+									</div>
+								</div>
+							</form>
+						</t>
+						<t t-else="">
+							<form class="form-content" t-attf-action="/organization/meeting-details" method="POST" enctype="multipart/form-data">
+								<div class="form-page active-form-page">
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											संस्थाको वैठक
+										</span>
+										<div class="col-md-6">
+											<label for="upabhokta_samiti_nth" class="form-label required">
+												उपभोक्ता समिति बैठकको संख्या
+											</label>
+											<input type="text" class="form-control" name="upabhokta_samiti_nth" id="upabhokta_samiti_nth" required="true" t-attf-value="#{sabha_details.sabha_number}" placeholder="सभा बैठकको संख्या" />
+										</div>
+										<div class="col-md-6">
+											<label for="nepali-datepicker" class="form-label required">
+												सभा मिति
+											</label>
+											<input type="text" class="form-control" name="sabha_date_bs" id="nepali-datepicker" required="true" placeholder="सभा मिति" />
+										</div>
+										<div class="col-md-6">
+											<label for="sabha_time" class="form-label required">
+												सभा समय(HH:mm)
+											</label>
+											<input type="time" class="form-control" name="sabha_time" id="sabha_time" required="true" placeholder="सभा समय(HH:mm)" />
+										</div>
+									</fieldset>
+									<!-- Other Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="upabhokta_samiti_guest_chairman" class="form-label required">
+												अध्यक्षको नाम
+											</label>
+											<input type="text" class="form-control" name="upabhokta_samiti_guest_chairman" id="upabhokta_samiti_guest_chairman" required="true" placeholder=" अध्यक्षको नाम" />
+										</div>
+										<div class="col-md-6">
+											<label for="bisesh_athiti_full_name" class="form-label required">
+												विशेष अतिथिको नाम
+											</label>
+											<input type="text" class="form-control" name="bisesh_athiti_full_name" id="bisesh_athiti_full_name" required="true" placeholder="विशेष अतिथिको नाम " />
+										</div>
+										<div class="col-md-6">
+											<label for="sabha_attendees_number" class="form-label required">
+												बैठकमा उपस्थित संख्या
+											</label>
+											<input type="text" class="form-control" name="sabha_attendees_number" id="sabha_attendees_number" required="true" placeholder="बैठकमा उपस्थित संख्या" />
+										</div>
+									</fieldset>
+									<div class="col-12 mt-4 form-button-container">
+										<button class="btn add-btn" id="add-btn" type="reset">
+											रिसेट गर्नुहोस
+										</button>
+										<button type="submit" class="btn btn-custom-primary">
+											सेभ
+											गर्नुहोस
+										</button>
+									</div>
+								</div>
+							</form>
+						</t>
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload = function () {
+					mainInput=document.getElementById("nepali-datepicker");mainInput.nepaliDatePicker();
+					};
+				</script>
+			</t>
+		</template>
+		<!-- Org Purpose -->
+		<template id="org_purpose_template" name="Organization Purposes">
+			<t t-call="website.layout">
+				<!-- CK Editor -->
+				<script src="https://cdn.ckeditor.com/4.21.0/full/ckeditor.js">
+				</script>
+				<!-- PDF Generator -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/upabhokta-samiti/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Organization Purposes
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							संस्थाको उद्देस्यहरु
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a t-attf-href="/organization/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+										समितिको विवरण
+									</a>
+									<button t-attf-href="/organization/meeting-details" class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+										भेलाको विवरण
+									</button>
+									<a class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+										संस्थाको उद्देस्यहरु
+									</a>
+									<a t-attf-href="/organization/member-details" class="multisteps-form__progress-btn " type="button" title="page_second">
+										समितिको सदस्य विवरण
+									</a>
+									<a t-attf-href="/organization/attendee-details" class="multisteps-form__progress-btn " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/organization/beneficiary" class="multisteps-form__progress-btn" type="button" title="page_four">
+										सदस्यताको प्रकारको विवरण
+									</a>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									<a t-attf-href="/organization/fix-assets">
+										संस्थाको अचल सम्पति
+									</a>
+								</button>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+										कार्यक्रमको  विवरण
+									</button>
+								</div>
+							</div>
+						</div>
+						<t t-if="document">
+							<form class="form-content" t-attf-action="/organization/purposes/create" method="POST" enctype="multipart/form-data">
+								<!-- Project Proposal -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										संस्थाको उद्देस्यहरु
+									</span>
+									<textarea name="editor" id="editor">
+										<t t-esc="document.purpose_text" />
+									</textarea>
+									<div class="col-12 mt-4 form-button-container" id="downloadBtnContainer">
+										<a id="pdf_download_btn" class="btn-variant-six" onclick="func()">
+											<i class="fa fa-download" aria-hidden="true">
+											</i>
+											डाउनलोड गर्नुहोस
+										</a>
+									</div>
+								</fieldset>
+								<div class="col-md-6">
+									<label for="signed_document" class="form-label required">
+										दस्तखत गरेको फाइल
+									</label>
+									<input type="file" class="form-control mb-4" name="signed_document" id="signed_document" accept=".png, .jpg, .jpeg, application/pdf" t-attf-value="#{proposal_file or ''}" />
+									<embed t-attf-src="data:application/pdf;base64,{{document.signed_document}}" type="application/pdf" width="100%" height="600px" />
+								</div>
+								<div class="col-12 mt-4 form-button-container">
+									<button type="submit" class="btn btn-custom-primary">
+										सेभ
+										गर्नुहोस
+									</button>
+								</div>
+							</form>
+						</t>
+						<t t-else="">
+							<form class="form-content" t-attf-action="/organization/purposes" method="POST" enctype="multipart/form-data">
+								<!-- Project Proposal -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										संस्थाको उद्देस्यहरु
+									</span>
+									<textarea name="editor" id="editor">
+									</textarea>
+									<div class="col-12 mt-4 form-button-container" id="downloadBtnContainer">
+										<a id="pdf_download_btn" class="btn-variant-six" onclick="func()">
+											<i class="fa fa-download" aria-hidden="true">
+											</i>
+											डाउनलोड गर्नुहोस
+										</a>
+									</div>
+								</fieldset>
+								<div class="col-md-6">
+									<label for="signed_document" class="form-label required">
+										दस्तखत गरेको फाइल
+									</label>
+									<input type="file" class="form-control mb-4" name="signed_document" id="signed_document" accept=".png, .jpg, .jpeg, application/pdf" t-attf-value="#{proposal_file or ''}" />
+								</div>
+								<div class="col-12 mt-4 form-button-container">
+									<button type="submit" class="btn btn-custom-primary">
+										सेभ
+										गर्नुहोस
+									</button>
+								</div>
+							</form>
+						</t>
+					</div>
+				</div>
+				<script type="text/javascript" src="/upabhokta_samiti/static/src/js/index.js" />
+			</t>
+		</template>
+		<!-- Member Details -->
+		<template id="org_members_template" name="Organization | Members">
+			<t t-call="website.layout">
+				<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript">
+				</script>
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<t t-set="page_js" t-value="value">
+				</t>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Members Detail
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							सदस्यहरुको विवरण
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a t-attf-href="/organization/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="समितिको विवरण">
+										समितिको विवरण
+									</a>
+									<button class="multisteps-form__progress-btn js-active" type="button" title="भेलाको विवरण">
+										भेलाको विवरण
+									</button>
+									<a t-attf-href="/organization/purposes" class="multisteps-form__progress-btn js-active" type="button" title=" संस्थाको उद्देस्यहरु">
+										संस्थाको उद्देस्यहरु
+									</a>
+									<a class="multisteps-form__progress-btn js-active" type="button" title="सदस्य विवरण">
+										सदस्य विवरण
+									</a>
+									<a t-attf-href="/organization/attendee-details" class="multisteps-form__progress-btn " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/organization/beneficiary" class="multisteps-form__progress-btn" type="button" title="page_four">
+										सदस्यताको प्रकारको विवरण
+									</a>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									<a t-attf-href="/organization/fix-assets">
+										संस्थाको अचल सम्पति
+									</a>
+								</button>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+										कार्यक्रमको  विवरण
+									</button>
+								</div>
+							</div>
+						</div>
+						<form class="form-content" t-attf-action="/organization/member-details/create" method="POST" enctype="multipart/form-data">
+							<div class="form-page active-form-page">
+								<!-- Samiti Basic Details -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										व्यक्तिगत विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="member_full_name" class="form-label required">
+											पुरा नाम
+										</label>
+										<input type="text" class="form-control" name="member_full_name" id="member_full_name" placeholder=" पुरा नाम" required="true" />
+									</div>
+									<div class="col-md-6">
+										<label for="member_gender" class="form-label required">
+											लिङ्ग
+										</label>
+										<select class="form-select" id="member_gender" name="member_gender">
+											<option t-attf-value="Male">
+												पुरुष
+											</option>
+											<option t-attf-value="Female">
+												महिला
+											</option>
+											<option t-attf-value="others">
+												अन्य
+											</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="organization_member_designation" class="form-label required">
+											पद
+										</label>
+										<select id="organization_member_designation" class="form-select" required="true" name="organization_member_designation">
+											<option disabled="true" selected="true">
+												छान्नुहोस्...
+											</option>
+											<t t-foreach="organization_member_designation" t-as="designation">
+												<option t-attf-value="#{designation.id}" t-field="designation.organization_member_designation" />
+											</t>
+										</select>
+									</div>
+									<!-- Qualification  -->
+									<div class="col-md-6">
+										<label for="qualification" class="form-label required">
+											योग्यता
+										</label>
+										<select id="qualification" name="qualification" class="form-select" required="true">
+											<option disabled="true" selected="true">
+												छान्नुहोस्...
+											</option>
+											<t t-foreach="qualifications" t-as="qualification">
+												<option t-attf-value="#{qualification.id}" t-field="qualification.member_qualification"/>
+											</t>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="member_address" class="form-label required">
+											ठेगाना
+										</label>
+										<input type="text" name="member_address" class="form-control" id="member_address" required="true" placeholder="ठेगाना" t-attf-value="#{org_info.org_district.district_name_np}, #{org_info.org_municipality.palika_name_np}" readonly="readonly" />
+									</div>
+									<div class="col-md-6">
+										<label for="profile" class="form-label required">
+											पासपोर्ट साईज फोटो
+										</label>
+										<input type="file" class="form-control mb-4" name="profile" id="profile" accept=".png, .jpg, .jpeg" t-attf-value="#{profile or ''}" />
+										<img src="" alt="Uploaded Image" id="imagePreview2" style="display: none; max-width:150px;" />
+									</div>
+									<div class="col-md-6">
+										<label for="signature" class="form-label required">
+											दस्तखत
+										</label>
+										<input type="file" class="form-control mb-4" name="signature" id="signature" accept=".png, .jpg, .jpeg" t-attf-value="#{signature or ''}" />
+										<img src="" alt="Uploaded Image" id="imagePreview" style="display: none; max-width:150px;" />
+									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										नागरिकता विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="citizenship_number" class="form-label required">
+											नागरिकता नं.
+										</label>
+										<input type="text" class="form-control" id="citizenship_number" name="citizenship_number" placeholder="नागरिकता नं." />
+									</div>
+									<div class="col-md-6">
+										<label for="issued_district" class="form-label required">
+											जारि गरिएको जिल्ला
+										</label>
+										<select id="issued_district" name="issued_district" class="form-select" required="true">
+											<option disabled="true" selected="true">
+												छान्नुहोस्...
+											</option>
+											<t t-foreach="nep_districts" t-as="district">
+												<option t-attf-value="#{district.id}" t-field="district.district_name_np" />
+											</t>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="nepali-datepicker" class="form-label required">
+											जारि मिति
+										</label>
+										<input type="text" class="form-control" name="issued_date_bs" id="nepali-datepicker" required="true" placeholder="जारि मिति" />
+									</div>
+									<div class="col-md-6">
+										<label for="citizenship_front" class="form-label required">
+											नागरिकताको अगाडी प्रति
+										</label>
+										<input type="file" class="form-control mb-4" name="citizenship_front" id="citizenship_front" accept=".png, .jpg, .jpeg" t-attf-value="#{citizenship_front or ''}" />
+										<img src="" alt="Uploaded Image" id="imagePreview3" style="display: none; max-width:150px;" />
+									</div>
+									<div class="col-md-6">
+										<label for="citizenship_back" class="form-label required">
+											नागरिकताको पछाडी प्रति
+										</label>
+										<input type="file" class="form-control mb-4" name="citizenship_back" id="citizenship_back" accept=".png, .jpg, .jpeg" t-attf-value="#{citizenship_back or ''}" />
+										<img src="" alt="Uploaded Image" id="imagePreview4" style="display: none; max-width:150px;" />
+									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										सम्पर्क विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="mobile" class="form-label required">
+											मोबाइल
+										</label>
+										<input type="text" class="form-control" id="mobile" name="mobile" placeholder="मोबाइल नं." />
+									</div>
+									<div class="col-md-6">
+										<label for="telephone" class="form-label required">
+											टेलिफोन
+										</label>
+										<input type="text" class="form-control" id="telephone" name="telephone" placeholder="टेलिफोन नं." />
+									</div>
+									<div class="col-md-6">
+										<label for="email" class="form-label required">
+											इमेल
+										</label>
+										<input type="text" class="form-control" id="email" name="email" placeholder="इमेल" />
+									</div>
+								</fieldset>
+								<!-- Guardian Details -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										अभिभावक विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="father_name" class="form-label required">
+											बुबाको नाम
+										</label>
+										<input type="text" class="form-control" id="father_name" name="father_name" placeholder="बुबाको नाम" />
+									</div>
+									<div class="col-md-6">
+										<label for="mother_name" class="form-label required">
+											आमाको नाम
+										</label>
+										<input type="text" class="form-control" id="mother_name" name="mother_name" placeholder="आमाको नाम" />
+									</div>
+									<div class="col-md-6">
+										<label for="grandfather_name" class="form-label required">
+											हजुरबुबाको नाम
+										</label>
+										<input type="text" class="form-control" id="grandfather_name" name="grandfather_name" placeholder="हजुरबुबाको नाम" />
+									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										
+										
+										<div class="col-md-6">
+											<label for="member_tenure" class="form-label required">
+												सदस्य कार्यकाल
+											</label>
+											<select id="member_tenure" name="member_tenure" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="fiscal_year" t-as="fy">
+													<option t-attf-value="#{fy.id}">
+														<t t-esc="fy.fiscal_year" />
+													</option>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="quota" class="form-label required">
+												सदस्य Type
+											</label>
+											<select id="member_type" name="member_type" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="quota" t-as="member">
+													<option t-attf-value="#{member.id}">
+														<t t-esc="member.quota" />
+													</option>
+												</t>
+											</select>
+										</div>
+										
+									</fieldset>
+									<div class="col-12">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="status" />
+											<label class="form-check-label required" for="status">
+												status
+											</label>
+										</div>
+									</div>
+								<div class="col-12 mt-4 form-button-container">
+									<button class="btn add-btn" id="add-btn" type="reset">
+										रिसेट गर्नुहोस
+									</button>
+									<button type="submit" class="btn btn-custom-primary">
+										सेभ
+										गर्नुहोस
+									</button>
+								</div>
+							</div>
+						</form>
+						<div class="data-view-table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">
+											क्र.स.
+										</th>
+										<th scope="col">
+											पुरा नाम
+										</th>
+										<th scope="col">
+											लिङ्ग
+										</th>
+										<th scope="col">
+											पद
+										</th>
+										<th scope="col">
+											ठेगाना
+										</th>
+										<th scope="col">
+											नागरिकता नं.
+										</th>
+										<th scope="col">
+											मोबाइल
+										</th>
+										<th scope="col">
+											एक्सन
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<t t-set="i" t-value="1" />
+									<t t-foreach="members_detail" t-as="member">
+										<tr>
+											<td id="sn" data-cell="sn">
+												<span t-esc="i" />
+												<t t-set="i" t-value="i+1" />
+											</td>
+											<td data-cell="full name">
+												<span t-field="member.member_full_name" />
+											</td>
+											<td data-cell="gender">
+												<span t-field="member.member_gender" />
+											</td>
+											<td data-cell="designation">
+												<span t-field="member.organization_member_designation" />
+											</td>
+											<td data-cell="address">
+												<span t-field="member.member_address" />
+											</td>
+											<td data-cell="citizenship_number">
+												<span t-field="member.member_citizenship_number" />
+											</td>
+											<td data-cell="member_mobile">
+												<span t-field="member.member_mobile" />
+											</td>
+											<td data-cell="action" class="action-container">
+											<!-- Update  t-attf-href="/organization/member-details/update/{{members_detail.id}}" -->
+											<a  class="btn-variant-six text-info">
+												<i class="fa fa-pencil-square-o" aria-hidden="true">
+												</i>
+											</a>
+											<!-- View Details  -->
+											<!-- <a t-attf-href="/organization/member-details/{{members_detail.id}}" class="btn btn-variant-six text-success">
+												<i class="fa fa-eye" aria-hidden="true">
+												</i>
+											</a> -->
+											<!--  -->
+											<!-- Delete  t-attf-value="#{members_detail.id}" -->
+											<!-- <div class="btn btn-variant-six delete text-danger">
+											<a t-attf-href="/organization/member-details/delete/{{members_detail.id}}"></a>
+												<i class="fa fa-trash" aria-hidden="true">
+												</i>
+											</div> -->
+										</td>
+											
+											
+										</tr>
+									</t>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload = function () {
+					
+					var deleteTarget = document.getElementById("deleteID");
+					if(deleteTarget){
+					deleteValue=deleteTarget.value;
+					
+					var deleteBtn = document.querySelectorAll('.delete');
+					deleteBtn.forEach(e => {
+					e.addEventListener('click', () => {
+					Swal.fire({
+					title: "Are you sure?",
+					text: "You won't be able to revert this!",
+					icon: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#3085d6",
+					cancelButtonColor: "#d33",
+					confirmButtonText: "Yes, delete it!"
+					}).then((result) => {
+					if (result.isConfirmed) {
+					setTimeout(deleteMember(deleteValue), 2000);
+					Swal.fire({
+					title: "Deleted!",
+					text: "Your file has been deleted.",
+					icon: "success"
+					});
+					}
+					});
+					});
+					});
+					
+					}
+					
+					function deleteMember(value){
+					var url = '/upabhokta-samiti/member-details/delete/' + value;
+					var method = 'DELETE';
+					fetch(url, {
+					method: method
+					})
+					.then(response => {
+					if (!response.ok) {
+					throw new Error('Network response was not ok');
+					}
+					
+					// Handle successful deletion
+					setTimeout(function(){
+					window.location.href = `/upabhokta-samiti/member-details`;
+					},2000);
+					});
+					}
+					
+					var
+					mainInput=document.getElementById("nepali-datepicker");mainInput.nepaliDatePicker();const
+					signature=document.getElementById("signature");imagePreview=document.getElementById("imagePreview"),signature.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview.src=t.result,imagePreview.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview.src="",imagePreview.style.display="none"}});
+					
+					
+					const
+					profile=document.getElementById("profile");imagePreview2=document.getElementById("imagePreview2"),profile.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview2.src=t.result,imagePreview2.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview2.src="",imagePreview2.style.display="none"}});
+					
+					
+					const
+					citizenship_front=document.getElementById("citizenship_front");imagePreview3=document.getElementById("imagePreview3"),citizenship_front.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview3.src=t.result,imagePreview3.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview3.src="",imagePreview3.style.display="none"}});
+					
+					const
+					citizenship_back=document.getElementById("citizenship_back");imagePreview4=document.getElementById("imagePreview4"),citizenship_back.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview4.src=t.result,imagePreview4.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview4.src="",imagePreview4.style.display="none"}});
+					
+					
+					};
+				</script>
+			</t>
+		</template>
+
+
+		<!-- View Member Details -->
+		<template id="view_members_template" name="Organization | Members">
+			<t t-call="website.layout">
+				<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript">
+				</script>
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<t t-set="page_js" t-value="value">
+				</t>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Members Detail
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							सदस्यहरुको विवरण
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a t-attf-href="/organization/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="समितिको विवरण">
+										समितिको विवरण
+									</a>
+									<button class="multisteps-form__progress-btn js-active" type="button" title="भेलाको विवरण">
+										भेलाको विवरण
+									</button>
+									<a t-attf-href="/organization/purposes" class="multisteps-form__progress-btn js-active" type="button" title=" संस्थाको उद्देस्यहरु">
+										संस्थाको उद्देस्यहरु
+									</a>
+									<a class="multisteps-form__progress-btn js-active" type="button" title="सदस्य विवरण">
+										सदस्य विवरण
+									</a>
+									<a t-attf-href="/organization/attendee-details" class="multisteps-form__progress-btn " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/organization/beneficiary" class="multisteps-form__progress-btn" type="button" title="page_four">
+										सदस्यताको प्रकारको विवरण
+									</a>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									<a t-attf-href="/organization/fix-assets">
+										संस्थाको अचल सम्पति
+									</a>
+								</button>
+									<button class="multisteps-form__progress-btn" type="button" title="page_four">
+										कार्यक्रमको  विवरण
+									</button>
+								</div>
+							</div>
+						</div>
+						<form class="form-content" t-attf-action="/organization/member-details"  enctype="multipart/form-data">
+							<div class="form-page active-form-page">
+								<!-- Samiti Basic Details -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										व्यक्तिगत विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="member_full_name" class="form-label required">
+											पुरा नाम
+										</label>
+										<input type="text" class="form-control" name="member_full_name" id="member_full_name" placeholder=" पुरा नाम" required="true"  t-att-value="members_detail.member_full_name" disabled="disabled"/>
+									</div>
+									<div class="col-md-6">
+										<label for="member_gender" class="form-label required">
+											लिङ्ग
+										</label>
+										<input type="text" class="form-control name" name="member_gender" t-att-value="members_detail.member_gender" disabled="disabled"/>
+									</div>
+									<div class="col-md-6">
+										<label for="organization_member_designation" class="form-label required">
+											पद
+										</label>
+										<input type="text" class="form-control" name="organization_member_designation" t-att-value="members_detail.organization_member_designation.org_representative_designations" disabled="disabled"/>
+									</div>
+									<div class="col-md-6">
+										<label for="qualification" class="form-label required">
+											योग्यता
+										</label>
+										<input type="text" class="form-control" name="qualification" t-att-value="members_detail.qualification_level_.member_qualification" disabled="disabled" />
+									</div>
+									<div class="col-md-6">
+										<label for="member_address" class="form-label required">
+											ठेगाना
+										</label>
+										<input type="text" name="member_address" class="form-control" id="member_address" required="true" placeholder="ठेगाना"  t-att-value="members_detail.member_address" disabled="disabled" />
+									</div>
+									<div class="col-md-6">
+										<label for="profile" class="form-label required">
+											पासपोर्ट साईज फोटो
+										</label>
+										<input type="file" class="form-control mb-4" name="profile" id="profile" accept=".png, .jpg, .jpeg" t-attf-value="#{profile or ''}" disabled="disabled" />
+										 <img src=""
+                                                t-attf-src="data:image/*;base64,{{members_detail.member_picture}}"
+                                                alt="Uploaded Image" id="imagePreview2"
+                                                style=" max-width:150px;" />
+									</div>
+									<div class="col-md-6">
+										<label for="signature" class="form-label required">
+											दस्तखत
+										</label>
+										<input type="file" class="form-control mb-4" name="signature" id="signature" accept=".png, .jpg, .jpeg" t-attf-value="#{signature or ''}"  disabled="disabled"/>
+ 												<img src=""
+                                                t-attf-src="data:image/*;base64,{{members_detail.member_signature}}"
+                                                alt="Uploaded Image" id="imagePreview2"
+                                                style=" max-width:150px;" />									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										नागरिकता विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="citizenship_number" class="form-label required">
+											नागरिकता नं.
+										</label>
+										<input type="text" class="form-control" id="citizenship_number" name="citizenship_number" placeholder="नागरिकता नं." t-att-value="members_detail.member_citizenship_number" disabled="disabled" />
+									</div>
+									<div class="col-md-6">
+										<label for="issued_district" class="form-label required">
+											जारि गरिएको जिल्ला
+										</label>
+										<input type="text" class="form-control" id="issued_district" t-att-value="members_detail.member_citizenship_issued_district" disabled="disabled" />	
+									</div>
+									<div class="col-md-6">
+										<label for="nepali-datepicker" class="form-label required">
+											जारि मिति
+										</label>
+										<input type="text" class="form-control" name="issued_date_bs" t-att-value="members_detail.member_citizenship_issued_date_bs" disabled="disabled"  />
+									</div>
+									<div class="col-md-6">
+										<label for="citizenship_front" class="form-label required">
+											नागरिकताको अगाडी प्रति
+										</label>
+										<input type="file" class="form-control mb-4" name="citizenship_front" id="citizenship_front" accept=".png, .jpg, .jpeg" t-attf-value="#{citizenship_front or ''}" disabled="disabled" />
+										<img src=""
+                                                t-attf-src="data:image/*;base64,{{members_detail.citizenship_front_image}}"
+                                                alt="Uploaded Image" id="imagePreview2"
+                                                style=" max-width:150px;" />
+									</div>
+									<div class="col-md-6">
+										<label for="citizenship_back" class="form-label required">
+											नागरिकताको पछाडी प्रति
+										</label>
+										<input type="file" class="form-control mb-4" name="citizenship_back" id="citizenship_back" accept=".png, .jpg, .jpeg" t-attf-value="#{citizenship_back or ''}"  disabled="disabled"/>
+										<img src=""
+                                                t-attf-src="data:image/*;base64,{{members_detail.citizenship_back_image}}"
+                                                alt="Uploaded Image" id="imagePreview2"
+                                                style=" max-width:150px;" />
+									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										सम्पर्क विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="mobile" class="form-label required">
+											मोबाइल
+										</label>
+										<input type="text" class="form-control" id="mobile" name="mobile" placeholder="मोबाइल नं." t-att-value="members_detail.member_mobile" disabled="disabled" />
+									</div>
+									<div class="col-md-6">
+										<label for="telephone" class="form-label required">
+											टेलिफोन
+										</label>
+										<input type="text" class="form-control" id="telephone" name="telephone" placeholder="टेलिफोन नं." t-att-value="members_detail.member_telephone_opt" disabled="disabled" />
+									</div>
+									<div class="col-md-6">
+										<label for="email" class="form-label required">
+											इमेल
+										</label>
+										<input type="text" class="form-control" id="email" name="email" placeholder="इमेल" t-att-value="members_detail.member_email" disabled="disabled"/>
+									</div>
+								</fieldset>
+								<!-- Guardian Details -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										अभिभावक विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="father_name" class="form-label required">
+											बुबाको नाम
+										</label>
+										<input type="text" class="form-control" id="father_name" name="father_name" t-att-value="members_detail.member_father_name"  disabled="disabled" placeholder="बुबाको नाम" />
+									</div>
+									<div class="col-md-6">
+										<label for="mother_name" class="form-label required">
+											आमाको नाम
+										</label>
+										<input type="text" class="form-control" id="mother_name" name="mother_name" t-att-value="members_detail.member_mother_name"  disabled="disabled" placeholder="आमाको नाम" />
+									</div>
+									<div class="col-md-6">
+										<label for="grandfather_name" class="form-label required">
+											हजुरबुबाको नाम
+										</label>
+										<input type="text" class="form-control" id="grandfather_name" name="grandfather_name" t-att-value="members_detail.member_grandfather_name" disabled="disabled" placeholder="हजुरबुबाको नाम" />
+									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										
+										
+										<div class="col-md-6">
+											<label for="member_tenure" class="form-label required">
+												सदस्य कार्यकाल
+											</label>
+											<input type="text" class="form-control" id="member_tenure" t-att-value="members_detail.comitte_member_tenure" disabled="disabled" />
+										</div>
+										<div class="col-md-6">
+											<label for="quota" class="form-label required">
+												सदस्य Type
+											</label>
+											<input id="member_type" name="member_type" class="form-select" t-att-value="members_detail.member_type" disabled="disabled" />
+												
+										</div>
+										
+									</fieldset>
+									<div class="col-12">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="status" t-att-value="members_detail.status" />
+											<label class="form-check-label required" for="status">
+												status
+											</label>
+										</div>
+									</div>
+								<div class="col-12 mt-4 form-button-container">
+									<button class="btn add-btn" id="add-btn"  t-attf-href="/organization/member-details">
+										फर्किनुहोस्
+									</button>
+									
+								</div>
+							</div>
+						</form>
+						
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload = function () {
+					
+					var deleteTarget = document.getElementById("deleteID");
+					if(deleteTarget){
+					deleteValue=deleteTarget.value;
+					
+					var deleteBtn = document.querySelectorAll('.delete');
+					deleteBtn.forEach(e => {
+					e.addEventListener('click', () => {
+					Swal.fire({
+					title: "Are you sure?",
+					text: "You won't be able to revert this!",
+					icon: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#3085d6",
+					cancelButtonColor: "#d33",
+					confirmButtonText: "Yes, delete it!"
+					}).then((result) => {
+					if (result.isConfirmed) {
+					setTimeout(deleteMember(deleteValue), 2000);
+					Swal.fire({
+					title: "Deleted!",
+					text: "Your file has been deleted.",
+					icon: "success"
+					});
+					}
+					});
+					});
+					});
+					
+					}
+					
+					function deleteMember(value){
+					var url = '/upabhokta-samiti/member-details/delete/' + value;
+					var method = 'DELETE';
+					fetch(url, {
+					method: method
+					})
+					.then(response => {
+					if (!response.ok) {
+					throw new Error('Network response was not ok');
+					}
+					
+					// Handle successful deletion
+					setTimeout(function(){
+					window.location.href = `/upabhokta-samiti/member-details`;
+					},2000);
+					});
+					}
+					
+					var
+					mainInput=document.getElementById("nepali-datepicker");mainInput.nepaliDatePicker();const
+					signature=document.getElementById("signature");imagePreview=document.getElementById("imagePreview"),signature.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview.src=t.result,imagePreview.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview.src="",imagePreview.style.display="none"}});
+					
+					
+					const
+					profile=document.getElementById("profile");imagePreview2=document.getElementById("imagePreview2"),profile.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview2.src=t.result,imagePreview2.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview2.src="",imagePreview2.style.display="none"}});
+					
+					
+					const
+					citizenship_front=document.getElementById("citizenship_front");imagePreview3=document.getElementById("imagePreview3"),citizenship_front.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview3.src=t.result,imagePreview3.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview3.src="",imagePreview3.style.display="none"}});
+					
+					const
+					citizenship_back=document.getElementById("citizenship_back");imagePreview4=document.getElementById("imagePreview4"),citizenship_back.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview4.src=t.result,imagePreview4.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview4.src="",imagePreview4.style.display="none"}});
+					
+					
+					};
+				</script>
+			</t>
+		</template>
+		<!-- Attendees Insert Form -->
+		<template id="organization_attendees_template" name="Organization Attendees Details">
+			<t t-call="website.layout">
+				<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript">
+				</script>
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<t t-set="page_js" t-value="value">
+				</t>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Attendees
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							सहभागीहरुको विवरण
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<button class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+										<a t-attf-href="/organization/register">
+											समितिको
+											विवरण
+										</a>
+									</button>
+									<button class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+										<a t-attf-href="/organization/sabha-details">
+											सभाको
+											विवरण
+										</a>
+									</button>
+									<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+										<a t-attf-href="/organization/project-proposals">
+											आयोजनाको
+											प्रस्तावहरु
+										</a>
+									</button>
+									<button class="multisteps-form__progress-btn js-active" type="button" title="page_forth">
+										<a t-attf-href="/organization/member-details">
+											समितिको
+											सदस्य विवरण
+										</a>
+									</button>
+									<button class="multisteps-form__progress-btn js-active" type="button" title="page_fifth">
+										सहभागीहरुको विवरण
+									</button>
+									<button class="multisteps-form__progress-btn" type="button" title="page_six">
+										<a t-attf-href="/organization/member/quota">
+											सदस्यताको प्रकारको
+											विवरण
+										</a>
+									</button>
+									<button class="multisteps-form__progress-btn" type="button" title="page_seven">
+										<a t-attf-href="/organization/fix-assets">
+											संस्थाको अचल सम्पतिको विवरण
+										</a>
+									</button>
+									<button class="multisteps-form__progress-btn" type="button" title="page_eight">
+										कार्यक्रमको  विवरण
+									</button>
+								</div>
+							</div>
+						</div>
+						<form class="form-content" t-attf-action="/organization/attendees/register" method="POST" enctype="multipart/form-data">
+							<div class="form-page active-form-page">
+								<!-- Samiti Basic Details -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										व्यक्तिगत विवरण
+									</span>
+
+									<div class="col-md-6">
+										<label for="organization_attendees_name" class="form-label required" >
+											पुरा नाम
+										</label>
+										<input type="text" class="form-control" name="organization_attendees_name" id="organization_attendees_name" placeholder=" पुरा नाम" required="true" />
+									</div>
+									<div class="col-md-6">
+										<label for="organization_attendees_gender" class="form-label required">
+											लिङ्ग
+										</label>
+										<select class="form-select" id="organization_attendees_gender" name="organization_attendees_gender">
+											<option t-attf-value="male">
+												पुरुष
+											</option>
+											<option t-attf-value="female">
+												महिला
+											</option>
+											<option t-attf-value="others">
+												अन्य
+											</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="signature" class="form-label required">
+											दस्तखत अपलोड गर्नुहोस
+										</label>
+										<input type="file" class="form-control mb-4" name="signature" id="signature" accept=".png, .jpg, .jpeg" t-attf-value="#{signature or ''}" />
+										<img src="" alt="Uploaded Image" id="imagePreview" style="display: none; max-width:150px;" />
+									</div>
+									<div class="col-md-6">
+										<label for="mobile" class="form-label required">
+											मोबाइल
+										</label>
+										<input type="text" class="form-control" id="mobile" name="mobile" placeholder="मोबाइल नं." />
+									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										सहभागी सभा विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="organization_attendees_sabha_number" class="form-label required">
+											सहभागी सभा नं
+										</label>
+										<select id="organization_attendees_sabha_number" name="organization_attendees_sabha_number" class="form-select" required="true">
+											<option disabled="true" selected="true">
+												छान्नुहोस्...
+											</option>
+											<!--
+											<t t-foreach='organization_attendees_sabha'
+											t-as="organization_attendees">
+											<option t-attf-value="#{organization_attendees.id}">
+											<t t-esc="organization_attendees.organization_attendees_sabha_number" />
+											</option>
+											</t>
+											-->
+										</select>
+									</div>
+								</fieldset>
+								<div class="col-12 mt-4 form-button-container">
+									<button class="btn add-btn" id="add-btn" type="reset">
+										रिसेट गर्नुहोस
+									</button>
+									<button type="submit" class="btn btn-custom-primary">
+										सेभ
+										गर्नुहोस
+									</button>
+								</div>
+							</div>
+						</form>
+						<div class="data-view-table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">
+											क्र.स.
+										</th>
+										<th scope="col">
+											पुरा नाम
+										</th>
+										<th scope="col">
+											लिङ्ग
+										</th>
+										<th scope="col">
+											मोबाइल
+										</th>
+										<th scope="col">
+											दस्तखत
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<t t-set="i" t-value="1" />
+									<t t-foreach="attendees_list" t-as="attendee">
+										<tr>
+											<td id="sn" data-cell="sn">
+												<span t-esc="i" />
+												<t t-set="i" t-value="i+1" />
+											</td>
+											<td data-cell="full name">
+												<span t-field="attendee.full_name" />
+											</td>
+											<td data-cell="gender">
+												<span t-field="attendee.gender" />
+											</td>
+											<td data-cell="mobile">
+												<span t-field="attendee.mobile" />
+											</td>
+											<td data-cell="signature">
+												<img class="dynamic-img f-center" style="max-width:100px;" t-attf-src="data:image/*;base64,{{attendee.signature}}" />
+											</td>
+										</tr>
+									</t>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload = function () { const
+					signature=document.getElementById("signature");imagePreview=document.getElementById("imagePreview"),signature.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview.src=t.result,imagePreview.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview.src="",imagePreview.style.display="none"}}); };
+				</script>
+			</t>
+		</template>
+		<!-- Quota -->
+		<template id="organization_quota_template" name="Organization Quota Details">
+			<t t-call="website.layout">
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								quota
+							</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="form-container">
+					<h1 class="form-title text-center my-4">
+						लाभार्थीको विवरण
+					</h1>
+					<div class="row justify-content-center align-items-center">
+						<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+							<div class="multisteps-form__progress">
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+									<a t-attf-href="/organization/register">
+										समितिको विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/sabha-details">
+										सभाको
+										विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/project-proposals">
+										आयोजनाको
+										प्रस्तावहरु
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+									<a t-attf-href="/organization/member-details">
+										समितिको
+										सदस्य विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/attendee-details">
+										सहभागीहरुको
+										विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									<a t-attf-href="/organization/member/quota">
+
+									सदस्यताको प्रकारको विवरण</a>
+								</button>
+								<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									<a t-attf-href="/organization/fix-assets">
+										संस्थाको अचल सम्पति
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									कार्यक्रमको  विवरण
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="data-view-table">
+						<form class="form-content" t-attf-action="/organization/member/quota/create" method="POST" enctype="multipart/form-data">
+							<table class="table" id="appendTable">
+								<thead>
+									<tr>
+										<th scope="col">
+											वर्ग
+										</th>
+										<th scope="col">
+											परिवार संख्या
+										</th>
+										<th scope="col">
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<t t-foreach="quota_list" t-as="quota">
+										<tr>
+											<td class="category" data-cell="category">
+												<div>
+													<select id="category_name" class="form-select" required="true">
+														<t t-foreach="category" t-as="cat">
+															<t t-if="quota.category.id==cat.id">
+																<option t-attf-value="#{cat.id}" selected="selected">
+																	<t t-esc="quota.category.quota" />
+																</option>
+															</t>
+															<t t-else="">
+																<option t-attf-value="#{cat.id}">
+																	<t t-esc="cat.quota" />
+																</option>
+															</t>
+														</t>
+													</select>
+												</div>
+											</td>
+											<td class="category_total_numbers" data-cell="total family">
+												<div>
+													<input id="category_total_numbers" t-attf-value="#{quota.category_total_numbers}" type="text" class="form-control" />
+												</div>
+											</td>
+										</tr>
+									</t>
+									<tr>
+										<td class="category" data-cell="category">
+											<div>
+												<select class="form-select" required="true" name="category_name">
+													<t t-foreach="category" t-as="cat">
+														<option t-attf-value="#{cat.id}" t-field="cat.quota" />
+													</t>
+												</select>
+											</div>
+										</td>
+										<td class="" data-cell="total family">
+											<div>
+												<input name="category_total_numbers" type="text" class="form-control" />
+											</div>
+										</td>
+										<td class="" data-cell="action">
+											<button type="submit" class="btn btn-custom-primary">
+												सेभ
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+				</div>
+				<script type="text/javascript" src="/upabhokta_samiti/static/src/js/quota_index.js" />
+			</t>
+		</template>
+		<!-- Fix Assets -->
+		<template id="organization_asset_template" name="Organization Assets">
+			<t t-call="website.layout">
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								quota
+							</li>
+						</ol>
+					</nav>
+				</div>
+				<!-- Form Body -->
+				<div class="form-container">
+					<h1 class="form-title text-center my-4">
+						संस्थाको अचल सम्पति विवरण
+					</h1>
+					<div class="row justify-content-center align-items-center">
+						<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+							<div class="multisteps-form__progress">
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+									<a t-attf-href="/organization/register">
+										समितिको विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/sabha-details">
+										सभाको
+										विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/project-proposals">
+										आयोजनाको
+										प्रस्तावहरु
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+									<a t-attf-href="/organization/member-details">
+										समितिको
+										सदस्य विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/attendee-details">
+										सहभागीहरुको
+										विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									<a t-attf-href="/organization/member/quota">
+
+									सदस्यताको प्रकारको विवरण</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									<a t-attf-href="/organization/fix-assets">
+										संस्थाको अचल सम्पति
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									<a t-attf-href="/organization/program-details">
+										कार्यक्रमको विवरण
+									</a>
+									
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-container">
+						<form class="form-content" t-attf-action="/organization/fix-assets/create" method="POST" enctype="multipart/form-data">
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									Asset Details
+								</span>
+								<div class="col-md-6">
+									<label for="asset_name" class="form-label required">
+										विवरण
+									</label>
+									<select class="form-control" name="asset_name" id="asset_name" required="true" onchange="showHideFieldsets()">
+										<option disabled="true" selected="true">
+											छान्नुहोस्...
+										</option>
+										<t t-foreach="org_asset_type" t-as="org_asset">
+											<option t-att-value="org_asset['id']">
+												<t t-out="org_asset['org_asset_type']" />
+											</option>
+										</t>
+									</select>
+								</div>
+								<div class="col-md-6">
+									<label for="location_of_asset" class="form-label required">
+										क्षेत्र
+									</label>
+									<input type="text" class="form-control" name="location_of_asset" id="location_of_asset" required="true" placeholder="Location of Asset" />
+								</div>
+								<div class="col-md-6">
+									<label for="asset_number" class="form-label required">
+										संख्या/परिणाम
+									</label>
+									<input type="text" class="form-control" name="asset_number" id="asset_number" required="true" placeholder="Asset Quantity " />
+								</div>
+								<div class="col-md-6">
+									<label for="asset_total_cost" class="form-label required">
+										जम्मा मुल्य
+									</label>
+									<input type="text" class="form-control" name="asset_total_cost" id="asset_total_cost" required="true" placeholder="Asset Total Cost " />
+								</div>
+							</fieldset>
+							<!-- Building fieldset -->
+							<fieldset class="form-fieldset row g-3 " id="buildingFieldset" style="display: none;">
+								<span class="field-title">
+									भवन
+								</span>
+								<div class="row">
+									<div class="col-md-6">
+										<label for="house_block_number" class="form-label required">
+											तला
+										</label>
+										<input type="text" class="form-control" name="house_block_number" id="house_block_number" placeholder="तला" />
+									</div>
+									<div class="col-md-6">
+										<label for="no_of_rooms" class="form-label required">
+											कोठा संख्या
+										</label>
+										<input type="text" class="form-control" name="no_of_rooms" id="no_of_rooms" placeholder="कोठा संख्या" />
+									</div>
+								</div>
+							</fieldset>
+							<!-- Vehicle fieldset -->
+							<fieldset class="form-fieldset row g-3 vehicle" id="vehicleFieldset" style="display: none;">
+								<span class="field-title">
+									सवारी साधन
+								</span>
+								<div class="col-md-6">
+									<label for="vehicle_type" class="form-label required">
+										सवारी साधन प्रकार
+									</label>
+									<input type="text" class="form-control" name="vehicle_type" id="vehicle_type" placeholder="प्रकार" />
+								</div>
+							</fieldset>
+							<!-- Land fieldset -->
+							<fieldset class="form-fieldset row g-3 land" id="landFieldset" style="display: none;">
+								<span class="field-title">
+									जग्गा (क्षेत्रफल)
+								</span>
+								<div class="col-md-6">
+									<label for="total_kitta_number" class="form-label required">
+										क्षेत्रफल
+									</label>
+									<input type="text" class="form-control" name="total_kitta_number" id="total_kitta_number" placeholder="क्षेत्रफल" />
+								</div>
+							</fieldset>
+							<div class="col-12 mt-4 form-button-container">
+								<button class="btn add-btn" id="add-btn" type="reset">
+									रिसेट गर्नुहोस
+								</button>
+								<button type="submit" class="btn btn-custom-primary">
+									सेभ
+									गर्नुहोस
+								</button>
+							</div>
+						</form>
+					</div>
+					<!-- Table to Display Data -->
+					<div class="data-view-table">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">
+										क्र.स.
+									</th>
+									<th scope="col">
+										विवरण
+									</th>
+									<th scope="col">
+										संख्या/परिणाम
+									</th>
+									<th scope="col">
+										जम्मा मुल्य
+									</th>
+									<th scope="col">
+										क्षेत्र
+									</th>
+									<th scope="col">
+										एक्सन
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<t t-set="i" t-value="1" />
+								<t t-foreach="asset_list" t-as="asset_list">
+									<tr>
+										<td id="sn" data-cell="sn">
+											<span t-esc="i" />
+											<t t-set="i" t-value="i+1" />
+										</td>
+										<td data-cell=" asset_name">
+											<span t-field="asset_list.asset_name" />
+										</td>
+										<td data-cell="asset_number">
+											<span t-field="asset_list.asset_number" />
+										</td>
+										<td data-cell="program_budget">
+											<span t-field="asset_list.asset_total_cost" />
+										</td>
+										<td data-cell="location">
+											<span t-field="asset_list.location_of_asset" />
+										</td>
+										<td data-cell="action" class="action-container">
+											<!-- Update t-attf-href="/organization/fix-assets/update/{{member.id}}" -->
+											<a  t-attf-href="/organization/edit-fix-assets/{{asset_list.id}}" class="btn-variant-six text-info">
+												<i class="fa fa-pencil-square-o" aria-hidden="true">
+												</i>
+											</a>
+											<!-- View Details -->
+											<a t-attf-href="/organization/fix-assets/{{asset_list.id}}" class="btn btn-variant-six text-success">
+												<i class="fa fa-eye" aria-hidden="true">
+												</i>
+											</a>
+											<!--  -->
+											<!-- Delete -->
+											<div class="btn btn-variant-six delete text-danger">
+												<i class="fa fa-trash" aria-hidden="true">
+												</i>
+												<input id="deleteID" type="text" class="hidden" t-attf-value="#{asset_list.id}" />
+											</div>
+										</td>
+									</tr>
+								</t>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</t>
+			<script>
+				function showHideFieldsets() {
+				var assetName = document.getElementById('asset_name').value;
+				var buildingFieldset = document.getElementById('buildingFieldset');
+				var vehicleFieldset = document.getElementById('vehicleFieldset');
+				var landFieldset = document.getElementById('landFieldset');
+				console.log("dfgh", assetName);
+				
+				buildingFieldset.style.display = (assetName === '1') ? 'block' : 'none';
+				vehicleFieldset.style.display = (assetName === '2') ? 'block' : 'none';
+				landFieldset.style.display = (assetName === '3') ? 'block' : 'none';
+				}
+				window.onload = function () {
+				var deleteTarget = document.getElementById("deleteID");
+				if(deleteTarget){
+				deleteValue=deleteTarget.value;
+				
+				var deleteBtn = document.querySelectorAll('.delete');
+				deleteBtn.forEach(e => {
+				e.addEventListener('click', () => {
+				Swal.fire({
+				title: "Are you sure?",
+				text: "You won't be able to revert this!",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#3085d6",
+				cancelButtonColor: "#d33",
+				confirmButtonText: "Yes, delete it!"
+				}).then((result) => {
+				if (result.isConfirmed) {
+				setTimeout(deleteAsset(deleteValue), 2000);
+				Swal.fire({
+				title: "Deleted!",
+				text: "Your file has been deleted.",
+				icon: "success"
+				});
+				}
+				});
+				});
+				});
+				
+				}
+				
+				function deleteAsset(deleteTarget){
+				var url = '/organization/fix-assets/delete/' + deleteTarget;
+				var method = 'DELETE';
+				fetch(url, {
+				method: method
+				})
+				.then(response => {
+				if (!response.ok) {
+				throw new Error('Network response was not ok');
+				}
+				
+				// Handle successful deletion
+				setTimeout(function(){
+				window.location.href = `/organization/fix-assets`;
+				},2000);
+				});
+				}
+				
+				}
+			</script>
+		</template>
+		<!-- Fix asset view -->
+		<template id="view_fix_assets_template" name="Organization Assets">
+			<t t-call="website.layout">
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								quota
+							</li>
+						</ol>
+					</nav>
+				</div>
+				<!-- Form Body -->
+				<div class="form-container">
+					<h1 class="form-title text-center my-4">
+						संस्थाको अचल सम्पति विवरण
+					</h1>
+					<div class="row justify-content-center align-items-center">
+						<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+							<div class="multisteps-form__progress">
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+									<a t-attf-href="/organization/register">
+										समितिको विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/sabha-details">
+										सभाको
+										विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/project-proposals">
+										आयोजनाको
+										प्रस्तावहरु
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+									<a t-attf-href="/organization/member-details">
+										समितिको
+										सदस्य विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/attendee-details">
+										सहभागीहरुको
+										विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									<a t-attf-href="/organization/member/quota">
+
+									सदस्यताको प्रकारको विवरण</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									<a t-attf-href="/organization/fix-assets">
+										संस्थाको अचल सम्पति
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									<a t-attf-href="/organization/program-details">
+										कार्यक्रमको विवरण
+									</a>
+									
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-container">
+						<form class="form-content" t-attf-action="/organization/fix-assets/create" method="POST" enctype="multipart/form-data">
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									Asset Details
+								</span>
+								<div class="col-md-6">
+									<label for="asset_name" class="form-label required">
+										विवरण
+									</label>
+
+									<input type="text" class="form-control" name="asset_name" id="asset_name" required="true" placeholder="Location of Asset" t-att-value="asset.asset_name.org_asset_type" disabled="disabled"/>
+								</div>
+								<div class="col-md-6">
+									<label for="location_of_asset" class="form-label required">
+										क्षेत्र: 
+									</label>
+									<input type="text" class="form-control" name="location_of_asset" id="location_of_asset" required="true" placeholder="Location of Asset" t-att-value="asset.location_of_asset" disabled="disabled"/>
+								</div>
+								<div class="col-md-6">
+									<label for="asset_number" class="form-label required">
+										संख्या/परिणाम
+									</label>
+									<input type="text" class="form-control" name="asset_number" id="asset_number" required="true" placeholder="Asset Quantity " t-att-value="asset.asset_number" disabled="disabled" />
+								</div>
+								<div class="col-md-6">
+									<label for="asset_total_cost" class="form-label required">
+										जम्मा मुल्य
+									</label>
+									<input type="text" class="form-control" name="asset_total_cost" id="asset_total_cost" required="true" placeholder="Asset Total Cost " t-att-value="asset.asset_total_cost" disabled="disabled"/>
+								</div>
+							</fieldset>
+							<!-- Building fieldset -->
+							<fieldset class="form-fieldset row g-3 " id="buildingFieldset">
+								<span class="field-title">
+									भवन
+								</span>
+								<div class="row">
+									<div class="col-md-6">
+										<label for="house_block_number" class="form-label required">
+											तला
+										</label>
+										<input type="text" class="form-control" name="house_block_number" id="house_block_number" placeholder="तला" t-att-value="asset.house_block_number" disabled="disabled"/>
+									</div>
+									<div class="col-md-6">
+										<label for="no_of_rooms" class="form-label required">
+											कोठा संख्या
+										</label>
+										<input type="text" class="form-control" name="no_of_rooms" id="no_of_rooms" placeholder="कोठा संख्या" t-att-value="asset.no_of_rooms" disabled="disabled"/>
+									</div>
+								</div>
+							</fieldset>
+							<!-- Vehicle fieldset -->
+							<fieldset class="form-fieldset row g-3 vehicle" id="vehicleFieldset">
+								<span class="field-title">
+									सवारी साधन
+								</span>
+								<div class="col-md-6">
+									<label for="vehicle_type" class="form-label required">
+										सवारी साधन प्रकार
+									</label>
+									<input type="text" class="form-control" name="vehicle_type" id="vehicle_type" placeholder="प्रकार" t-att-value="asset.vehicle_type" disabled="disabled"/>
+								</div>
+							</fieldset>
+							<!-- Land fieldset -->
+							<fieldset class="form-fieldset row g-3 land" id="landFieldset">
+								<span class="field-title">
+									जग्गा (क्षेत्रफल)
+								</span>
+								<div class="col-md-6">
+									<label for="total_kitta_number" class="form-label required">
+										क्षेत्रफल
+									</label>
+									<input type="text" class="form-control" name="total_kitta_number" id="total_kitta_number" placeholder="क्षेत्रफल" t-att-value="asset.total_kitta_number" disabled="disabled"/>
+								</div>
+							</fieldset>
+							<div class="col-12 mt-4 form-button-container">
+								<button class="btn add-btn" id="add-btn" type="reset">
+									रिसेट गर्नुहोस
+								</button>
+								<button type="submit" class="btn btn-custom-primary">
+									सेभ
+									गर्नुहोस
+								</button>
+							</div>
+						</form>
+					</div>
+					<!-- Table to Display Data -->
+					
+				</div>
+			</t>
+			
+			
+		</template>
+		<!-- Fix asset edit  -->
+		<template id="edit_fix_assets_template" name="Organization Assets">
+			<t t-call="website.layout">
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								quota
+							</li>
+						</ol>
+					</nav>
+				</div>
+				<!-- Form Body -->
+				<div class="form-container">
+					<h1 class="form-title text-center my-4">
+						संस्थाको अचल सम्पति विवरण
+					</h1>
+					<div class="row justify-content-center align-items-center">
+						<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+							<div class="multisteps-form__progress">
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+									<a t-attf-href="/organization/register">
+										समितिको विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/sabha-details">
+										सभाको
+										विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/project-proposals">
+										आयोजनाको
+										प्रस्तावहरु
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+									<a t-attf-href="/organization/member-details">
+										समितिको
+										सदस्य विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									<a t-attf-href="/organization/attendee-details">
+										सहभागीहरुको
+										विवरण
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									<a t-attf-href="/organization/member/quota">
+
+									सदस्यताको प्रकारको विवरण</a>
+								</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									<a t-attf-href="/organization/fix-assets">
+										संस्थाको अचल सम्पति
+									</a>
+								</button>
+								<button class="multisteps-form__progress-btn" type="button" title="page_four">
+									<a t-attf-href="/organization/program-details">
+										कार्यक्रमको विवरण
+									</a>
+									
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-container">
+						<form class="form-content" t-attf-action="/organization/fix-assets/update" method="POST" enctype="multipart/form-data">
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									Asset Details
+								</span>
+								<input type="hidden" name = "asset_id" t-att-value="asset.id"/>
+								<div class="col-md-6">
+									<label for="asset_name" class="form-label required">
+										विवरण
+									</label>
+									
+									        <select id="asset_name"
+                                                name="asset_name"
+                                                class="form-select" required="true" onchange="showHideFieldsets()">
+
+                                                <t t-foreach="org_asset_type" t-as="org_asset">
+
+                                                    <t
+                                                        t-if="org_asset.org_asset_type == asset.asset_name.org_asset_type">
+                                                        <option t-att-value="org_asset['id']"
+                                                           
+                                                            selected="selected"
+                                                        ><t t-out="org_asset['org_asset_type']" />
+
+														</option>
+                                                    </t>
+
+                                                    <t t-else="">
+                                                        <option t-att-value="org_asset['id']">
+															<t t-out="org_asset['org_asset_type']" />
+														</option>
+                                                    </t>
+
+                                                </t>
+                                            </select>
+									<!-- <input type="text" class="form-control" name="asset_name" id="asset_name" required="true" placeholder="Location of Asset" t-att-value="asset.asset_name.org_asset_type"/> -->
+								</div>
+								<div class="col-md-6">
+									<label for="location_of_asset" class="form-label required">
+										क्षेत्र: 
+									</label>
+									<input type="text" class="form-control" name="location_of_asset" id="location_of_asset" required="true" placeholder="Location of Asset" t-att-value="asset.location_of_asset"/>
+								</div>
+								<div class="col-md-6">
+									<label for="asset_number" class="form-label required">
+										संख्या/परिणाम
+									</label>
+									<input type="text" class="form-control" name="asset_number" id="asset_number" required="true" placeholder="Asset Quantity " t-att-value="asset.asset_number" />
+								</div>
+								<div class="col-md-6">
+									<label for="asset_total_cost" class="form-label required">
+										जम्मा मुल्य
+									</label>
+									<input type="text" class="form-control" name="asset_total_cost" id="asset_total_cost" required="true" placeholder="Asset Total Cost " t-att-value="asset.asset_total_cost"/>
+								</div>
+							</fieldset>
+							<!-- Building fieldset -->
+							<fieldset class="form-fieldset row g-3 " id="buildingFieldset" style="display: none;">
+								<span class="field-title">
+									भवन
+								</span>
+								<div class="row">
+									<div class="col-md-6">
+										<label for="house_block_number" class="form-label required">
+											तला
+										</label>
+										<input type="text" class="form-control" name="house_block_number" id="house_block_number" placeholder="तला" t-att-value="asset.house_block_number"/>
+									</div>
+									<div class="col-md-6">
+										<label for="no_of_rooms" class="form-label required">
+											कोठा संख्या
+										</label>
+										<input type="text" class="form-control" name="no_of_rooms" id="no_of_rooms" placeholder="कोठा संख्या" t-att-value="asset.no_of_rooms"/>
+									</div>
+								</div>
+							</fieldset>
+							<!-- Vehicle fieldset -->
+							<fieldset class="form-fieldset row g-3 vehicle" id="vehicleFieldset" style="display: none;">
+								<span class="field-title">
+									सवारी साधन
+								</span>
+								<div class="col-md-6">
+									<label for="vehicle_type" class="form-label required">
+										सवारी साधन प्रकार
+									</label>
+									<input type="text" class="form-control" name="vehicle_type" id="vehicle_type" placeholder="प्रकार" t-att-value="asset.vehicle_type"/>
+								</div>
+							</fieldset>
+							<!-- Land fieldset -->
+							<fieldset class="form-fieldset row g-3 land" id="landFieldset" style="display: none;">
+								<span class="field-title">
+									जग्गा (क्षेत्रफल)
+								</span>
+								<div class="col-md-6">
+									<label for="total_kitta_number" class="form-label required" >
+										क्षेत्रफल
+									</label>
+									<input type="text" class="form-control" name="total_kitta_number" id="total_kitta_number" placeholder="क्षेत्रफल" t-att-value="asset.total_kitta_number"/>
+								</div>
+							</fieldset>
+							<div class="col-12 mt-4 form-button-container">
+								<!-- <button class="btn add-btn" id="add-btn" type="reset">
+									रिसेट गर्नुहोस
+								</button> -->
+								<button type="submit" class="btn btn-custom-primary">
+									अप्डेट
+									गर्नुहोस
+								</button>
+							
+							</div>
+						</form>
+					</div>
+				</div>
+			</t>
+			<script>
+				function showHideFieldsets() {
+				var assetName = document.getElementById('asset_name').value;
+				var buildingFieldset = document.getElementById('buildingFieldset');
+				var vehicleFieldset = document.getElementById('vehicleFieldset');
+				var landFieldset = document.getElementById('landFieldset');
+				console.log("dfgh", assetName);
+
+				
+				buildingFieldset.style.display = (assetName === '1') ? 'block' : 'none';
+				vehicleFieldset.style.display = (assetName === '2') ? 'block' : 'none';
+				landFieldset.style.display = (assetName === '3') ? 'block' : 'none';
+				}
+				
+				
+				
+			</script>
+		</template>
+	<!-- Program Details Template -->
+	<template id="org_program_details_template" name="Organization Basic Details">
+		<t t-call="website.layout">
+			<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript"></script>
+			<div class="page-with-breadcrumb">
+				<nav class="breadcrumb-container" aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="/organization/dashboard">
+								Dashboard
+							</a>
+						</li>
+						<li class="breadcrumb-item active" aria-current="page">
+							Basic Details
+						</li>
+					</ol>
+				</nav>
+				<div class="form-container">
+					<h1 class="form-title text-center my-4">
+						कार्यक्रमको विवरण
+					</h1>
+					<!-- multisteps-form -->
+					<div class="row justify-content-center align-items-center">
+						<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+							<div class="multisteps-form__progress">
+								<a class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+									समितिको विवरण
+								</a>
+								<a t-attf-href="/organization/meeting-details " class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									भेलाको विवरण
+								</a>
+								<a t-attf-href="/organization/purposes " class="multisteps-form__progress-btn js-active " type="button " title="page_third">
+									आयोजनाको प्रस्तावहरु
+								</a>
+								<a t-attf-href="/organization/member-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+									समितिको सदस्य विवरण
+								</a>
+								<a t-attf-href="/organization/attendee-details" class="multisteps-form__progress-btn  js-active" type="button" title="page_third">
+									सहभागीहरुको विवरण
+								</a>
+								<a t-attf-href="/organization/member/quota" class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									सदस्यताको प्रकारको विवरण
+								</a>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+										<a t-attf-href="/organization/fix-assets">
+											संस्थाको अचल सम्पति
+										</a>
+									</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									कार्यक्रमको विवरण
+								</button>
+							</div>
+						</div>
+					</div>
+					
+
+					<form class="form-content" t-attf-action="/organization/program-details/create" method="POST" enctype="multipart/form-data">
+						<div class="form-page active-form-page">
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									संस्थाको  कार्यक्रमको विवरण
+								</span>
+								<div class="col-md-6">
+									<label for="program_name" class="form-label required">
+										नाम
+									</label>
+									<input type="text" class="form-control" name="program_name" id="program_name" placeholder=" कार्यक्रमको नाम" required="true" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_purpose" class="form-label required">
+										अपेक्षा र उद्देश्य
+									</label>
+									<input type="text" class="form-control" name="program_purpose" id="program_purpose" placeholder=" कार्यक्रमको अपेक्षा र उद्देश्य" required="true" />
+								</div>
+							
+								<div class="col-md-6">
+									<label for="program_budget" class="form-label required">
+										बजेट
+									</label>
+									<input type="text" class="form-control" name="program_budget" id="program_budget" placeholder="Budget" required="true" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_collaborative_organization" class="form-label required">
+										साझेदार संस्था
+									</label>
+									<input type="text" class="form-control" name="program_collaborative_organization" id="program_collaborative_organization" placeholder="Enter Collaborative Organizations (comma-separated)" required="true" />
+								</div>
+
+							</fieldset>
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									कार्यक्रम लागु हुने समय र क्षेत्रको विवरण
+								</span>
+								<div class="col-md-6">
+									<label for="program_location" class="form-label required">
+										क्षेत्र
+									</label>
+									<input type="text" class="form-control" name="program_location" id="program_location" placeholder="कार्यक्रम लागु हुने क्षेत्र" required="true" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_start_time" class="form-label required">
+										देखि
+									</label>
+									<input type="text" class="form-control" name="program_start_time" id="program_start_time" placeholder="कार्यक्रम लागु हुने समय(देखि)" required="true" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_end_time" class="form-label required">
+										सम्म
+									</label>
+									<input type="text" class="form-control" name="program_end_time" id="program_end_time" placeholder=" कार्यक्रम लागु हुने समय( सम्म)" required="true" />
+								</div>
+							</fieldset>
+							
+
+							<div class="col-12 mt-4 form-button-container">
+								<button type="submit" class="btn btn-custom-primary">
+									सेभ गर्नुहोस
+								</button>
+							</div>
+						</div>
+					</form>
+					<div class="data-view-table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">
+											क्र.स.
+										</th>
+										<th scope="col">
+											नाम
+										</th>
+										<th scope="col">
+											क्षेत्र
+										</th>
+										<th scope="col">
+											बजेट
+										</th>
+										<th scope="col">
+											कार्यक्रम लागु हुने समय(देखि)
+										</th>
+										<th scope="col">
+											कार्यक्रम लागु हुने समय(सम्म)
+										</th>
+										
+										<th scope="col">
+											एक्सन
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<t t-set="i" t-value="1" />
+									<t t-foreach="program_list" t-as="program_list">
+										<tr>
+											<td id="sn" data-cell="sn">
+												<span t-esc="i" />
+												<t t-set="i" t-value="i+1" />
+											</td>
+											<td data-cell=" program_name">
+												<span t-field="program_list.program_name" />
+											</td>
+											<td data-cell="program_location">
+												<span t-field="program_list.program_location" />
+											</td>
+											<td data-cell="program_budget">
+												<span t-field="program_list.program_budget" />
+											</td>
+											<td data-cell="program_start_time">
+												<span t-field="program_list.program_start_time" />
+											</td>
+											<td data-cell="program_end_time">
+												<span t-field="program_list.program_end_time" />
+											</td>
+											<td data-cell="action" class="action-container">
+												<!-- Update t-attf-href="/organization/fix-assets/update/{{member.id}}" -->
+												<a t-attf-href="/organization/program-details/edit/{{program_list.id}}" class="btn-variant-six text-info">
+													<i class="fa fa-pencil-square-o" aria-hidden="true">
+													</i>
+												</a>
+												<!-- View Details -->
+												<a  t-attf-href="/organization/program-details/{{program_list.id}}" class="btn btn-variant-six text-success">
+													<i class="fa fa-eye" aria-hidden="true">
+													</i>
+												</a>
+												<!--  -->
+												<!-- Delete -->
+												<div class="btn btn-variant-six delete text-danger">
+													<i class="fa fa-trash" aria-hidden="true">
+													</i>
+													<input id="deleteID" type="text" class="hidden" />
+												</div>
+											</td>
+										</tr>
+									</t>
+								</tbody>
+							</table>
+						</div>
+					
+				</div>
+			</div>
+			<script type="text/javascript">
+				window.onload = function () {
+				
+				
+				}
+			</script>
+		</t>
+	</template>
+
+	<!-- Program Details View -->
+	<template id="org_program_details_view" name="Organization Basic Details">
+		<t t-call="website.layout">
+			<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript"></script>
+			<div class="page-with-breadcrumb">
+				<nav class="breadcrumb-container" aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="/organization/dashboard">
+								Dashboard
+							</a>
+						</li>
+						<li class="breadcrumb-item active" aria-current="page">
+							Basic Details
+						</li>
+					</ol>
+				</nav>
+				<div class="form-container">
+					<h1 class="form-title text-center my-4">
+						कार्यक्रमको विवरण
+					</h1>
+					<!-- multisteps-form -->
+					<div class="row justify-content-center align-items-center">
+						<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+							<div class="multisteps-form__progress">
+								<a class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+									समितिको विवरण
+								</a>
+								<a t-attf-href="/organization/meeting-details " class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									भेलाको विवरण
+								</a>
+								<a t-attf-href="/organization/purposes " class="multisteps-form__progress-btn js-active " type="button " title="page_third">
+									आयोजनाको प्रस्तावहरु
+								</a>
+								<a t-attf-href="/organization/member-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+									समितिको सदस्य विवरण
+								</a>
+								<a t-attf-href="/organization/attendee-details" class="multisteps-form__progress-btn  js-active" type="button" title="page_third">
+									सहभागीहरुको विवरण
+								</a>
+								<a t-attf-href="/organization/member/quota" class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									सदस्यताको प्रकारको विवरण
+								</a>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+										<a t-attf-href="/organization/fix-assets">
+											संस्थाको अचल सम्पति
+										</a>
+									</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									कार्यक्रमको विवरण
+								</button>
+							</div>
+						</div>
+					</div>
+					
+
+					<form class="form-content" t-attf-action="/organization/program-details/create" method="POST" enctype="multipart/form-data">
+						<div class="form-page active-form-page">
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									संस्थाको  कार्यक्रमको विवरण
+								</span>
+								<div class="col-md-6">
+									<label for="program_name" class="form-label required">
+										नाम
+									</label>
+									<input type="text" class="form-control" name="program_name" id="program_name" placeholder=" कार्यक्रमको नाम" required="true" t-att-value="programs_detail.program_name" disabled="disabled" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_purpose" class="form-label required">
+										अपेक्षा र उद्देश्य
+									</label>
+									<input type="text" class="form-control" name="program_purpose" id="program_purpose" placeholder=" कार्यक्रमको अपेक्षा र उद्देश्य" required="true" t-att-value="programs_detail.program_purpose" disabled="disabled" />
+								</div>
+							
+								<div class="col-md-6">
+									<label for="program_budget" class="form-label required">
+										बजेट
+									</label>
+									<input type="text" class="form-control" name="program_budget" id="program_budget" placeholder="Budget" required="true" t-att-value="programs_detail.program_budget" disabled="disabled"/>
+								</div>
+								<div class="col-md-6">
+									<label for="program_collaborative_organization" class="form-label required">
+										साझेदार संस्था
+									</label>
+									<input type="text" class="form-control" name="program_collaborative_organization" id="program_collaborative_organization" placeholder="Enter Collaborative Organizations (comma-separated)" required="true" t-att-value="programs_detail.program_collaborative_organization" disabled="disabled" />
+								</div>
+
+							</fieldset>
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									कार्यक्रम लागु हुने समय र क्षेत्रको विवरण
+								</span>
+								<div class="col-md-6">
+									<label for="program_location" class="form-label required">
+										क्षेत्र
+									</label>
+									<input type="text" class="form-control" name="program_location" id="program_location" placeholder="कार्यक्रम लागु हुने क्षेत्र" required="true" t-att-value="programs_detail.program_location" disabled="disabled" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_start_time" class="form-label required">
+										देखि
+									</label>
+									<input type="text" class="form-control" name="program_start_time" id="program_start_time" placeholder="कार्यक्रम लागु हुने समय(देखि)" required="true" t-att-value="programs_detail.program_start_time" disabled="disabled" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_end_time" class="form-label required">
+										सम्म
+									</label>
+									<input type="text" class="form-control" name="program_end_time" id="program_end_time" placeholder=" कार्यक्रम लागु हुने समय( सम्म)" required="true" t-att-value="programs_detail.program_end_time" disabled="disabled" />
+								</div>
+							</fieldset>
+						</div>
+					</form>		
+				</div>
+			</div>
+			<script type="text/javascript">
+				window.onload = function () {
+				
+				
+				}
+			</script>
+		</t>
+	</template>
+
+	<!-- Program Details Edit -->
+	<template id="org_program_details_edit" name="Organization Basic Details">
+		<t t-call="website.layout">
+			<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript"></script>
+			<div class="page-with-breadcrumb">
+				<nav class="breadcrumb-container" aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="/organization/dashboard">
+								Dashboard
+							</a>
+						</li>
+						<li class="breadcrumb-item active" aria-current="page">
+							Basic Details
+						</li>
+					</ol>
+				</nav>
+				<div class="form-container">
+					<h1 class="form-title text-center my-4">
+						कार्यक्रमको विवरण
+					</h1>
+					<!-- multisteps-form -->
+					<div class="row justify-content-center align-items-center">
+						<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+							<div class="multisteps-form__progress">
+								<a class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+									समितिको विवरण
+								</a>
+								<a t-attf-href="/organization/meeting-details " class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									भेलाको विवरण
+								</a>
+								<a t-attf-href="/organization/purposes " class="multisteps-form__progress-btn js-active " type="button " title="page_third">
+									आयोजनाको प्रस्तावहरु
+								</a>
+								<a t-attf-href="/organization/member-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+									समितिको सदस्य विवरण
+								</a>
+								<a t-attf-href="/organization/attendee-details" class="multisteps-form__progress-btn  js-active" type="button" title="page_third">
+									सहभागीहरुको विवरण
+								</a>
+								<a t-attf-href="/organization/member/quota" class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									सदस्यताको प्रकारको विवरण
+								</a>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+										<a t-attf-href="/organization/fix-assets">
+											संस्थाको अचल सम्पति
+										</a>
+									</button>
+								<button class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									कार्यक्रमको विवरण
+								</button>
+							</div>
+						</div>
+					</div>
+					
+
+					<form class="form-content" t-attf-action="/organization/program-details/create" method="POST" enctype="multipart/form-data">
+						<div class="form-page active-form-page">
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									संस्थाको  कार्यक्रमको विवरण
+								</span>
+								<div class="col-md-6">
+									<label for="program_name" class="form-label required">
+										नाम
+									</label>
+									<input type="text" class="form-control" name="program_name" id="program_name" placeholder=" कार्यक्रमको नाम" required="true" t-att-value="programs_detail.program_name" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_purpose" class="form-label required">
+										अपेक्षा र उद्देश्य
+									</label>
+									<input type="text" class="form-control" name="program_purpose" id="program_purpose" placeholder=" कार्यक्रमको अपेक्षा र उद्देश्य" required="true" t-att-value="programs_detail.program_purpose" />
+								</div>
+							
+								<div class="col-md-6">
+									<label for="program_budget" class="form-label required">
+										बजेट
+									</label>
+									<input type="text" class="form-control" name="program_budget" id="program_budget" placeholder="Budget" required="true" t-att-value="programs_detail.program_budget"/>
+								</div>
+								<div class="col-md-6">
+									<label for="program_collaborative_organization" class="form-label required">
+										साझेदार संस्था
+									</label>
+									<input type="text" class="form-control" name="program_collaborative_organization" id="program_collaborative_organization" placeholder="Enter Collaborative Organizations (comma-separated)" required="true" t-att-value="programs_detail.program_collaborative_organization" />
+								</div>
+
+							</fieldset>
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									कार्यक्रम लागु हुने समय र क्षेत्रको विवरण
+								</span>
+								<div class="col-md-6">
+									<label for="program_location" class="form-label required">
+										क्षेत्र
+									</label>
+									<input type="text" class="form-control" name="program_location" id="program_location" placeholder="कार्यक्रम लागु हुने क्षेत्र" required="true" t-att-value="programs_detail.program_location" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_start_time" class="form-label required">
+										देखि
+									</label>
+									<input type="text" class="form-control" name="program_start_time" id="program_start_time" placeholder="कार्यक्रम लागु हुने समय(देखि)" required="true" t-att-value="programs_detail.program_start_time" />
+								</div>
+								<div class="col-md-6">
+									<label for="program_end_time" class="form-label required">
+										सम्म
+									</label>
+									<input type="text" class="form-control" name="program_end_time" id="program_end_time" placeholder=" कार्यक्रम लागु हुने समय( सम्म)" required="true" t-att-value="programs_detail.program_end_time" />
+								</div>
+							</fieldset>
+						</div>
+					</form>		
+				</div>
+			</div>
+			<script type="text/javascript">
+				window.onload = function () {
+				
+				
+				}
+			</script>
+		</t>
+	</template>
+	</data>
+</odoo>

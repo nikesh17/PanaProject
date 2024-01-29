@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="tole_bikash_menu"
+        name="Tole Bikash"
+        action="tole_bikash_info"
+        sequence="10"/>
+
+    <record id="tole_bikash_info" model="ir.actions.act_window">
+        <field name="name">Tole Bikash</field>
+        <field name="res_model">tole.bikash.info</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent" >
+                Add New
+            </div>
+        </field>
+    </record>
+
+    <menuitem
+        id="tole_bikash_configurations"
+        name="Configurations"
+        parent="tole_bikash_menu"
+        sequence="21" />
+
+<!-- 
+    <menuitem
+        id="total_bikash_members_menu"
+        name="Tole Bikash Members"
+        action="tole_bikash_members"
+        parent="tole_bikash_configurations"
+        sequence="10"/>
+
+    <record id="tole_bikash_members" model="ir.actions.act_window">
+        <field name="name">Tole Bikash Members</field>
+        <field name="res_model">tole.bikash.member</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>    
+        </field>
+    </record>
+
+
+    <menuitem
+        id="total_bikash_decision_menu"
+        name="Tole Bikash Decision"
+        action="tole_bikash_decision"
+        parent="tole_bikash_configurations"
+        sequence="10"/> 
+
+    <record id="tole_bikash_decision" model="ir.actions.act_window">
+        <field name="name">Tole Bikash Decision</field>
+        <field name="res_model">tole.bikash.decision</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>    
+        </field>
+    </record>
+
+
+    <menuitem
+        id="total_bikash_proposal_menu"
+        name="Tole Bikash Proposal"
+        action="tole_bikash_proposal"
+        parent="tole_bikash_configurations"
+        sequence="10"/>
+
+    <record id="tole_bikash_proposal" model="ir.actions.act_window">
+        <field name="name">Tole Bikash Proposal</field>
+        <field name="res_model">tole.bikash.proposal</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>    
+        </field>
+    </record>
+    
+
+    <menuitem
+        id="total_bikash_meeting_details"
+        name="Tole Bikash Meeting"
+        parent="tole_bikash_configurations"
+        sequence="10"/>
+
+    <record id="tole_bikash_meeting" model="ir.actions.act_window">
+        <field name="name">Tole Bikash Proposal</field>
+        <field name="res_model">tole.bikash.meeting.details</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>    
+        </field>
+    </record>
+
+    <menuitem
+        id="total_bikash_attendees_menu"
+        name="Tole Bikash attendees"
+        parent="tole_bikash_configurations"
+        sequence="10"/>
+
+    <record id="tole_bikash_attendees" model="ir.actions.act_window">
+        <field name="name">Tole Bikash attendees</field>
+        <field name="res_model">tole.bikash.attendees</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>    
+        </field>
+    </record> -->
+
+    <record id="action_documents" model="ir.actions.act_window">
+        <field name="name">Documents</field>
+        <field name="res_model">documents</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem
+        id="documents_menu"
+        name="Documents"
+        action="action_documents"
+        parent="tole_bikash_menu"
+        sequence="10"/>
+
+</odoo>

@@ -1,0 +1,13 @@
+{
+    "active": ["Active"],
+    "code": ["Code"],
+    "company_ward": ["Company Ward"],
+    "delete_date": ["Delete Date"],
+    "delete_uid": ["Deleted  By"],
+    "display_order": ["Display Order"],
+    "feet_per_unit": ["Feet Per Unit"],
+    "is_deleted": ["Deleted"],
+    "name_en": ["Name EN"],
+    "name_np": ["Name NEP"],
+    "remarks": ["Remarks"]
+}

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="organization_member_Type_detail_view_form" model="ir.ui.view">
+        <field name="name">organization_member_Type_detail.view.form</field>
+        <field name="model">organization.member.quota</field>
+        <field name="arch" type="xml">
+            <form string="Organization  Form">
+                <sheet>
+                       
+                        <group  name="Member category detail" string="Member category detail">
+                            <group>
+                                <field name="category" />
+                            </group>
+                            <group>
+                              
+                                <field name="category_total_numbers" />
+                            </group>
+                             <!-- <group name="Total Member population Record" string="Total Member population Record">
+                                <field name="member_male_population" />
+                                <field name="member_female_population" />
+                                <field name="member_other_population" />
+                            </group> -->
+                            
+                        </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

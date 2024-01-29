@@ -1,0 +1,15 @@
+<odoo> 
+    <!-- inherite form view of ir.mail_server -->
+    <record id="view_ir_mail_server_domain_field" model="ir.ui.view">
+        <field name="name">Mail Server</field>
+        <field name="model">ir.mail_server</field>
+        <field name="inherit_id" ref="base.ir_mail_server_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="///field[@name='sequence']" position="after">
+                <field name="company_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

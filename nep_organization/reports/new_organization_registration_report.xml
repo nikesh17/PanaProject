@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Define the paper format -->
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Define the report action -->
+    <record id="org_new_org_registration_report" model="ir.actions.report">
+        <field name="name">New Organization Registration Report</field>
+        <field name="model">organization.information</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nep_organization.organization_new_org_registration_report</field>
+        <field name="binding_model_id" ref="model_organization_information" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <!-- Define the template for the report -->
+    <template id="organization_new_org_registration_report">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    .centered {
+                        text-align: center;
+                    }
+                    
+                    .left {
+                        text-align: left;
+                        margin-left: 30px;
+                    }
+                    /* Commented out styles - remove if not needed */
+                     h3{
+                        font-size:22px;
+                                <!-- font-weight:bold -->
+                     }
+                     h4{
+                        font-size:18px;
+                     }
+                    p{
+                        font-size:14px;
+                    }
+                     td span{
+                        font-size:14px;
+                    }
+                           
+                </style>
+                <!-- Loop through records -->
+                <t t-foreach="docs" t-as="o">
+                    <br/>
+                    <!-- Header section -->
+                    <div class="centered">
+                        <h3>अनुसूची-3</h3>
+                        <h3>परिच्छेद ६ नियम २८.१ (१) बमोजिम</h3>
+                        <h3>नयाँ संस्था दर्ता सिफारिस</h3>
+                    </div><br/>
+
+                    <!-- Date section -->
+                    <div class="date" style="text-align:right;">
+                        <p>मिति: <span t-field="o.registration_date_bs"/></p>
+                    </div><br/>
+
+                    <!-- Left-aligned section -->
+                    <div class="left">
+                        <p>श्री नगर प्रमुख ज्यू,</p>
+                        <p><span t-field="o.org_municipality.palika_name_np"/>,</p>
+                        <p><span t-field="o.org_district.district_name_np" /></p>
+                    </div><br/>
+
+                    <!-- Centered section -->
+                    <div class="centered">
+                        <h4>विषय : नयाँ संस्था दर्ताका लागि सिफारिस पाउँ ।</h4>
+                        <br />
+                    </div><br/>
+
+                    <!-- Main body section -->
+                    <div class="main_body" style="line-height:2.5; padding-bottom:60px;">
+                        <p>
+                            उपरोक्त सम्बन्धमा <t t-foreach="o.organization_purpose" t-as="purpose">
+                                <span t-field="purpose.document_name" /></t> । मुख्य उद्देश्य राखी
+                            <span t-field="o.org_name_np" /> नामको <span t-field="o.org_province.name_np" />, <span t-field="o.org_district.district_name_np" />,
+                            <span t-field="o.org_municipality.palika_name_np" /> ठेगानामा कार्यालय रहने गरी संस्था स्थापना गर्न <span t-field="o.org_name_np" />
+                            संस्थाको सदस्यहरुको निर्णयहरुबाट, आवश्यक पर्ने सम्पूर्ण कागजात संलग्न राखी निवेदन पेस गरेका छौँ । जिल्ला
+                            प्रशासन कार्यालय, गोरखामा संस्था दर्ताका लागि सिफारिस गरिदिनुहुन अनुरोच्रै छ ।
+                        </p>
+                    </div>
+
+                    <!-- Right-aligned section -->
+                    <div style="text-align:right">
+                        <p>............................</p>
+                        <p style="margin-top: -1.5em; display: inline-block;">निवेदक</p>
+                    </div>
+
+                    <!-- Left-aligned section -->
+                    <div class="left">
+                        <p>संस्थाको मुख्य उद्देश्यहरु</p>
+                        <t t-foreach="o.organization_purpose" t-as="purpose">
+                        <span t-field="purpose.purpose_text" /></t>            
+                    </div>
+
+                    <!-- Main body section -->
+                    <div class="main_body" style="line-height:2; padding-bottom:60px;">
+                        <!-- Table start -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">त्र.स .</th>
+                                    <th rowspan="2">नाम थर </th>
+                                    <th rowspan="2">बुबाको नाम</th>
+                                    <th rowspan="2">आमाको नाम</th>
+                                    <th rowspan="2">बजेको नाम</th>
+                                    <th rowspan="2">लिङ्ग</th>
+                                    <th rowspan="2">पद </th>
+                                    <th rowspan="2">एस्थई ठेगाना </th>
+                                    <th rowspan="2">शैछिक योग्यता </th>
+                                    <th rowspan="2">दस्तखत </th>
+                                </tr>
+                            </thead>
+                            <tbody style="border-top:none; font-size:12px; ">
+                                <t t-set="i" t-value="1" />
+                                <!-- Loop through organization members -->
+                                <t t-foreach="o.organization_members_ref" t-as="member">
+                                    <tr>
+                                        <td><span t-esc="i" /><t t-set="i" t-value="i+1" /></td>
+                                        <td><span t-field="member.member_full_name" /></td>
+                                        <td><span t-field="member.member_father_name" /></td>
+                                        <td><span t-field="member.member_mother_name" /></td>
+                                        <td><span t-field="member.member_grandfather_name" /></td>
+                                        <td><span t-field="member.member_gender" /></td>
+                                        <td><span t-field="member.organization_member_designation" /></td>
+                                        <td><span t-field="member.member_address" /></td>
+                                        <td><span t-field="member.qualification_level_" /></td>
+
+                                        <td>
+                                            <t t-if="member.member_signature">
+                                                <img class="dynamic-img f-center"
+                                                    t-attf-src="data:image/*;base64,{{member.member_signature}}"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <!-- Table End -->
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

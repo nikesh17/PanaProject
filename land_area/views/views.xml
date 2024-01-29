@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="tax_measurement.list">
+      <field name="name">tax_measurement list</field>
+      <field name="model">tax_measurement.tax_measurement</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="tax_measurement.action_window">
+      <field name="name">tax_measurement window</field>
+      <field name="res_model">tax_measurement.tax_measurement</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="tax_measurement.action_server">
+      <field name="name">tax_measurement server</field>
+      <field name="model_id" ref="model_tax_measurement_tax_measurement"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="tax_measurement" id="tax_measurement.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="tax_measurement.menu_1" parent="tax_measurement.menu_root"/>
+    <menuitem name="Menu 2" id="tax_measurement.menu_2" parent="tax_measurement.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="tax_measurement.menu_1_list" parent="tax_measurement.menu_1"
+              action="tax_measurement.action_window"/>
+    <menuitem name="Server to list" id="tax_measurement" parent="tax_measurement.menu_2"
+              action="tax_measurement.action_server"/>
+-->
+  </data>
+</odoo>

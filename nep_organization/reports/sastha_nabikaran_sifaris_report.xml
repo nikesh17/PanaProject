@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="org_nabikaran_sifaris_report" model="ir.actions.report">
+        <field name="name">Nabikaran Sifaris Report</field>
+        <field name="model">organization.information</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nep_organization.organization_nabikaran_sifaris</field>
+        <field name="binding_model_id" ref="model_organization_information" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <template id="organization_nabikaran_sifaris">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+            <style>
+            .centered{
+                text-align:center;
+
+            }
+            .main{
+                text-align:left;
+            }
+            .main_body{
+                font-size:16px;
+            }
+            </style>
+                
+
+                <t t-foreach="docs" t-as="o">
+                    <div class="centered">
+                        <h4>अनुसूची-5</h4>
+                        <h4>परिच्छेद 6  नियम 28.2 (1) बमोजिम</h4>
+                        <h4>संस्था नविकरण सिफारिस  </h4> <br /><br />
+                        <div class="date" style="text-align:right; margin-right:10px;">
+                            <p> मिति: <span t-field="o.registration_date_bs" /></p>
+                        </div>
+                         <div class="main">
+                        <p>श्री प्रमुख ज्यू</p>
+                        <p><span t-field="o.org_municipality.palika_name_np" /> कार्यालय</p>
+                        <p><span t-field="o.org_municipality.palika_name_np" /> , <span t-field="o.org_district.district_name_np" /> ।</p>
+                    </div>
+                        
+                    </div>
+                    <br />
+                    <div class="centered">
+                        <h5>विषय:संस्था नविकरणका लागि सिफारिस पाउँ ।</h5> <br /><br />
+                    </div>
+                    <br />
+                    <div class="main_body" style="line-height:2.5; padding-bottom:60px;">
+                        <p>
+                            उपरोक्त सम्वन्धमा <span t-field="o.org_district.district_name_np" /> जिल्लामा दर्ता भएको दर्ता नं 21 को
+                           <span t-field="o.org_name_np" /> नामको <span t-field="o.org_municipality.palika_name_np" />, <span t-field="o.org_district.district_name_np" />, <span t-field="o.org_province.name_np" /> ठेगानाको
+                            यस संस्थाको आ.व. <span t-field="o.org_ward" /> का लागि नविकरण गर्न आवश्यक
+                            पर्ने सम्पुर्ण कागजात संलग्न राखी सम्बन्धित जिल्ला प्रशासन कार्यालयमा
+                            नविकरणका लागि सिफारिस गरिदिनुहुन अनुरोध छ ।
+                        </p>
+                    </div>
+                   <div style="text-align:right;">
+    <p>...........................................</p>
+    <p style=" margin-right:30px;">निवेदक</p>
+</div>
+
+                    
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

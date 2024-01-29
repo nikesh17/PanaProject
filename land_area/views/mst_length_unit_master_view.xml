@@ -1,0 +1,58 @@
+<odoo>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="view_mst_length_unit_master_action_window">
+        <field name="name">Length Unit</field>
+        <field name="res_model">mst.length.unit.master</field>
+        <field name="view_mode">tree,graph,kanban,form</field>
+        <field name="domain">[('is_deleted','=',(False))]</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_mst_length_unit_master_list">
+        <field name="name">Length Unit List</field>
+        <field name="model">mst.length.unit.master</field>
+        <field name="arch" type="xml">      
+            <tree create="False">
+                <field name="code"/>
+                <field name="name_np"/>
+                <field name="name_en"/>
+                <field name="feet_per_unit"/>
+                <field name="remarks"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    
+            
+
+    <record id="view_mst_length_unit_master_form" model="ir.ui.view">
+        <field name="name">Length Unit</field>
+        <field name="model">mst.length.unit.master</field>
+        <field name="arch" type="xml">
+            <form string="member">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="name_np"/>
+                            <field name="name_en"/>
+                        </group>
+                        <group>
+                            <field name="feet_per_unit"/>
+
+                        </group>
+                        <group>
+                            <field name="remarks"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+ 
+    
+
+</odoo>

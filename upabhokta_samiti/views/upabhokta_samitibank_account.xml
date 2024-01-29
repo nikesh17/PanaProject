@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="upabhokta_samiti_bank_account_view_tree" model="ir.ui.view">
+        <field name="name">upabhokta_samiti_bank_account.view.tree</field>
+        <field name="model">upabhokta.samiti.bank.account</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="bank_name"></field>
+                <field name="bank_location"></field>
+                <field name="bank_account"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="upabhokta_samiti_bank_account_view_form" model="ir.ui.view">
+        <field name="name">upabhokta_samiti_bank_account.view.tree</field>
+        <field name="model">upabhokta.samiti.bank.account</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="bank_name"></field>
+                        <field name="bank_location"></field>
+                        <field name="bank_account"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

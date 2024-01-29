@@ -1,0 +1,21 @@
+<odoo>
+    <record id="upbhokta_samiti_email_template_verified_" model="mail.template">
+    <field name="name">Organization form Request Template</field>
+    <field name="model_id" ref="upabhokta_samiti.model_upabhokta_samiti_info"/>
+    <field name="subject">Organization Form Request Accepted </field>
+    <field name="email_from">"{{ user.email}}"</field>
+    <field name="email_to">"{{object.contact_person_email_}}"</field>
+    <field name="report_template" ref="upabhokta_samiti.action_Darta_Nibedan_report"></field>
+    <field name="report_name">Upabhokta Samiti</field>
+    <field name="body_html" type="html">
+        <div>
+                 Dear <t t-out="object.upabhokta_samiti_name or ''"></t>,<br/><br/>
+                <p>We are pleased to inform you that your organization form registration request has been accepted.
+                 The verification process is complete, and your verification number is:.</p>
+                <p>Thank you for choosing our services. If you have any further inquiries or need assistance, please feel free to contact us.</p>
+                <p>Best regards,<br/></p>
+                <t t-out="object.municipality.palika_name_np"></t>                
+            </div>
+    </field>
+</record>
+</odoo>

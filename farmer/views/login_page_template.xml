@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="login_layout_inherited" inherit_id="web.login" name="Login Layout">
+        <xpath expr="//form[@class='oe_login_form']" position="before">
+            <!-- <img t-if="request.company_bg_img" style="position:absolute;height:90vh;width:90vw;left:5vw;z-index:-1;" t-att-src="image_data_uri(request.company_bg_img)"/> -->
+            <div class="d-flex flex-column m-3 p-3 justify-content-center align-items-center" style="text-align:center;background-size:cover;">
+                <b>
+                    <h3><span t-if="request.company_palika_info" t-esc="request.company_palika_info"/></h3>
+                    <h4><span t-if="request.company_title1" t-esc="request.company_title1"/></h4>
+                    <h4><span t-if="request.company_title2" t-esc="request.company_title2"/></h4>
+                    <h4><span t-if="request.company_title3" t-esc="request.company_title3"/></h4>
+                </b>
+            </div>
+        </xpath>
+        <xpath expr="//form[@class='oe_login_form']" position="attributes">
+            <attribute name="style">margin-top:0px;padding:20px 40px;background-color:#41C59A;color:white;max-width:500px</attribute>
+        </xpath>
+    </template>
+</odoo>

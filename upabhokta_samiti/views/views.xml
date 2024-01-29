@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+    <record id="project_proposal_view_form" model="ir.ui.view">
+      <field name="name">project_proposal.view.form</field>
+      <field name="model">upabhokta.samiti.project.proposal</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <group>
+                <field name="signed_document" widget="pdf_viewer" />
+              </group>
+              <group>
+                <field name="document_name" />
+              </group>
+              <group>
+                <field name="proposal_text" />
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

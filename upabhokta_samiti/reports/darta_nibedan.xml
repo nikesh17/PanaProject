@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_Darta_Nibedan_report" model="ir.actions.report">
+        <field name="name">Darta Nibedan</field>
+        <field name="model">upabhokta.samiti.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">upabhokta_samiti.Darta_Nibedan</field>
+        <field name="binding_model_id" ref="model_upabhokta_samiti_info" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <template id="Darta_Nibedan">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    @font-face {
+                    font-family: 'kalimati-regular';
+                    src: url('/upabhokta_samiti/static/src/fonts/kalimati_regular.otf')
+                    format('truetype');
+                    font-weight: normal;
+                    font-style: normal;
+                    }
+                    *{
+                    font-family:kalimati-regular !important;
+                    }
+                    .img-signature{
+                        width:100px;
+                        height:60px
+                        margin-bottom:50px;
+                    }
+                    .sign{
+                        text-align:center;
+                    }
+                </style>
+
+                <t t-foreach="docs" t-as="o">
+                    <style>
+
+                    </style>
+                    <center>
+                        <h3>अनुसूची-२</h3>
+                        <h4>(दफा ११ को उपदफा (१) सँगसम्बन्धित )</h4>
+                    </center>
+                    <br />
+
+                    <div class="main">
+                        <p>श्री प्रमुख प्रशासकीय अधिकृतज्यू</p>
+                        <p><span t-field="o.municipality" /> कार्यालय</p>
+                        <p><span t-field="o.municipality" /> , <span t-field="o.district" /> ।</p>
+                    </div>
+
+                    <div class="date" style="text-align:right; margin-right:10px;">
+                        <p> मिति: <span t-esc="o.registration_date_bs" /></p>
+                    </div>
+                    <br />
+                    <center>
+                        <p>
+                            <b>उपभोक्ता समिति दर्ता निवेदन</b>
+                        </p>
+                    </center>
+                    <br />
+                    <!-- <div class="main_body" style="line-height:2; padding-bottom:60px;">
+                        <p>यस नगरपालिकाको वडा नं<span style=" padding:0px 10px; font-weight:bold;"
+                                t-field="o.ward" /> टोल<span
+                                style=" padding:0px 10px; font-weight:bold;" t-field="o.tole" /> मा <span
+                                style=" padding:0px 10px; font-weight:bold;"
+                                t-field="o.upabhokta_samiti_name" /> कार्य गर्नका लागि मिति <span
+                                style=" padding:0px 10px; font-weight:bold;"
+                                t-field="o.registration_date_bs" /> मा सम्बन्धित उपभोक्ताको भेलाबाट
+                            उपभोक्ता समिति गठन गर्ने निर्णय भएको र उक्त निर्णय बमोजिम उपभोक्ता समिति
+                            दर्ताको यो निवेदन पेश गरेका छौं ।</p>
+                    </div> -->
+                    <!-- <div class="row justify-content-center sign">
+                        <t t-foreach="o.upabhokta_samiti_members_ref" t-as="samiti_member">
+                            <t t-if="samiti_member.member_designation == 'chairperson_president' ">
+                                <div class="col-4">
+                                    <img class="img-signature"
+                                        t-attf-src="data:image/*;base64,{{samiti_member.member_signature}}" />
+                                    <div class="col-3 text-center w-100 mt-3" style="text-align:center;">
+                                        अध्यक्ष
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-if="samiti_member.member_designation == 'vice_chairperson_vice_president' ">
+                                <div class="col-4" >
+                                    <img class="img-signature"
+                                        t-attf-src="data:image/*;base64,{{samiti_member.member_signature}}" />
+                                    <div class="col-3 text-center w-100 mt-3" style="text-align:center;">
+                                        उपाध्यक्ष
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-if="samiti_member.member_designation == 'secretary' ">
+                                <div class="col-4 ">
+                                    <img class="img-signature" t-attf-src="data:image/*;base64,{{samiti_member.member_signature}}" />
+                              
+                                    <div class="col-3 text-center w-100 mt-3" style="text-align:center;">
+                                        सचिव
+                                    </div>
+                                </div>
+                            </t>
+                        </t>
+                    </div> -->
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

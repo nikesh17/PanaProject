@@ -1,0 +1,1733 @@
+<odoo>
+	<data>
+		<!-- Dashboard -->
+		<template id="tole_bikash_dashboard_template" name=" Tole Bikash Registration |Tole Bikash  Dashboard">
+			<t t-call="website.layout">
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" />
+				<script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous">
+				</script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js">
+				</script>
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+				</script>
+				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+				</script>
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+				</script>
+				<div class="wrapper">
+					<div class="grey-bg container-fluid px-5 template-wrapper ">
+						<div class="col-12 notification-badge-container">
+							<div class="dropdown show">
+								<div class="dropdown">
+									<button type="button" class="icon-button" data-toggle="dropdown">
+										<i class="fa fa-bell" aria-hidden="true">
+										</i>
+										<span class="icon-button__badge" id="counter-badge">
+											0
+										</span>
+									</button>
+									<div class="dropdown-menu notifications-container mt-1" aria-labelledby="dropdownMenuButton">
+										<t t-foreach="notifications" t-as="notification">
+											<a class="dropdown-item notification-counter" t-attf-href="/upabhokta-samiti/user/notification">
+												<div class="notification-item px-1 py-2">
+													<div class="notification-title">
+														<span t-raw="notification.message" style="line-height:0.1" />
+													</div>
+													<div class="notification-datetime">
+														<span t-raw="notification.sent_at" />
+													</div>
+												</div>
+											</a>
+										</t>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 mt-3">
+							<h4 class="text-uppercase">
+								Applicant Portal(आवेदक पोर्टल)
+							</h4>
+						</div>
+						<div class="mb-3" style="display:flex;justify-content:end;">
+							<div class="dropdown show">
+								<div class="dropdown">
+									<a class="btn btn-sm dropdown-toggle" style="border:1px solid grey;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Download PDF
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" t-attf-href="/upabhokta-samiti/darta-nibedan/">
+											दर्ता
+											निवेदन
+										</a>
+										<!--
+										<a class="dropdown-item"
+										t-attf-href="/upabhokta-samiti/pramadpatra-report/{{upabhokta_samiti_info.id}}">प्रमाण
+										पत्र </a>
+										-->
+										<!--
+										<a class="dropdown-item"
+										t-attf-href="/upabhokta-samiti/pramadpatra-report/{{upabhokta_samiti_info.id}}">समितिको
+										लगत </a>
+										-->
+										<a class="dropdown-item" t-attf-href="/upabhokta-samiti/pramadpatra-report/">
+											समिति
+											गठन
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/tole-bikash/basic-details">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/form.png" />
+												</div>
+												<span>
+													संस्थाको विवरण
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/tole-bikash/meeting-details">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/details.png" />
+												</div>
+												<span>
+													भेला विवरण
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/tole-bikash/proposal">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/proposal.png" />
+												</div>
+												<span>
+													आयोजनाका प्रस्तावहरु
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/tole-bikash/member-details">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/anugaman.jpg" />
+												</div>
+												<span>
+													सदस्यहरुको विवरण
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/tole-bikash/attendees">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/attendees.png" />
+												</div>
+												<span>
+													सहभागीहरुको विवरण
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-xl-3 col-sm-6 col-12 ">
+								<a t-attf-href="/tole-bikash/decisions">
+									<div class="card card-link">
+										<div class="media">
+											<div class="media-body text-center">
+												<div class="card-icon">
+													<img src="/upabhokta_samiti/static/src/images/proposal.png" />
+												</div>
+												<span>
+													आयोजनाका निर्णयहरु 
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript" src="/nep_organization/static/src/js/dashboard.js" />
+			</t>
+		</template>
+		<!-- Tole Bikash Basic Details -->
+		<template id="tole_bikash_basic_details_template" name="Tole Bikash Basic Details">
+			<t t-call="website.layout">
+				<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Basic Details
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							टोल विकास संस्थाको विवरण
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a t-attf-href="/tole-bikash/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+										संस्थाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/meeting-details" class="multisteps-form__progress-btn" type="button" title="page_second">
+										भेलाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/proposal" class="multisteps-form__progress-btn" type="button" title="page_third">
+										आयोजनाको प्रस्तावहरु
+									</a>
+									<a t-attf-href="/tole-bikash/member-details" class="multisteps-form__progress-btn " type="button" title="page_second">
+										समितिको सदस्य विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/attendees" class="multisteps-form__progress-btn " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/decisions" class="multisteps-form__progress-btn" type="button" title="page_four">
+										आयोजनाको निर्णयहरु
+									</a>
+								</div>
+							</div>
+						</div>
+						<t t-if="check_if_tole_bikash_exists">
+							<form class="form-content" t-attf-action="/tole-bikash/basic-details" method="POST" enctype="multipart/form-data">
+								<div class="form-page active-form-page">
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											टोल विकास संस्थाको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="tole_bikash_name_en" class="form-label required">
+												नाम(अंग्रेजीमा)
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_name_en" id="tole_bikash_name_en" placeholder="Tole Bikash Name(English) " required="true" t-att-value="check_if_tole_bikash_exists.tole_bikash_name_en" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_name_np" class="form-label required">
+												नाम(नेपालीमा)
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_name_np" id="tole_bikash_name_np" placeholder="Tole Bikash Name(Nepali)" required="true" t-att-value="check_if_tole_bikash_exists.tole_bikash_name_np" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_type" class="form-label required">
+												प्रकार
+											</label>
+											<select id="tole_bikash_type" name="tole_bikash_type" class="form-select" required="true">
+												<t t-foreach="org_external_details['organization_type']" t-as="tole_type">
+													<t t-if="check_if_tole_bikash_exists.tole_bikash_type.id==tole_type.id">
+														<option t-attf-value="#{tole_type.id}" t-field="tole_type.type" selected="selected" />
+													</t>
+													<t t-else="">
+														<option t-attf-value="#{tole_type.id}" t-field="tole_type.type" />
+													</t>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="organization_category" class="form-label required">
+												तह
+											</label>
+											<select class="form-select" name="organization_category" id="organization_category">
+												<option value="1">
+													Select
+												</option>
+												<!--
+												<option
+												t-attf-value="#{org_external_details['org_category_id']}"
+												>
+												<t
+												t-esc="org_external_details['org_category_name']" />
+												</option>
+												-->
+											</select>
+										</div>
+									</fieldset>
+									<!-- Tole Bikash Contacts -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सम्पर्क विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="tole_bikash_email" class="form-label required">
+												इमेल
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_email" id="tole_bikash_email" required="true" placeholder="Email" t-att-value="check_if_tole_bikash_exists.tole_bikash_email" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_telephone" class="form-label required">
+												टेलिफोन
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_telephone" id="tole_bikash_telephone" required="true" placeholder="Telephone" t-att-value="check_if_tole_bikash_exists.tole_bikash_telephone" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_postbox_number" class="form-label required">
+												पोस्ट बक्स नम्बर
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_postbox_number" id="tole_bikash_postbox_number" required="true" placeholder="Post box" t-att-value="check_if_tole_bikash_exists.tole_bikash_postbox_number" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_fax_number" class="form-label required">
+												फ्याक्स नम्बर
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_fax_number" id="tole_bikash_fax_number" required="true" placeholder="Fax" t-att-value="check_if_tole_bikash_exists.tole_bikash_fax_number" />
+										</div>
+									</fieldset>
+									<!-- Location -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											स्थान सम्बन्धि विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="province" class="form-label required">
+												प्रदेश
+											</label>
+											<select id="province" name="province" class="form-select" required="true" onchange="upadateDistricts()">
+												<t t-foreach="org_external_details['provinces']" t-as="province">
+													<t t-if="check_if_tole_bikash_exists.province.id==province.id">
+														<option t-attf-value="#{province.id}" t-field="province.name_np" selected="selected" />
+													</t>
+													<t t-else="">
+														<option t-attf-value="#{province.id}" t-field="province.name_np" />
+													</t>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="district" class="form-label required">
+												जिल्ला
+											</label>
+											<select id="district" name="district" class="form-select" required="true">
+												<t t-foreach="org_external_details['districts']" t-as="district">
+													<t t-if="check_if_tole_bikash_exists.district.id==district.id">
+														<option t-attf-value="#{district.id}" t-field="district.district_name_np" selected="selected" />
+													</t>
+													<t t-else="">
+														<option t-attf-value="#{district.id}" t-field="district.district_name_np" />
+													</t>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="municipality" class="form-label required">
+												नगर/गाँउ पालिका
+											</label>
+											<select id="municipality" name="municipality" class="form-select" required="true">
+												<t t-foreach="org_external_details['palika']" t-as="palika">
+													<t t-if="check_if_tole_bikash_exists.municipality.id==palika.id">
+														<option t-attf-value="#{palika.id}" t-field="palika.palika_name_np" selected="selected" />
+													</t>
+													<t t-else="">
+														<option t-attf-value="#{palika.id}" t-field="palika.palika_name_np" />
+													</t>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-3">
+											<label for="ward" class="form-label required">
+												वडा
+											</label>
+											<input type="text" class="form-control" name="ward" id="ward" required="true" placeholder="वडा" t-att-value="check_if_tole_bikash_exists.ward" />
+										</div>
+										<div class="col-md-3">
+											<label for="tole" class="form-label required">
+												टोल
+											</label>
+											<input type="text" class="form-control" name="tole" id="tole" required="true" placeholder="टोल" t-att-value="check_if_tole_bikash_exists.tole" />
+										</div>
+									</fieldset>
+									<!-- Border Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सिमानाको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="east" class="form-label ">
+												पूर्व सिमाना
+											</label>
+											<input type="text" class="form-control" name="east" id="east" required="true" t-att-value="check_if_tole_bikash_exists.east" />
+										</div>
+										<div class="col-md-6">
+											<label for="west" class="form-label ">
+												पश्चिम सिमाना
+											</label>
+											<input type="text" class="form-control" name="west" id="west" required="true" t-att-value="check_if_tole_bikash_exists.west" />
+										</div>
+										<div class="col-md-6">
+											<label for="north" class="form-label ">
+												उत्तर सिमाना
+											</label>
+											<input type="text" class="form-control" name="north" id="north" required="true" t-att-value="check_if_tole_bikash_exists.north" />
+										</div>
+										<div class="col-md-6">
+											<label for="south" class="form-label">
+												दक्षिण सिमाना
+											</label>
+											<input type="text" class="form-control mb-4" name="south" id="south" placeholder="South Border " t-att-value="check_if_tole_bikash_exists.south" />
+										</div>
+									</fieldset>
+									<!-- Contact person details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सम्पर्क व्यक्तिको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="contact_person_name" class="form-label required ">
+												नाम
+											</label>
+											<input type="text" class="form-control" name="contact_person_name" id="contact_person_name" t-att-value="check_if_tole_bikash_exists.contact_person_name" />
+										</div>
+										<div class="col-md-6">
+											<label for="contact_person_designation" class="form-label required">
+												पद
+											</label>
+											<select id="contact_person_designation" name="contact_person_designation" class="form-select" required="true">
+												<t t-foreach="org_external_details['contact_person_designation']" t-as="designation">
+													<t t-if="check_if_tole_bikash_exists.contact_person_designation.id==designation.id">
+														<option t-attf-value="#{designation.id}" t-field="designation.organization_samiti_designations" selected="selected" />
+													</t>
+													<t t-else="">
+														<option t-attf-value="#{designation.id}" t-field="designation.organization_samiti_designations" />
+													</t>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="contact_person_phone" class="form-label required">
+												सम्पर्क न.
+											</label>
+											<input type="text" class="form-control" name="contact_person_phone" id="contact_person_phone" t-att-value="check_if_tole_bikash_exists.contact_person_phone" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_contact_person_email" class="form-label required">
+												इमेल
+											</label>
+											<input type="text" class="form-control" name="contact_person_email" id="organization_contact_person_email" t-att-value="check_if_tole_bikash_exists.contact_person_email" />
+										</div>
+									</fieldset>
+									<!-- Other Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="tole_bikash_logo" class="form-label">
+												संगठनको लोगो
+											</label>
+											<input type="file" class="form-control mb-4" name="tole_bikash_logo" id="tole_bikash_logo" placeholder="संगठनको लोगो " accept=".png, .jpg, .jpeg" t-attf-value="#{tole_bikash_logo or ''}" />
+											<img t-attf-src="data:image/*;base64,{{check_if_tole_bikash_exists.tole_bikash_logo}}" src="" alt="Uploaded Image" id="imagePreview" style="max-width:150px;" />
+										</div>
+									</fieldset>
+									<div class="col-12">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="gridCheck" />
+											<label class="form-check-label required" for="gridCheck">
+												सहमति छ
+											</label>
+										</div>
+									</div>
+									<div class="col-12 mt-4 form-button-container">
+										<button type="submit" class="btn btn-custom-primary">
+											सेभ
+											गर्नुहोस
+										</button>
+									</div>
+								</div>
+							</form>
+						</t>
+						<t t-else="">
+							<form class="form-content" t-attf-action="/tole-bikash/basic-details" method="POST" enctype="multipart/form-data">
+								<div class="form-page active-form-page">
+									<!-- Basic Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											टोल विकास संस्थाको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="tole_bikash_name_en" class="form-label required">
+												नाम(अंग्रेजीमा)
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_name_en" id="tole_bikash_name_en" placeholder="Tole Bikash Name(English) " required="true" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_name_np" class="form-label required">
+												नाम(नेपालीमा)
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_name_np" id="tole_bikash_name_np" placeholder="Tole Bikash Name(Nepali)" required="true" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_type" class="form-label required">
+												प्रकार
+											</label>
+											<select id="tole_bikash_type" name="tole_bikash_type" class="form-select" required="true">
+												<t t-foreach="org_external_details['organization_type']" t-as="tole_type">
+													<option t-attf-value="#{tole_type.id}">
+														<t t-esc="tole_type.type" />
+													</option>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="organization_category" class="form-label required">
+												तह
+											</label>
+											<select class="form-select" name="organization_category" id="organization_category">
+												<option value="1">
+													Select
+												</option>
+												<!--
+												<option
+												t-attf-value="#{org_external_details['org_category_id']}"
+												>
+												<t
+												t-esc="org_external_details['org_category_name']" />
+												</option>
+												-->
+											</select>
+										</div>
+									</fieldset>
+									<!-- Tole Bikash Contacts -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सम्पर्क विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="tole_bikash_email" class="form-label required">
+												इमेल
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_email" id="tole_bikash_email" required="true" placeholder="Email" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_telephone" class="form-label required">
+												टेलिफोन
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_telephone" id="tole_bikash_telephone" required="true" placeholder="Telephone" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_postbox_number" class="form-label required">
+												पोस्ट बक्स नम्बर
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_postbox_number" id="tole_bikash_postbox_number" required="true" placeholder="Post box" />
+										</div>
+										<div class="col-md-6">
+											<label for="tole_bikash_fax_number" class="form-label required">
+												फ्याक्स नम्बर
+											</label>
+											<input type="text" class="form-control" name="tole_bikash_fax_number" id="tole_bikash_fax_number" required="true" placeholder="Fax" />
+										</div>
+									</fieldset>
+									<!-- Location -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											स्थान सम्बन्धि विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="province" class="form-label required">
+												प्रदेश
+											</label>
+											<select id="province" name="province" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['provinces']" t-as="province">
+													<option t-attf-value="#{province.id}" t-field="province.name_np" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="district" class="form-label required">
+												जिल्ला
+											</label>
+											<select id="district" name="district" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['districts']" t-as="district">
+													<option t-attf-value="#{district.id}" t-field="district.district_name_np" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="municipality" class="form-label required">
+												नगर/गाँउ पालिका
+											</label>
+											<select id="municipality" name="municipality" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['palika']" t-as="palika">
+													<option t-attf-value="#{palika.id}" t-field="palika.palika_name_np" />
+												</t>
+											</select>
+										</div>
+										<div class="col-md-3">
+											<label for="ward" class="form-label required">
+												वडा
+											</label>
+											<input type="text" class="form-control" name="ward" id="ward" required="true" placeholder="वडा" />
+										</div>
+										<div class="col-md-3">
+											<label for="tole" class="form-label required">
+												टोल
+											</label>
+											<input type="text" class="form-control" name="tole" id="tole" required="true" placeholder="टोल" />
+										</div>
+									</fieldset>
+									<!-- Border Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सिमानाको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="east" class="form-label ">
+												पूर्व सिमाना
+											</label>
+											<input type="text" class="form-control" name="east" id="east" required="true" placeholder="East Border" />
+										</div>
+										<div class="col-md-6">
+											<label for="west" class="form-label ">
+												पश्चिम सिमाना
+											</label>
+											<input type="text" class="form-control" name="west" id="west" required="true" placeholder="West Border" />
+										</div>
+										<div class="col-md-6">
+											<label for="north" class="form-label ">
+												उत्तर सिमाना
+											</label>
+											<input type="text" class="form-control" name="north" id="north" required="true" placeholder="North Border" />
+										</div>
+										<div class="col-md-6">
+											<label for="south" class="form-label">
+												दक्षिण सिमाना
+											</label>
+											<input type="text" class="form-control mb-4" name="south" id="south" placeholder="South Border " />
+										</div>
+									</fieldset>
+									<!-- Contact Person Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सम्पर्क व्यक्तिको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="contact_person_name" class="form-label required">
+												नाम
+											</label>
+											<input type="text" class="form-control" name="contact_person_name" id="contact_person_name" t-attf-value="#{org_external_details['contact_person_name']}" readonly="readonly" />
+										</div>
+										<div class="col-md-6">
+											<label for="contact_person_designation" class="form-label required">
+												पद
+											</label>
+											<select id="contact_person_designation" name="contact_person_designation" class="form-select" required="true">
+												<option disabled="true" selected="true">
+													छान्नुहोस्...
+												</option>
+												<t t-foreach="org_external_details['contact_person_designation']" t-as="contact_person_designation">
+													<option t-attf-value="#{contact_person_designation.id}">
+														<t t-esc="contact_person_designation.organization_samiti_designations" />
+													</option>
+												</t>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<label for="contact_person_phone" class="form-label required">
+												सम्पर्क न.
+											</label>
+											<input type="text" class="form-control" name="contact_person_phone" id="contact_person_phone" t-attf-value="#{org_external_details['contact_person_phone']}" readonly="readonly" />
+										</div>
+										<div class="col-md-6">
+											<label for="organization_contact_person_email" class="form-label required">
+												इमेल
+											</label>
+											<input type="text" class="form-control" name="contact_person_email" id="organization_contact_person_email" t-attf-value="#{org_external_details['contact_person_email']}" readonly="readonly" />
+										</div>
+									</fieldset>
+									<!-- Other Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="tole_bikash_logo" class="form-label">
+												संगठनको लोगो
+											</label>
+											<input type="file" class="form-control mb-4" name="tole_bikash_logo" id="tole_bikash_logo" placeholder="संगठनको लोगो " accept=".png, .jpg, .jpeg" t-attf-value="#{tole_bikash_logo or ''}" />
+											<img src="" alt="Uploaded Image" id="imagePreview" style="display: none; max-width:150px;" />
+										</div>
+									</fieldset>
+									<div class="col-12">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="gridCheck" />
+											<label class="form-check-label required" for="gridCheck">
+												सहमति छ
+											</label>
+										</div>
+									</div>
+									<div class="col-12 mt-4 form-button-container">
+										<button type="submit" class="btn btn-custom-primary">
+											सेभ
+											गर्नुहोस
+										</button>
+									</div>
+								</div>
+							</form>
+						</t>
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload = function () {
+					mainInput=document.getElementById("nepali-datepicker");mainInput.nepaliDatePicker();
+					const
+					tole_bikash_logo=document.getElementById("tole_bikash_logo");imagePreview=document.getElementById("imagePreview"),tole_bikash_logo.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview.src=t.result,imagePreview.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview.src="",imagePreview.style.display="none"}});
+					};
+				</script>
+			</t>
+		</template>
+		<!-- Bela Details -->
+		<template id="tole_bikash_meeting_details_template" name="Bhela Details">
+			<t t-call="website.layout">
+				<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript">
+				</script>
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Bhela
+								Details
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							भेलाको विवरण
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a t-attf-href="/tole-bikash/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+										संस्थाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/meeting-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+										भेलाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/proposal" class="multisteps-form__progress-btn" type="button" title="page_third">
+										आयोजनाको प्रस्तावहरु
+									</a>
+									<a t-attf-href="/tole-bikash/member-details" class="multisteps-form__progress-btn " type="button" title="page_second">
+										समितिको सदस्य विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/attendees" class="multisteps-form__progress-btn " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/decisions" class="multisteps-form__progress-btn" type="button" title="page_four">
+										आयोजनाको निर्णयहरु
+									</a>
+								</div>
+							</div>
+						</div>
+						<t t-if="sabha_details">
+							<form class="form-content" t-attf-action="/tole-bikash/meeting-details" method="POST" enctype="multipart/form-data">
+								<div class="form-page active-form-page">
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सभाको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="meeting_number" class="form-label required">
+												टोल विकास संस्था बैठकको संख्या
+											</label>
+											<input type="text" class="form-control" name="meeting_number" id="meeting_number" required="true" t-attf-value="#{sabha_details.meeting_number}" placeholder="सभा बैठकको संख्या" />
+										</div>
+										<div class="col-md-6">
+											<label for="nepali-datepicker" class="form-label required">
+												सभा मिति
+											</label>
+											<input type="text" class="form-control" name="meeting_date_bs" id="nepali-datepicker" required="true" t-attf-value="#{sabha_details.meeting_date_bs}" placeholder="सभा मिति" />
+										</div>
+										<div class="col-md-6">
+											<label for="meeting_time" class="form-label required">
+												सभा समय(HH:mm)
+											</label>
+											<input type="time" class="form-control" name="meeting_time" id="meeting_time" required="true" t-attf-value="#{sabha_details.meeting_time}" placeholder="सभा समय(HH:mm)" />
+										</div>
+									</fieldset>
+									<!-- Other Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="meeting_chairman_fullname" class="form-label required">
+												अध्यक्षको नाम
+											</label>
+											<input type="text" class="form-control" name="meeting_chairman_fullname" id="meeting_chairman_fullname" required="true" t-attf-value="#{sabha_details.meeting_chairman_fullname}" placeholder=" अध्यक्षको नाम" />
+										</div>
+										<div class="col-md-6">
+											<label for="total_attendees" class="form-label required">
+												बैठकमा उपस्थित संख्या
+											</label>
+											<input type="text" class="form-control" name="total_attendees" id="total_attendees" required="true" t-attf-value="#{sabha_details.total_attendees}" placeholder="बैठकमा उपस्थित संख्या" />
+										</div>
+									</fieldset>
+									<div class="col-12 mt-4 form-button-container">
+										<button class="btn add-btn" id="add-btn" type="reset">
+											रिसेट गर्नुहोस
+										</button>
+										<a t-attf-href="/organization/dashboard" class="btn btn-variant-six">
+											रद्द
+											गर्नुहोस
+										</a>
+										<button type="submit" class="btn btn-custom-primary">
+											सेभ
+											गर्नुहोस
+										</button>
+									</div>
+								</div>
+							</form>
+						</t>
+						<t t-else="">
+							<form class="form-content" t-attf-action="/organization/meeting-details" method="POST" enctype="multipart/form-data">
+								<div class="form-page active-form-page">
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											सभाको विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="meeting_number" class="form-label required">
+												टोल विकास संस्था बैठकको संख्या
+											</label>
+											<input type="text" class="form-control" name="meeting_number" id="meeting_number" required="true" placeholder="सभा बैठकको संख्या" />
+										</div>
+										<div class="col-md-6">
+											<label for="nepali-datepicker" class="form-label required">
+												सभा मिति
+											</label>
+											<input type="text" class="form-control" name="meeting_date_bs" id="nepali-datepicker" required="true" placeholder="सभा मिति" />
+										</div>
+										<div class="col-md-6">
+											<label for="meeting_time" class="form-label required">
+												सभा समय(HH:mm)
+											</label>
+											<input type="time" class="form-control" name="meeting_time" id="meeting_time" required="true" placeholder="सभा समय(HH:mm)" />
+										</div>
+									</fieldset>
+									<!-- Other Details -->
+									<fieldset class="form-fieldset row g-3">
+										<span class="field-title">
+											अन्य विवरण
+										</span>
+										<div class="col-md-6">
+											<label for="meeting_chairman_fullname" class="form-label required">
+												अध्यक्षको नाम
+											</label>
+											<input type="text" class="form-control" name="meeting_chairman_fullname" id="meeting_chairman_fullname" required="true" placeholder=" अध्यक्षको नाम" />
+										</div>
+										<div class="col-md-6">
+											<label for="total_attendees" class="form-label required">
+												बैठकमा उपस्थित संख्या
+											</label>
+											<input type="text" class="form-control" name="total_attendees" id="total_attendees" required="true" placeholder="बैठकमा उपस्थित संख्या" />
+										</div>
+									</fieldset>
+									<div class="col-12 mt-4 form-button-container">
+										<button class="btn add-btn" id="add-btn" type="reset">
+											रिसेट गर्नुहोस
+										</button>
+										<button type="submit" class="btn btn-custom-primary">
+											सेभ
+											गर्नुहोस
+										</button>
+									</div>
+								</div>
+							</form>
+						</t>
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload = function () {
+					mainInput=document.getElementById("nepali-datepicker");mainInput.nepaliDatePicker();
+					};
+				</script>
+			</t>
+		</template>
+		<!-- Tole Bikash Purpose -->
+		<template id="tole_bikash_purpose_template" name="Organization Purposes">
+			<t t-call="website.layout">
+				<!-- CK Editor -->
+				<script src="https://cdn.ckeditor.com/4.21.0/full/ckeditor.js">
+				</script>
+				<!-- PDF Generator -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/tole-bikash/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Tole Bikash Purposes
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							संस्थाको उद्देस्यहरु
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a t-attf-href="/tole-bikash/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+										संस्थाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/meeting-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+										भेलाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/proposal" class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+										आयोजनाको प्रस्तावहरु
+									</a>
+									<a t-attf-href="/tole-bikash/member-details" class="multisteps-form__progress-btn " type="button" title="page_second">
+										समितिको सदस्य विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/attendees" class="multisteps-form__progress-btn " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/decisions" class="multisteps-form__progress-btn" type="button" title="page_four">
+										आयोजनाको निर्णयहरु
+									</a>
+								</div>
+							</div>
+						</div>
+						<t t-if="document">
+							<form class="form-content" t-attf-action="/organization/purposes" method="POST" enctype="multipart/form-data">
+								<!-- Project Proposal -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										संस्थाको उद्देस्यहरु
+									</span>
+									<textarea name="editor" id="editor">
+										<t t-esc="document.proposal_detail" />
+									</textarea>
+									<div class="col-12 mt-4 form-button-container" id="downloadBtnContainer">
+										<a id="pdf_download_btn" class="btn-variant-six" onclick="func()">
+											<i class="fa fa-download" aria-hidden="true">
+											</i>
+											डाउनलोड गर्नुहोस
+										</a>
+									</div>
+								</fieldset>
+								<div class="col-md-6">
+									<label for="proposal_document" class="form-label required">
+										दस्तखत गरेको फाइल
+									</label>
+									<input type="file" class="form-control mb-4" name="proposal_document" id="proposal_document" accept=".png, .jpg, .jpeg, application/pdf" t-attf-value="#{proposal_file or ''}" />
+									<embed t-attf-src="data:application/pdf;base64,{{document.proposal_document}}" type="application/pdf" width="100%" height="300px" />
+								</div>
+								<div class="col-12 mt-4 form-button-container">
+									<button type="submit" class="btn btn-custom-primary">
+										सेभ
+										गर्नुहोस
+									</button>
+								</div>
+							</form>
+						</t>
+						<t t-else="">
+							<form class="form-content" t-attf-action="/tole-bikash/proposal" method="POST" enctype="multipart/form-data">
+								<!-- Project Proposal -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										संस्थाको उद्देस्यहरु
+									</span>
+									<textarea name="editor" id="editor">
+									</textarea>
+									<div class="col-12 mt-4 form-button-container" id="downloadBtnContainer">
+										<a id="pdf_download_btn" class="btn-variant-six" onclick="func()">
+											<i class="fa fa-download" aria-hidden="true">
+											</i>
+											डाउनलोड गर्नुहोस
+										</a>
+									</div>
+								</fieldset>
+								<div class="col-md-6">
+									<label for="proposal_document" class="form-label required">
+										दस्तखत गरेको फाइल
+									</label>
+									<input type="file" class="form-control mb-4" name="proposal_document" id="proposal_document" accept=".png, .jpg, .jpeg, application/pdf" t-attf-value="#{proposal_file or ''}" />
+								</div>
+								<div class="col-12 mt-4 form-button-container">
+									<button type="submit" class="btn btn-custom-primary">
+										सेभ
+										गर्नुहोस
+									</button>
+								</div>
+							</form>
+						</t>
+					</div>
+				</div>
+				<script type="text/javascript" src="/upabhokta_samiti/static/src/js/index.js" />
+			</t>
+		</template>
+		<!-- Tole Bikash Member Details -->
+		<template id="tole_bikash_members_template" name="Tole Bikash | Members">
+			<t t-call="website.layout">
+				<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript">
+				</script>
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="/organization/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Members Detail
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							सदस्यहरुको विवरण
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a t-attf-href="/tole-bikash/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+										संस्थाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/meeting-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+										भेलाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/proposal" class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+										आयोजनाको प्रस्तावहरु
+									</a>
+									<a t-attf-href="/tole-bikash/member-details" class="multisteps-form__progress-btn js-active " type="button" title="page_second">
+										समितिको सदस्य विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/attendees" class="multisteps-form__progress-btn " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/decisions" class="multisteps-form__progress-btn" type="button" title="page_four">
+										आयोजनाको निर्णयहरु
+									</a>
+								</div>
+							</div>
+						</div>
+						<form class="form-content" t-attf-action="/tole-bikash/member-details" method="POST" enctype="multipart/form-data">
+							<div class="form-page active-form-page">
+								<!-- Samiti Basic Details -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										व्यक्तिगत विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="member_name" class="form-label required">
+											पुरा नाम
+										</label>
+										<input type="text" class="form-control" name="member_name" id="member_name" placeholder=" पुरा नाम" required="true" />
+									</div>
+									<div class="col-md-6">
+										<label for="member_gender" class="form-label required">
+											लिङ्ग
+										</label>
+										<select class="form-select" id="member_gender" name="member_gender">
+											<option t-attf-value="Male">
+												पुरुष
+											</option>
+											<option t-attf-value="Female">
+												महिला
+											</option>
+											<option t-attf-value="others">
+												अन्य
+											</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="org_designation" class="form-label required">
+											पद
+										</label>
+										<select id="org_designation" class="form-select" required="true" name="org_designation">
+											<option disabled="true" selected="true">
+												छान्नुहोस्...
+											</option>
+											<t t-foreach="org_designations" t-as="designation">
+												<option t-attf-value="#{designation.id}" t-field="designation.organization_samiti_designations" />
+											</t>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="member_address" class="form-label required">
+											ठेगाना
+										</label>
+										<input type="text" name="member_address" class="form-control" id="member_address" required="true" placeholder="ठेगाना" t-attf-value="#{tole_bikash_info.district.district_name_np}, #{tole_bikash_info.municipality.palika_name_np}" readonly="readonly" />
+									</div>
+									<div class="col-md-6">
+										<label for="profile" class="form-label required">
+											पासपोर्ट साईज फोटो
+										</label>
+										<input type="file" class="form-control mb-4" name="profile" id="profile" accept=".png, .jpg, .jpeg" t-attf-value="#{profile or ''}" />
+										<img src="" alt="Uploaded Image" id="imagePreview2" style="display: none; max-width:150px;" />
+									</div>
+									<div class="col-md-6">
+										<label for="signature" class="form-label required">
+											दस्तखत
+										</label>
+										<input type="file" class="form-control mb-4" name="signature" id="signature" accept=".png, .jpg, .jpeg" t-attf-value="#{signature or ''}" />
+										<img src="" alt="Uploaded Image" id="imagePreview" style="display: none; max-width:150px;" />
+									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										नागरिकता विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="citizenship_number" class="form-label required">
+											नागरिकता नं.
+										</label>
+										<input type="text" class="form-control" id="citizenship_number" name="citizenship_number" placeholder="नागरिकता नं." />
+									</div>
+									<div class="col-md-6">
+										<label for="issued_district" class="form-label required">
+											जारि गरिएको जिल्ला
+										</label>
+										<select id="issued_district" name="issued_district" class="form-select" required="true">
+											<option disabled="true" selected="true">
+												छान्नुहोस्...
+											</option>
+											<t t-foreach="nep_districts" t-as="district">
+												<option t-attf-value="#{district.id}" t-field="district.district_name_np" />
+											</t>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="nepali-datepicker" class="form-label required">
+											जारि मिति
+										</label>
+										<input type="text" class="form-control" name="issued_date_bs" id="nepali-datepicker" required="true" placeholder="जारि मिति" />
+									</div>
+									<div class="col-md-6">
+										<label for="citizenship_front_back" class="form-label required">
+											नागरिकताको स्क्यान गरिएको फोटो
+										</label>
+										<input type="file" class="form-control mb-4" name="citizenship_front_back" id="citizenship_front_back" accept=".png, .jpg, .jpeg" t-attf-value="#{citizenship_front or ''}" multiple="multiple" data-show-upload="true" data-show-caption="true" data-show-preview="true" />
+										<div id="image-preview-container">
+										</div>
+									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										शैक्षिक विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="qualification" class="form-label required">
+											शैक्षिक योग्यता
+										</label>
+										<select id="qualification" name="qualification" class="form-select" required="true">
+											<option disabled="true" selected="true">
+												छान्नुहोस्...
+											</option>
+											<t t-foreach="qualification" t-as="qy">
+												<option t-attf-value="#{qy.id}">
+													<t t-esc="qy.member_qualification" />
+												</option>
+											</t>
+										</select>
+									</div>
+								</fieldset>
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										सम्पर्क विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="mobile" class="form-label required">
+											मोबाइल
+										</label>
+										<input type="text" class="form-control" id="mobile" name="mobile" placeholder="मोबाइल नं." />
+									</div>
+									<div class="col-md-6">
+										<label for="email" class="form-label">
+											ईमेल
+										</label>
+										<input type="text" class="form-control" id="email" name="email" placeholder="user@example.com" />
+									</div>
+								</fieldset>
+								<!-- Guardian Details -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										अभिभावक विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="member_family_male" class="form-label required">
+											Male
+										</label>
+										<input type="text" class="form-control" id="member_family_male" name="member_family_male" placeholder="बुबाको नाम" />
+									</div>
+									<div class="col-md-6">
+										<label for="member_family_female" class="form-label required">
+											Female
+										</label>
+										<input type="text" class="form-control" id="member_family_female" name="member_family_female" placeholder="आमाको नाम" />
+									</div>
+									<div class="col-md-6">
+										<label for="member_family_total" class="form-label required">
+											Total
+										</label>
+										<input type="text" class="form-control" id="member_family_total" name="member_family_total" placeholder="हजुरबुबाको नाम" />
+									</div>
+								</fieldset>
+								<div class="col-12">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="status" id="status" checked="checked" />
+										<label class="form-check-label required" for="status">
+											सक्रिय
+										</label>
+									</div>
+								</div>
+								<div class="col-12 mt-4 form-button-container">
+									<button class="btn add-btn" id="add-btn" type="reset">
+										रिसेट गर्नुहोस
+									</button>
+									<button type="submit" class="btn btn-custom-primary">
+										सेभ
+										गर्नुहोस
+									</button>
+								</div>
+							</div>
+						</form>
+						<div class="data-view-table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">
+											क्र.स.
+										</th>
+										<th scope="col">
+											पुरा नाम
+										</th>
+										<th scope="col">
+											लिङ्ग
+										</th>
+										<th scope="col">
+											पद
+										</th>
+										<th scope="col">
+											ठेगाना
+										</th>
+										<th scope="col">
+											नागरिकता नं.
+										</th>
+										<th scope="col">
+											मोबाइल
+										</th>
+										<th scope="col">
+											एक्सन
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<t t-set="i" t-value="1" />
+									<t t-foreach="members_detail" t-as="member">
+										<tr>
+											<td id="sn" data-cell="sn">
+												<span t-esc="i" />
+												<t t-set="i" t-value="i+1" />
+											</td>
+											<td data-cell="full name">
+												<span t-field="member.member_name" />
+											</td>
+											<td data-cell="gender">
+												<span t-field="member.member_gender" />
+											</td>
+											<td data-cell="designation">
+												<span t-field="member.member_designation" />
+											</td>
+											<td data-cell="address">
+												<span t-field="member.member_location" />
+											</td>
+											<td data-cell="citizenship_number">
+												<span t-field="member.member_citizenship_number" />
+											</td>
+											<td data-cell="member_phone">
+												<span t-field="member.member_phone" />
+											</td>
+											<td data-cell="action" class="action-container">
+												<!--
+												Update
+												t-attf-href="/tole-bikash/member-details/update/{{members_detail.id}}"
+												-->
+												<a class="btn-variant-six text-info">
+													<i class="fa fa-pencil-square-o" aria-hidden="true">
+													</i>
+												</a>
+												<!-- View Details -->
+												<a class="btn btn-variant-six text-success">
+													<i class="fa fa-eye" aria-hidden="true">
+													</i>
+												</a>
+												<!--  -->
+												<!-- Delete  t-attf-value="#{members_detail.id}" -->
+												<div class="btn btn-variant-six delete text-danger">
+													<i class="fa fa-trash" aria-hidden="true">
+													</i>
+													<!-- <input id="deleteID" type="text" class="hidden" /> -->
+												</div>
+											</td>
+										</tr>
+									</t>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload = function () {
+					mainInput=document.getElementById("nepali-datepicker");mainInput.nepaliDatePicker();const
+					signature=document.getElementById("signature");imagePreview=document.getElementById("imagePreview"),signature.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview.src=t.result,imagePreview.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview.src="",imagePreview.style.display="none"}}); const
+					profile=document.getElementById("profile");imagePreview2=document.getElementById("imagePreview2"),profile.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview2.src=t.result,imagePreview2.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview2.src="",imagePreview2.style.display="none"}});
+					}
+				</script>
+				<script type="text/javascript" src="/nep_organization/static/src/js/tole_bikash_members.js" />
+			</t>
+		</template>
+		<!-- Tole Bikash Attendees Detail -->
+		<template id="tole_bikash_attendees_details_template" name="Tole Bikash Attendees Details">
+			<t t-call="website.layout">
+				<script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript">
+				</script>
+				<!-- Sweet Alert -->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+				</script>
+				<t t-set="page_js" t-value="value">
+				</t>
+				<div class="page-with-breadcrumb">
+					<nav class="breadcrumb-container" aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="tole-bikash/dashboard">
+									Dashboard
+								</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								Attendees
+							</li>
+						</ol>
+					</nav>
+					<div class="form-container">
+						<h1 class="form-title text-center my-4">
+							सहभागीहरुको विवरण
+						</h1>
+						<!-- multisteps-form -->
+						<div class="row justify-content-center align-items-center">
+							<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+								<div class="multisteps-form__progress">
+									<a t-attf-href="/tole-bikash/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+										संस्थाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/meeting-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+										भेलाको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/proposal" class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+										आयोजनाको प्रस्तावहरु
+									</a>
+									<a t-attf-href="/tole-bikash/member-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+										समितिको सदस्य विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/attendees" class="multisteps-form__progress-btn js-active " type="button" title="page_third">
+										सहभागीहरुको विवरण
+									</a>
+									<a t-attf-href="/tole-bikash/decisions" class="multisteps-form__progress-btn" type="button" title="page_four">
+										आयोजनाको निर्णयहरु
+									</a>
+								</div>
+							</div>
+						</div>
+						<form class="form-content" t-attf-action="/tole-bikash/attendees" method="POST" enctype="multipart/form-data">
+							<div class="form-page active-form-page">
+								<!-- Samiti Basic Details -->
+								<fieldset class="form-fieldset row g-3">
+									<span class="field-title">
+										व्यक्तिगत विवरण
+									</span>
+									<div class="col-md-6">
+										<label for="tole_bikash_attendees_name" class="form-label required">
+											पुरा नाम
+										</label>
+										<input type="text" class="form-control" name="tole_bikash_attendees_name" id="tole_bikash_attendees_name" placeholder=" पुरा नाम" required="true" />
+									</div>
+									<div class="col-md-6">
+										<label for="tole_bikash_attendees_gender" class="form-label required">
+											लिङ्ग
+										</label>
+										<select class="form-select" id="tole_bikash_attendees_gender" name="tole_bikash_attendees_gender">
+											<option t-attf-value="male">
+												पुरुष
+											</option>
+											<option t-attf-value="female">
+												महिला
+											</option>
+											<option t-attf-value="others">
+												अन्य
+											</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="signature" class="form-label required">
+											दस्तखत अपलोड गर्नुहोस
+										</label>
+										<input type="file" class="form-control mb-4" name="signature" id="signature" accept=".png, .jpg, .jpeg" t-attf-value="#{signature or ''}" />
+										<img src="" alt="Uploaded Image" id="imagePreview" style="display: none; max-width:150px;" />
+									</div>
+									<div class="col-md-6">
+										<label for="mobile" class="form-label required">
+											मोबाइल
+										</label>
+										<input type="text" class="form-control" id="mobile" name="mobile" placeholder="मोबाइल नं." />
+									</div>
+									<div class="col-md-6">
+										<label for="email" class="form-label required">
+											इमेल
+										</label>
+										<input type="text" class="form-control" id="email" name="email" placeholder="xyz@gmail.com" />
+									</div>
+								</fieldset>
+								<div class="col-12 mt-4 form-button-container">
+									<button class="btn add-btn" id="add-btn" type="reset">
+										रिसेट गर्नुहोस
+									</button>
+									<button type="submit" class="btn btn-custom-primary">
+										सेभ
+										गर्नुहोस
+									</button>
+								</div>
+							</div>
+						</form>
+						<div class="data-view-table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">
+											क्र.स.
+										</th>
+										<th scope="col">
+											पुरा नाम
+										</th>
+										<th scope="col">
+											लिङ्ग
+										</th>
+										<th scope="col">
+											मोबाइल
+										</th>
+										<th scope="col">
+											दस्तखत
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<t t-set="i" t-value="1" />
+									<t t-foreach="attendees_list" t-as="attendee">
+										<tr>
+											<td id="sn" data-cell="sn">
+												<span t-esc="i" />
+												<t t-set="i" t-value="i+1" />
+											</td>
+											<td data-cell="full name">
+												<span t-field="attendee.full_name" />
+											</td>
+											<td data-cell="gender">
+												<span t-field="attendee.gender" />
+											</td>
+											<td data-cell="mobile">
+												<span t-field="attendee.mobile" />
+											</td>
+											<td data-cell="signature">
+												<img class="dynamic-img f-center" style="max-width:100px;" t-attf-src="data:image/*;base64,{{attendee.signature}}" />
+											</td>
+										</tr>
+									</t>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<script>
+					function updateDistricts() {
+						var provinceSelect = document.getElementById('province');
+						var districtSelect = document.getElementById('district');
+						
+						// Get the selected province ID
+						var selectedProvinceId = provinceSelect.value;
+				
+						// Call Odoo RPC to fetch districts based on the selected province
+						odoo.jsonRpc("/update_districts", 'call', {'province_id': selectedProvinceId}).then(function(districts) {
+							// Clear existing options
+							districtSelect.innerHTML = "";
+				
+							// Populate the district options based on the response
+							districts.forEach(function(district) {
+								var option = document.createElement('option');
+								option.value = district.id;
+								option.text = district.district_name_np;
+								districtSelect.appendChild(option);
+							});
+						});
+					}
+				</script>
+				<script type="text/javascript">
+					window.onload = function () { const
+					signature=document.getElementById("signature");imagePreview=document.getElementById("imagePreview"),signature.addEventListener("change",function(){let
+					e=this.files[0];if(e){if(["png","jpg","jpeg"].includes(e.name.split(".").pop().toLowerCase())){let
+					t=new
+					FileReader;t.addEventListener("load",function(){imagePreview.src=t.result,imagePreview.style.display="block"}),t.readAsDataURL(e)}else
+					this.value="";imagePreview.src="",imagePreview.style.display="none"}}); };
+				</script>
+			</t>
+		</template>
+	<!-- Tole Bikash Decisions -->
+	<template id="tole_bikash_decision_template" name="Tole Bikash Decision">
+		<t t-call="website.layout">
+			<!-- CK Editor -->
+			<script src="https://cdn.ckeditor.com/4.21.0/full/ckeditor.js">
+			</script>
+			<!-- PDF Generator -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+			</script>
+			<div class="page-with-breadcrumb">
+				<nav class="breadcrumb-container" aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="/tole-bikash/dashboard">
+								Dashboard
+							</a>
+						</li>
+						<li class="breadcrumb-item active" aria-current="page">
+							 decisions
+						</li>
+					</ol>
+				</nav>
+				<div class="form-container">
+					<h1 class="form-title text-center my-4">
+						आयोजनाको निर्णयहरु
+					</h1>
+					<!-- multisteps-form -->
+					<div class="row justify-content-center align-items-center">
+						<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+							<div class="multisteps-form__progress">
+								<a t-attf-href="/tole-bikash/basic-details" class="multisteps-form__progress-btn js-active" type="button" title="page_first">
+									संस्थाको विवरण
+								</a>
+								<a t-attf-href="/tole-bikash/meeting-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+									भेलाको विवरण
+								</a>
+								<a t-attf-href="/tole-bikash/proposal" class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									आयोजनाको प्रस्तावहरु
+								</a>
+								<a t-attf-href="/tole-bikash/member-details" class="multisteps-form__progress-btn js-active" type="button" title="page_second">
+									समितिको सदस्य विवरण
+								</a>
+								<a t-attf-href="/tole-bikash/attendees" class="multisteps-form__progress-btn js-active" type="button" title="page_third">
+									सहभागीहरुको विवरण
+								</a>
+								<a t-attf-href="/tole-bikash/decisions " class="multisteps-form__progress-btn js-active" type="button" title="page_four">
+									आयोजनाको निर्णयहरु
+								</a>
+							</div>
+						</div>
+					</div>
+					<t t-if="document">
+						<form class="form-content" t-attf-action="/tole-bikash/decisions" method="POST" enctype="multipart/form-data">
+							<!-- Project Proposal -->
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									संस्थाको निर्णयहरु
+								</span>
+								<textarea name="editor" id="editor">
+									<t t-esc="document.decision_detail" />
+								</textarea>
+								<div class="col-12 mt-4 form-button-container" id="downloadBtnContainer">
+									<a id="pdf_download_btn" class="btn-variant-six" onclick="func()">
+										<i class="fa fa-download" aria-hidden="true">
+										</i>
+										डाउनलोड गर्नुहोस
+									</a>
+								</div>
+							</fieldset>
+							<div class="col-md-6">
+								<label for="decision_document" class="form-label required">
+									दस्तखत गरेको फाइल
+								</label>
+								<input type="file" class="form-control mb-4" name="decision_document" id="decision_document" accept=".png, .jpg, .jpeg, .pdf" t-attf-value="#{decision_file or ''}" />
+								<embed t-attf-src="data:application/pdf;base64,{{document.decision_document}}" type="application/pdf" width="100%" height="300px" />
+							</div>
+							<div class="col-12 mt-4 form-button-container">
+								<button type="submit" class="btn btn-custom-primary">
+									सेभ गर्नुहोस
+								</button>
+							</div>
+						</form>
+					</t>
+					<t t-else="">
+						<form class="form-content" t-attf-action="/tole-bikash/decisions" method="POST" enctype="multipart/form-data">
+							<!-- Project Proposal -->
+							<fieldset class="form-fieldset row g-3">
+								<span class="field-title">
+									संस्थाको निर्णयहरु
+								</span>
+								<textarea name="editor" id="editor">
+								</textarea>
+								<div class="col-12 mt-4 form-button-container" id="downloadBtnContainer">
+									<a id="pdf_download_btn" class="btn-variant-six" onclick="func()">
+										<i class="fa fa-download" aria-hidden="true">
+										</i>
+										डाउनलोड गर्नुहोस
+									</a>
+								</div>
+							</fieldset>
+							<div class="col-md-6">
+								<label for="decision_document" class="form-label required">
+									दस्तखत गरेको फाइल
+								</label>
+								<input type="file" class="form-control mb-4" name="decision_document" id="decision_document" accept=".png, .jpg, .jpeg, .pdf" t-attf-value="#{decision_file or ''}" />
+							</div>
+							<div class="col-12 mt-4 form-button-container">
+								<button type="submit" class="btn btn-custom-primary">
+									सेभ गर्नुहोस
+								</button>
+							</div>
+						</form>
+					</t>
+				</div>
+			</div>
+			<script type="text/javascript" src="/upabhokta_samiti/static/src/js/index.js">
+			</script>
+		</t>
+	</template>
+
+	<!-- Error  -->
+	<template id="error_page" name="Error">
+		<head>
+			<title>Error</title>
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+		</head>
+		<style>
+			h1 {
+				color: #88B04B;
+				font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+				font-weight: 900;
+				font-size: 40px;
+				margin-bottom: 10px;
+			  }
+		</style>
+	
+		<body>
+			<div class="vh-100 d-flex justify-content-center align-items-center">
+				<div class="card col-md-4 bg-white shadow-md p-5">
+					<div class="mb-4 text-center">
+					</div>
+					<div class="text-center">
+						<h1>Error</h1>
+						<p>Error Message.......</p>
+						<button class="btn btn-outline-danger">Back Home</button>
+					</div>
+				</div>
+			</div>
+		</body>
+	</template>
+
+	<!-- Sucess  -->
+	<template id="success_page" name="Success Page">
+		<head>
+			<title>Success</title>
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+		</head>
+		<style>
+			h1 {
+				color: #88B04B;
+				font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+				font-weight: 900;
+				font-size: 40px;
+				margin-bottom: 10px;
+			  }
+		</style>
+	
+		<body>
+			<div class="vh-100 d-flex justify-content-center align-items-center">
+				<div class="card col-md-4 bg-white shadow-md p-5">
+					<div class="mb-4 text-center">
+					</div>
+					<div class="text-center">
+						<h1>Success</h1>
+						<p>Reuquest Submitted Successfully</p>
+						<button class="btn btn-outline-success">Back Home</button>
+					</div>
+				</div>
+			</div>
+		</body>
+	
+	</template>
+	</data>
+</odoo>

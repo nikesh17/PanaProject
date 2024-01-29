@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Define the paper format -->
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Define the report action -->
+    <record id="report_tole_bikash_meeting" model="ir.actions.report">
+        <field name="name">Tole Bikash Meeting</field>
+        <field name="model">tole.bikash.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tole_bikash.tole_bikash_meeting_report</field>
+        <field name="binding_model_id" ref="model_tole_bikash_info" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <!-- Define the template for the report -->
+    <template id="tole_bikash_meeting_report">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    .centered {
+                        text-align: center;
+                    }
+                    
+                    h3{
+                        font-size:22px;
+                        font-weight:bold
+                     }
+                     
+                    p{
+                        font-size:16px;
+                        text-align:left;
+
+                    }
+                     td span{
+                        font-size:14px;
+                    }
+                    .dynamic-img{
+                        display:block;
+                        max-width:80px;
+                        aspect-ratio:4/3;
+                    }
+                    .table-data{
+                        font-size:16px;
+                    }
+                      h2{
+                        font-size:24px;
+                        font-weight:bold;
+                    }
+                           
+                </style>
+                <!-- Loop through records -->
+                <t t-foreach="docs" t-as="o">
+                    <br/>
+                    <!-- Header section -->
+                    <div class="centered">
+                        <h2>अनुसूचि-४</h2>
+                        <h3>टोल विकास संस्था गठनकालागि बस्ने भेलाको नमुना</h3>
+                    </div><br/>
+
+                    <!-- Main body section -->
+                    <div class="main_body" style="line-height:2.5; padding-bottom:60px;">
+                        <p>
+                            आज मिति  <span t-field="o.meetings.meeting_date_bs"/> गते यस टोलका श्री <span t-field="o.meetings.meeting_chairman_fullname"/> को संयोजकत्वमा <span t-field="o.municipality.palika_name_np"/> वडा नं <span t-field="o.ward"/> को <span t-field="o.tole"/> स्थानमा <span t-field="o.meetings.meeting_time"/>बजे तपशिल अनुसारको उपस्थितिमा देहाय बमोजिमका प्रस्तावहरुमा छलफल तथा निर्णयका लागि बैठक प्रारम्भ गरियो ।
+                        </p>
+                    </div>
+
+                    <div class="centered" style=" text-decoration: underline ">
+                        <p>आम भेलाको उपस्थिति विवरण</p>
+                    </div>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">सि.नं.</th>
+                                <th rowspan="2">नामथर</th>
+                                <th rowspan="2">फोन नम्वर</th>
+                                <th rowspan="2">ठेगाना</th>
+                                <th rowspan="2">हस्ताक्षर</th>
+                            </tr>
+                            <tbody style="border-top:none;">
+                                <t t-set="i" t-value="1"/>
+                                <t t-foreach="o.attendees" t-as="attendee">
+                                    <td><span t-esc="i"/><t t-set="i" t-value="i+1"/></td>
+                                    <td><span t-field="attendee.full_name"/></td>
+                                    <td><span t-field="attendee.mobile"/></td>
+                                    <td><span t-field="attendee.location"/></td>
+                                    <td class="f-center">
+                                        <t t-if="attendee.signature">
+                                            <img class="dynamic-img f-center" t-attf-src="data:image/*;base64,{{attendee.signature}}"/>
+                                        </t>
+                                        <t t-else="">
+                                            दस्तखत भेटिएन  
+                                        </t>
+                                    </td>     
+                                 </t>
+                            </tbody>
+                        </thead>
+                    </table>
+                    
+                    <div>
+                        <p style=" text-decoration: underline ">प्रस्तावहरु</p>
+                            <span t-esc="o.proposals.proposal_detail" />
+                    </div>
+                    <div>
+                        <p style=" text-decoration: underline ">निर्णयहरु</p>
+                         <span t-esc="o.decisions.decision_detail" />
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

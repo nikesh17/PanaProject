@@ -1,0 +1,142 @@
+<odoo>
+    <data>
+        <record id="view_farmer_crop_form" model="ir.ui.view">
+            <field name="name">Farmer Crop Form</field>
+            <field name="model">farmer.crop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="delete" class="btn btn-danger" type="object" attrs="{'invisible':[('delete_request','=',True)]}">Delete</button>
+                        <button name="undo_delete" class="btn btn-info" type="object" attrs="{'invisible':[('delete_request','=',False)]}">Cancel Delete</button>
+                    </header>
+                    <sheet>
+                        <group col="1">
+                            <group>
+    
+                                <field name="name"/>
+                                <field name="crop_name"/>
+                                <field name="crops_types"/>
+                                <field name="area"/>
+                                <field name="is_published" attrs="{'invisible': [('id', '==', False)]}"/>
+                                <field name="is_sellable" attrs="{'invisible': [('id', '==', False)]}"/>
+                                <field name="is_variant" attrs="{'invisible': [('id', '!=', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="delete_request" invisible="1"/>
+                                <!-- <group><field name="quantity"/></group>
+                                <group><field name="production_frequency"/></group>  -->
+                            </group>
+                        </group>
+                        <field name="type" invisible="1"/>
+    
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" modifiers="{&quot;invisible&quot;: [[&quot;active&quot;, &quot;=&quot;, true]]}"/>
+                        <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                        <div name="options">
+                            <span class="d-inline-block">
+                                <field name="sale_ok" on_change="1"/>
+                                <label for="sale_ok"/>
+                            </span>
+                            <span class="d-inline-block">
+                                <field name="purchase_ok"/>
+                                <label for="purchase_ok"/>
+                            </span>
+                        </div>
+                        <notebook>
+                            <page string="General Information">
+                                <group>
+                                    <group name="group_general">
+                                        <field name="active" modifiers="{&quot;invisible&quot;: true}"/>
+                                        <field name="detailed_type" on_change="1" modifiers="{&quot;required&quot;: true}"/>
+                                        <field name="invoice_policy" modifiers="{&quot;required&quot;: true}"/>
+                                        <!-- <field name="expense_policy" widget="radio" modifiers="{&quot;invisible&quot;: [[&quot;visible_expense_policy&quot;, &quot;=&quot;, false]]}"/> -->
+                                        <!-- <field name="product_tooltip" string="" class="fst-italic text-muted" modifiers="{&quot;readonly&quot;: true}"/>
+                                        <label for="product_tooltip" string="" modifiers="{&quot;invisible&quot;: [&quot;|&quot;, [&quot;type&quot;, &quot;not in&quot;, [&quot;product&quot;, &quot;consu&quot;]], [&quot;invoice_policy&quot;, &quot;!=&quot;, &quot;order&quot;]]}"/>
+                                        <div class="fst-italic text-muted" modifiers="{&quot;invisible&quot;: [&quot;|&quot;, [&quot;type&quot;, &quot;not in&quot;, [&quot;product&quot;, &quot;consu&quot;]], [&quot;invoice_policy&quot;, &quot;!=&quot;, &quot;order&quot;]]}">
+                                            You can invoice them before they are delivered.
+                                        </div>
+                                        <label for="product_tooltip" string="" modifiers="{&quot;invisible&quot;: [&quot;|&quot;, [&quot;type&quot;, &quot;not in&quot;, [&quot;product&quot;, &quot;consu&quot;]], [&quot;invoice_policy&quot;, &quot;!=&quot;, &quot;delivery&quot;]]}"/>
+                                        <div class="fst-italic text-muted" modifiers="{&quot;invisible&quot;: [&quot;|&quot;, [&quot;type&quot;, &quot;not in&quot;, [&quot;product&quot;, &quot;consu&quot;]], [&quot;invoice_policy&quot;, &quot;!=&quot;, &quot;delivery&quot;]]}">
+                                            Invoice after delivery, based on quantities delivered, not ordered.
+                                        </div> -->
+                                        <field name="uom_id" options="{'no_create': True}" on_change="1" modifiers="{&quot;required&quot;: true}" can_create="true" can_write="true"/>
+                                        <field name="uom_po_id" options="{'no_create': True}" on_change="1" modifiers="{&quot;required&quot;: true}" can_create="true" can_write="true"/>
+                                    </group>
+                                    <group name="group_standard_price">
+                                        <label for="list_price"/>
+                                        <div name="pricing">
+                                            <field name="list_price" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" on_change="1"/>
+                                            <span class="ms-2"/><field name="tax_string" modifiers="{&quot;readonly&quot;: true}"/>
+                                        </div>
+                                        <field name="taxes_id" widget="many2many_tags" context="{'default_type_tax_use':'sale', 'search_default_sale': 1, 'search_default_service': type == 'service', 'search_default_goods': type == 'consu'}" on_change="1" can_create="true" can_write="true"/>
+                                        <label for="standard_price" modifiers="{&quot;invisible&quot;: [[&quot;product_variant_count&quot;, &quot;&gt;&quot;, 1], [&quot;is_product_variant&quot;, &quot;=&quot;, false]]}"/>
+                                        <div name="standard_price_uom" modifiers="{&quot;invisible&quot;: [[&quot;product_variant_count&quot;, &quot;&gt;&quot;, 1], [&quot;is_product_variant&quot;, &quot;=&quot;, false]]}">
+                                            <field name="standard_price" class="oe_inline" widget="monetary" options="{'currency_field': 'cost_currency_id', 'field_digits': True}"/>
+                                            <span>per
+                                                <field name="uom_name" class="oe_inline" on_change="1" modifiers="{&quot;readonly&quot;: true}"/>
+                                            </span>
+                                        </div>
+                                        <field name="categ_id" string="Product Category" on_change="1" modifiers="{&quot;required&quot;: true}" can_create="true" can_write="true"/>
+                                        <!-- <field name="default_code" on_change="1" modifiers="{&quot;invisible&quot;: [[&quot;product_variant_count&quot;, &quot;&gt;&quot;, 1]]}"/> -->
+                                        <!-- <field name="barcode" modifiers="{&quot;invisible&quot;: [[&quot;product_variant_count&quot;, &quot;&gt;&quot;, 1]]}"/>
+                                        <field name="product_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" can_create="true" can_write="true"/> -->
+                                        <field name="company_id" options="{'no_create': True}" on_change="1" can_create="true" can_write="true"/>
+                                        <!-- <field name="currency_id" modifiers="{&quot;invisible&quot;: true, &quot;readonly&quot;: true}"/>
+                                        <field name="cost_currency_id" modifiers="{&quot;invisible&quot;: true, &quot;readonly&quot;: true}"/>
+                                        <field name="product_variant_id" modifiers="{&quot;invisible&quot;: true, &quot;readonly&quot;: true}"/> -->
+                                    </group>
+                                </group>
+                                <!-- <group string="Internal Notes">
+                                    <field colspan="2" name="description" nolabel="1" placeholder="This note is only for internal purposes."/>
+                                </group> -->
+                            </page>
+                            <page name="variants" string="Attributes &amp; Variants" attrs="{'invisible': [('is_variant', '==', False)]}">
+                                <field name="attribute_line_ids" widget="one2many" context="{'show_attribute': False}">
+                                    <tree string="Variants" editable="bottom" decoration-info="value_count &lt;= 1">
+                                        <field name="value_count" modifiers="{&quot;readonly&quot;: true, &quot;column_invisible&quot;: true}"/>
+                                        <field name="attribute_id" on_change="1" modifiers="{&quot;readonly&quot;: [[&quot;id&quot;, &quot;!=&quot;, false]], &quot;required&quot;: true}" can_create="true" can_write="true"/>
+                                        <field name="value_ids" widget="many2many_tags" options="{'no_create_edit': True, 'color_field': 'color'}" context="{'default_attribute_id': attribute_id, 'show_attribute': False}" on_change="1" can_create="true" can_write="true"/>
+                                        <button string="Configure" class="float-end btn-secondary" type="object" name="action_open_attribute_values"/>
+                                    </tree>
+                                </field>
+                                    <p class="oe_grey oe_edit_only">
+                                    <strong>Warning</strong>: adding or deleting attributes
+                                    will delete and recreate existing variants and lead
+                                    to the loss of their possible customizations.
+                                </p>
+                            </page>
+                            <page name="Farmer Produce Production" attrs="{'invisible': [('id', '==', False)]}">
+                                <field name="farmer_produce_production_ids" domain="[('farmer_production_ids.name', '=', name)]">
+                                    <tree delete="0">
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="Farmer Sell Products" attrs="{'invisible': [('is_sellable', '==', False)]}">
+                                <field name="farmer_sell_products_ids">
+                                    <tree delete="0">
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+        <record id="view_farmer_crop_tree" model="ir.ui.view">
+            <field name="name">Farmer Crop Tree View</field>
+            <field name="model">farmer.crop</field>
+            <field name="arch" type="xml">
+                <tree delete="0" decoration-danger="delete_request">
+                    <field name="name"/>
+                    <field name="crop_name"/>
+                    <field name="crops_types"/>
+                    <field name="detailed_type"/>
+                    <field name="list_price"/>
+                    <field name="uom_id"/>
+                    <field name="delete_request" invisible="1"/>
+     
+                </tree>
+            </field>
+        </record>
+    </data>
+    </odoo>

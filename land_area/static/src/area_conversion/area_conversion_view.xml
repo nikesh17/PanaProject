@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="tax_measurement.AreaConversionEvalView"  owl="1">
+        
+        <div class="text-nowrap">
+            <FloatField t-props="props" />
+            <div class="modal-body">
+                <form id="form_container_id" class="container">
+                    <div class="line d-flex">
+                        <div class="col-md-2">
+                            <label>Area unit type:</label>
+                            <select type="select" id="input_type_select" class="o_input">
+                                <option value=""></option>
+                                <option value="bkdkk">Bigha,Katha,Dhur</option>
+                                <option value="rapd">Ropani,Aana,Paisa,Dam</option>
+                                <option value="hecter">Hecter</option>
+                                <option value="acre">Acre</option>
+                                <option value="SqMeter">Sq. meter</option>
+                                <option value="SqFeet">Sq. feet</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Kanwa/Kanwain:</label>
+                            <input class="o_input" type="checkbox" id="kanwa_kanwain_input" />
+                        </div>
+                    </div>
+                    <div id="bkdkk" class="line disabled d-flex">
+                        <div id="bigha" class="col-md-2">
+                            <label>Bigha:</label>
+                            <input class="o_input" type="number" id="input_bigha" />
+                        </div>
+                        <div id="kattha" class="col-md-2">
+                            <label>Kattha:</label>
+                            <input class="o_input" type="number" id="input_kattha" />
+                        </div>
+                        <div id="dhur" class="col-md-2">
+                            <label>dhur:</label>
+                            <input class="o_input" type="number" id="input_dhur" />
+                        </div>
+                        <div id="kanwa_kanwain" class="inline disabled d-flex">
+                            <div id="kanwa" class="col-md-2">
+                                <label>Kanwa:</label>
+                                <input class="o_input" type="number" id="input_kanwa" />
+                            </div>
+                            <div id="kanwain" class="col-md-2">
+                                <label>Kanwain:</label>
+                                <input class="o_input" type="number" id="input_kanwain" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rapd" class="line disabled d-flex">
+                        <div id="ropani" class="col-md-2">
+                            <label>Ropani:</label>
+                            <input class="o_input" type="number" id="input_ropani" />
+                        </div>
+                        <div id="aana" class="col-md-2">
+                            <label>Aana:</label>
+                            <input class="o_input" type="number" id="input_aana" />
+                        </div>
+                        <div id="paisa" class="col-md-2">
+                            <label>Paisa:</label>
+                            <input class="o_input" type="number" id="input_paisa" />
+                        </div>
+                        <div id="dam" class="col-md-2">
+                            <label>Dam:</label>
+                            <input class="o_input" type="number" id="input_dam" />
+                        </div>
+                    </div>
+                    <div id="hecter" class="line col-md-2 d-flex disabled">
+                        <label>Hecter:</label>
+                        <input class="o_input" type="number" id="input_hecter" />
+                    </div>
+                    <div id="acre" class="line col-md-2 d-flex disabled">
+                        <label>Acre:</label>
+                        <input class="o_input" type="number" id="input_acre" />
+                    </div>
+                    <div id="SqMeter" class="line col-md-2 d-flex disabled">
+                        <label>Square-Meter:</label>
+                        <input class="o_input" type="number" id="input_SqMeter" />
+                    </div>
+                    <div id="SqFeet" class="line col-md-2 d-flex disabled">
+                        <label>Square-Feet:</label>
+                        <input class="o_input" type="number" id="input_SqFeet" />
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button id="refresh_all" class="btn btn-primary" text-align="center">re-set</button>
+            </div>
+            
+        </div>
+    </t>
+</templates>

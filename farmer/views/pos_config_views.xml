@@ -1,0 +1,49 @@
+
+<odoo>
+    <data>
+
+        <!-- inherite form view of pos.config -->
+        <record id="view_pos_config_form_inherit" model="ir.ui.view">
+            <field name="name">POS config Form Inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_title']" position="after">
+                    <group>
+                        <field name="payment_method_ids" widget="many2many_tags" />
+                        <field name="module_pos_restaurant" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- inherite kanban view of pos.config -->
+        <record id="view_pos_config_kanban_inherit" model="ir.ui.view">
+            <field name="name">POS config kanban Inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="." position="attributes">
+                    <attribute name="create">true</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+
+
+        <record id="action_pos_floor_plan_config" model="ir.actions.act_window">
+            <field name="name">FLoor Plans</field>
+            <field name="res_model">restaurant.floor</field>
+            <field name="domain">[('company_id','in',allowed_company_ids)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Producer Sub-Menu-->
+        <menuitem id="menu_pos_floor_plan_config"
+            name="Floor Plans"
+            parent="point_of_sale.menu_point_config_product"
+            action="action_pos_floor_plan_config" />
+    </data>
+
+
+</odoo>

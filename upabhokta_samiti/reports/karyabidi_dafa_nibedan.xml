@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="paperformat_karyabidi_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_karyabidi_dafa_pramadpatra_report" model="ir.actions.report">
+        <field name="name">Karyabidi Dafa Darta Pramad Patra</field>
+        <field name="model">upabhokta.samiti.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">upabhokta_samiti.karyabidi_dafa_pramadpatra</field>
+        <field name="binding_model_id" ref="model_upabhokta_samiti_info" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_karyabidi_report_view" />
+    </record>
+
+    <template id="karyabidi_dafa_pramadpatra">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+
+                <t t-foreach="docs" t-as="o">
+                    
+                    <center>
+                        <h3>अनुसूची- ३</h3>
+                        <h4>कार्यविधिको दफा ११ को उपदफा (२) सँग सम्बन्धित</h4>
+
+
+                        <div class="main">
+
+                            <p>
+                                <span t-field="o.municipality" />
+                            </p>
+                            <p>नगर कार्यपालिका को कार्यालय</p>
+                            <p><span t-field="o.municipality" /> , <span t-field="o.district" /> ।</p>
+                        </div>
+                        <p>
+                            <b>उपभोक्ता समिति दर्ता प्रमाण पत्र</b>
+                        </p>
+
+                    </center>
+                    <br />
+                    <div class="date" style="text-align:right; margin-right:10px;">
+                        <p> मिति: <span t-esc="o.registration_date_bs" /></p>
+                    </div>
+                    <br />
+
+                    <div class="main_body" style="line-height:2; padding-bottom:60px;">
+                        <p>यस नगरपालिकाको वडा नं<span style=" padding:0px 10px; font-weight:bold;"
+                                t-field="o.ward" /> टोल<span
+                                style=" padding:0px 10px; font-weight:bold;" t-field="o.tole" /> मा<span
+                                style=" padding:0px 10px; font-weight:bold;"
+                                t-field="o.upabhokta_samiti_name" /> कार्य गर्नका लागि मिति <span
+                                style=" padding:0px 10px; font-weight:bold;"
+                                t-field="o.registration_date_bs" /> मा सम्बन्धित उपभोक्ताको भेलाबाट
+                            उपभोक्ता समिति गठन गर्ने निर्णय भए बमोजिम उपभोक्ता समितिको मिति<span
+                                style=" padding:0px 10px; font-weight:bold;"
+                                t-field="o.registration_date_bs" /> को वैठकको निर्णयबाट समिति
+                            दर्ताको लागि निवेदन प्राप्त भएको हुँदा मिति<span
+                                style=" padding:0px 10px; font-weight:bold;"
+                                t-field="o.registration_date_bs" /> को निर्णयानुसार<span
+                                style=" padding:0px 10px; font-weight:bold;"
+                                t-field="o.upabhokta_samiti_name" /> कार्य गर्नका लागि समिति दर्ता
+                            गर्ने निर्णय भएकोले उपभोक्ता समिति दर्ता प्रमाणपत्र प्रदान गरिएको छ ।</p>
+                    </div>
+                    <div class="row " style="text-align:right;">
+                        <div class="col-4">..................................</div>
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

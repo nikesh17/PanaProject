@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="tole_bikash_attendees_view_tree" model="ir.ui.view">
+        <field name="name">tole_bikash_attendees</field>
+        <field name="model">tole.bikash.attendees</field>
+        <field name="arch" type="xml">
+            <tree string="Tole Bikash Attendees">
+                <field name="full_name" />
+                <field name="gender" />
+                <field name="mobile" />
+                <field name="email" />
+                <field name="remarks" />
+                <field name="signature" widget="image" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="tole_bikash_attendees_view_form" model="ir.ui.view">
+        <field name="name">tole_bikash_attendees.view.form</field>
+        <field name="model">tole.bikash.attendees</field>
+        <field name="arch" type="xml">
+            <form string="Tole Bikash Attendees">
+                <sheet>
+                    <group name="attendees" string="Attendees Detail">
+                        <group>
+                            <field name="full_name" />
+                            <field name="gender" />
+                            <field name="remarks" />
+                        </group>
+                        
+                        <group>
+                            <field name="mobile" />
+                            <field name="email" />
+                            <field name="signature" widget="image" />
+                        </group>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

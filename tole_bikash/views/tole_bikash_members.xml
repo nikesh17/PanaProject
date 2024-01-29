@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="tole_bikash_members_view_tree" model="ir.ui.view">
+        <field name="name">tole_bikash_members.view.tree</field>
+        <field name="model">tole.bikash.member</field>
+        <field name="arch" type="xml">
+            <tree string="Tole Bikash Members">
+                <field name="member_name" />
+                <field name="member_gender" />
+                <field name="member_phone" />
+                <field name="member_email" />
+                <field name="member_signature" />
+                
+            </tree>
+        </field>
+    </record>
+
+    <record id="tole_bikash_members_view_form" model="ir.ui.view">
+        <field name="name">tole_bikash_members.view.form</field>
+        <field name="model">tole.bikash.member</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <field name="csv_file" />
+                    <group>
+                        <group name="member_personal_info" string="Basic Info">
+                            <field name="member_name" />
+                            <field name="member_gender" />
+                            <field name="member_designation" />
+                            <field name="member_location" />
+                            <field name="qualification_level" />
+                        </group>
+
+                        <group name="Profile" string="Profile">
+                            <field name="member_picture" widget="image" />
+                        </group>
+
+                        <group name="total_family_member_info" string="Total Family Members">
+                            <field name="member_family_male" />
+                            <field name="member_family_female" />
+                            <field name="member_family_total" />
+                        </group>
+
+                        <group name="Signature" string=" Member Signature">
+                            <field name="member_signature" widget="image" />
+                        </group>
+
+                        <group name="member_citizenship_details" string="Citizenship Details">
+                            <field name="member_citizenship_number" />
+                            <field name="member_citizenship_issued_district" />
+                            <field name="member_citizenship_issued_date_bs" />
+                            <field name="citizenship_front_back" widget="many2many_binary" options="{'multiple': true}" />
+
+                        </group>
+
+                        
+                       
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

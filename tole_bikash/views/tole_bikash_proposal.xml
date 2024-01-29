@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="tole_bikash_proposal_view_tree" model="ir.ui.view">
+        <field name="name">tole_bikash_proposal.view.tree</field>
+        <field name="model">tole.bikash.proposal</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="proposal_name" />
+                <field name="proposal_detail" />
+                <field name="proposal_document" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="tole_bikash_proposal_view_form" model="ir.ui.view">
+        <field name="name">tole_bikash_proposal.view.form</field>
+        <field name="model">tole.bikash.proposal</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                        <group string="Proposal Detail">
+                            <field name="proposal_name" />
+                            <field name="proposal_detail" />
+                            <field name="proposal_document" widget="pdf_viewer"/>
+                        </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

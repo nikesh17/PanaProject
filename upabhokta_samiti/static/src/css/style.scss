@@ -1,0 +1,28 @@
+img[name="upabhokta_samiti_logo"] {
+  max-width: 100px !important;
+}
+
+.tree-image {
+  max-width: 100px;
+}
+.button-container {
+  max-width: 700px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 1em;
+  margin-bottom: 3em;
+}
+#comments {
+  font-size: 1.2em;
+  padding: 1em;
+  border-bottom: 1px solid #ccc;
+  border-radius: 7px;
+  min-height: 100px;
+  max-width: 90ch;
+  margin-inline: auto;
+  margin-bottom: 1.5em;
+}
+.img-fluid{
+  max-width: 100px !important;
+}

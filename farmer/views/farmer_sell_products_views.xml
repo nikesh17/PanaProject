@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Farmer Crop View -->
+    <record id="view_farmer_sell_products_form" model="ir.ui.view">
+        <field name="name">farmer.sell.products.form</field>
+        <field name="model">farmer.sell.products</field>
+        <field name="arch" type="xml">
+            <form string="Farmer Sell Products">
+                <group>
+                    <field name="farmer_id" attrs="{'readonly': [('id', '!=', False)]}"/>
+                    <field name="farmer_sell_ids" domain="[('farmer_id', '=', farmer_id)]" attrs="{'readonly': [('id', '!=', False)]}"/>
+                    <field name="product_template_id" invisible="1"/>
+                    <field name="product_variants" attrs="{'readonly': [('id', '!=', False)]}"/>
+                    <field name="quantity_to_transfer" attrs="{'readonly': [('id', '!=', False)]}"/>
+                    <field name="stock_picking_id" invisible="True"/>
+                    <field name="transfer_done" invisible="True"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Farmer Crop Tree View -->
+    <record id="view_tree_farmer_sell_products" model="ir.ui.view">
+        <field name="name">Farmer Sell Products Tree View</field>
+        <field name="model">farmer.sell.products</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_variants"/>
+                <field name="quantity_to_transfer"/>
+                <field name="location_id"/>
+                <field name="location_dest_id"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

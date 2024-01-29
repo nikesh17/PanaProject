@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+   
+    <record id="organization_sabha_details_view_form" model="ir.ui.view">
+        <field name="name">organization_sabha_details.view.form</field>
+        <field name="model">organization.sabha.details</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group string=" Bhela Date and Time">
+                            <field name="sabha_number"></field>
+                            <field name="sabha_time" widget="time" placeholde="HH:mm" />
+                            <field name="sabha_date_bs" widget="nepali_datepicker" />
+                            <field name="week" />
+
+                        </group>
+                        <group string="Representative Details">
+                            <field name="sabha_chairman_fullname"></field>
+                        </group>
+                        <group string="Other Info">
+                            <field name="total_attendees" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

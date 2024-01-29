@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_provider_form" model="ir.ui.view">
+        <field name="name">Esewa Payment Gateway Form</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <group name="provider_credentials" position="inside">
+                <group attrs="{'invisible': [('code', '!=', 'esewa')]}">
+                    <!-- <field name="esewa_auth_key" string="API Authentication Key" attrs="{'required':[ ('code', '=', 'esewa'), ('state', '!=', 'disabled')]}"/> -->
+                    <!-- <field name="domain_name" string="Domain Name"/> -->
+                    <field name="domain_name" string="Domain Name"/>
+                    <field name="merchant_code" string="Merchant Code"/>
+                    <!-- <field name="port" string="Port Number"/> -->
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <record id="payment_transaction_form" model="ir.ui.view">
+        <field name="name">Esewa Payment Form</field>
+        <field name="model">payment.transaction</field>
+        <field name="inherit_id" ref="payment.payment_transaction_form"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button string="Authorize"
+                        type="object"
+                        name="action_esewa_set_auth"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',['provider_code','!=','esewa'],['state','==','authorized']]}"
+                        />
+                <button string="Pending"
+                        type="object"
+                        name="action_esewa_set_pending"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',['provider_code','!=','esewa'],['state','==','pending']]}"
+                        />
+                <button string="Draft"
+                        type="object"
+                        name="action_esewa_set_draft"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',['provider_code','!=','esewa'],['state','==','draft']]}"
+                        />
+                <button string="Confirm"
+                        type="object"
+                        name="action_esewa_set_done"
+                        class="oe_highlight"
+                        attrs="{'invisible':['|',['provider_code','!=','esewa'],['state','==','done']]}"
+                        />
+                <button string="Cancel"
+                        type="object"
+                        name="action_esewa_set_canceled"
+                        attrs="{'invisible':['|',['provider_code','!=','esewa'],['state','in',['cancel','error']]]}"
+                        />
+                <button string="Error"
+                        type="object"
+                        name="action_esewa_set_error"
+                        attrs="{'invisible':['|',['provider_code','!=','esewa'],['state','in',['error','cancel']]]}"
+                        />
+
+                <!-- <button string="Pending"
+                        type="object"
+                        name="action_esewa_set_pending"
+                        attrs="{'invisible':[['provider_code','!=','esewa']]}"
+                        /> -->
+            </header>
+        </field>
+    </record>
+    
+</odoo>

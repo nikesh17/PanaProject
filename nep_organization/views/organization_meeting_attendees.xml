@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- Attendees Form View -->
+    <record id="organization_attendees_Form_view" model="ir.ui.view">
+        <field name="name">Organization Meeting Attendees</field>
+        <field name="model">organization.attendees</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="attendees" string="Attendees Detail">
+                        <group>
+                            <field name="full_name" />
+                            <field name="gender" />
+                            <field name="remarks" />
+
+
+                        </group>
+                        <group>
+                            <field name="mobile" />
+                            <field name="sabha_name" />
+                            <field name="signature" widget="image" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Define the paper format -->
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Define the report action -->
+    <record id="report_tole_bikash_praman_patra" model="ir.actions.report">
+        <field name="name">Tole Bikash Praman Patra</field>
+        <field name="model">tole.bikash.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tole_bikash.tole_bikash_praman_patra_report</field>
+        <field name="binding_model_id" ref="model_tole_bikash_info" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <!-- Define the template for the report -->
+    <template id="tole_bikash_praman_patra_report">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    .centered {
+                        text-align: center;
+                    }
+
+                    .left {
+                        text-align: left;
+                    }
+                    h2{
+                        font-size:24px;
+                        font-weight:bold;
+                    }
+
+                    h3 {
+                        font-size: 22px;
+                        font-weight: bold;
+                    }
+
+                    h4 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+
+                    td span {
+                        font-size: 16px;
+                    }
+                    .dynamic-img{
+                        display:inline-block;
+                        max-width:80px;
+                        aspect-ratio:4/3;
+                    }
+                    .table-data{
+                        font-size:16px;
+                    }
+                </style>
+                <!-- Loop through records -->
+                <t t-foreach="docs" t-as="o">
+                    <br/>
+                    <!-- Header section -->
+                    <div class="centered">
+                        <h2>अनुसूचि-3</h2>
+                        <h3><span t-esc="o.municipality.palika_name_np"/></h3>
+                        <h3>गाउँ कार्यपालिकाको कार्यालय</h3>
+                        <h3><span t-esc="o.municipality.palika_name_np"/>, <span t-esc="o.district.district_name_np"/></h3>
+                        <h3><span t-esc="o.province.name_np" />,नेपाल</h3> <br /><br /> 
+                        <h3>टोल विकास संस्था दर्ताप्रमाण-पत्र</h3>
+                    </div><br/><br/> 
+
+                    <!-- Main body section -->
+                    <div>
+                        <p><span t-esc="o.municipality.palika_name_np" /> वडा नं <span t-esc="o.ward" /> स्थित <span t-esc="o.tole" />टोलमा गठन भएको <span t-esc="o.tole_bikash_name_np" /> टोल विकास संस्थालाई यस कार्यालयमा मितिः ....मा सूचिकृत/दर्ता गरी यो प्रमाण-पत्र प्रदान गरिएको छ ।</p>
+                        <p>यस गाउँ कार्यपालिकाको स्वीकृत विधान आर्थिक,सामाजिक,भौतिक पूर्वाधार,शहरी सुशासन लगायतका क्षेत्रमा यस टोल विकास संस्थाको सहभागिताको अपेक्षाका साथै उत्तरोत्तर प्रगितिको शुभकामना व्यक्त गर्दछु ।</p>
+                    </div>
+                    <br/>
+                    <div  style="text-align:right;">
+                        <p>
+                          <div class="row">
+                                <t t-foreach="o.members" t-as="member">
+                                    <t t-if="member.member_designation.organization_samiti_designations=='President'">
+                                        <t t-if="member.member_signature">
+                                            <div class="justify-content-end">
+                                                <img class="dynamic-img" t-attf-src="data:image/*;base64,{{member.member_signature}}"/>
+                                            </div>
+                                        </t>
+                                        <t t-else="">
+                                            दस्तखत भेटिएन
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        दस्तखत भेटिएन
+                                    </t>
+                                </t>
+                            </div>
+
+                        </p>
+                        <p>प्रमुख प्रशासकीय अधिकृत</p>
+                        <p><span  t-esc="o.municipality.palika_name_np" /></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

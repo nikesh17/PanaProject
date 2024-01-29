@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="tole_bikash_meeting_details_view_tree" model="ir.ui.view">
+        <field name="name">tole_bikash_meeting_details</field>
+        <field name="model">tole.bikash.meeting.details</field>
+        <field name="arch" type="xml">
+            <tree string="Tole Bikash Meeting Details">
+                <field name="meeting_number" />
+                <field name="meeting_date_bs" />
+                <field name="total_attendees"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="tole_bikash_meeting_details_view_form" model="ir.ui.view">
+        <field name="name">tole_bikash_meeting_details.view.form</field>
+        <field name="model">tole.bikash.meeting.details</field>
+        <field name="arch" type="xml">
+            <form string="Tole Bikash Meeting Details">
+                <sheet>
+                    <group>
+                        <group name="meeting_details" string="Meeting Date and Time">
+                            <field name="meeting_number" />
+                            <field name="meeting_date_bs" widget="nepali_datepicker"/>
+                            <field name="meeting_time" widget="time" placeholde="HH:mm"/>
+                            <field name="week" />
+                        </group>
+
+                       
+                        <group name="Other Info" string="Other Info">
+                        <field name="meeting_chairman_fullname" />
+                        <field name="total_attendees"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

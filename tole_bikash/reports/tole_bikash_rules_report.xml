@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Define the paper format -->
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Define the report action -->
+    <record id="report_tole_bikash_rules" model="ir.actions.report">
+        <field name="name">Tole Bikash Rules</field>
+        <field name="model">tole.bikash.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tole_bikash.tole_bikash_rules_report</field>
+        <field name="binding_model_id" ref="model_tole_bikash_info" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <!-- Define the template for the report -->
+    <template id="tole_bikash_rules_report">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    .centered {
+                        text-align: center;
+                    }
+
+                    .left{
+                        text-align: left;
+                    }
+                    
+                    h3{
+                        font-size:20px;
+                        font-weight:bold
+                     }
+                     h4{
+                        font-size:18px;
+                     }
+                    p{
+                        font-size:14px;
+                    }
+                     td span{
+                        font-size:14px;
+                    }
+                      h2{
+                        font-size:24px;
+                        font-weight:bold;
+                    }
+                           
+                </style>
+                <!-- Loop through records -->
+                <t t-foreach="docs" t-as="o">
+                    <br/>
+                    <!-- Header section -->
+                    <div class="centered">
+                        <h2>अनुसूचि-1</h2>
+                        <h3> <span t-esc="o.tole" /> टोल विकास संस्थाको विधान</h3>
+                    </div><br/>
+
+                    <!-- Main body section -->
+                    <div>
+                        प्रस्तावना:
+                        <p> <span t-esc="o.proposals.proposal_detail"/></p>
+                    </div>
+
+                    <div class="left">                     
+                        स्थानीय रुपमा उपलब्ध श्रम,सीप र साधन तथा अवसरहरुलाई अधिकतम परिचालन गर्दै गाउँपालिकासको सामाजिक तथा आर्थिक व्यवस्थालाई एक अर्काको परिपूरकको रुपमा विकसित गरी गरिबी न्यूनिकरणका प्रयासमा ठौस योगदान पुर्याउने ,सहभागितात्मक योजना तर्जुमा गर्ने तथा आफ्नो टोलको समग्र विकास गर्ने वातावरण सिर्जना गर्न यो <span t-esc="o.tole_bikash_name_np"/>टोल विकास संस्था स्थापना गरी सञ्चालन गर्न वान्छनिय भएकाले यो विधान बनाइएको छ ।
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

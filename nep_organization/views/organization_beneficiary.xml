@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- Organization Beneficiary Tree View -->
+    <record id="organization_beneficiary_view_tree" model="ir.ui.view">
+        <field name="name">organization_beneficiary.view.tree</field>
+        <field name="model">organization.beneficiary.record</field>
+        <field name="arch" type="xml">
+            <tree string="Organization Beneficiary Tree">
+                <field name="category" />
+                <field name="category_male_population" />
+                <field name="category_female_population" />
+                <field name="category_family_numbers" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Organization Beneficiary Form View -->
+    <record id="organization_beneficiary_view_form" model="ir.ui.view">
+        <field name="name">organization_beneficiary.view.form</field>
+        <field name="model">organization.beneficiary.record</field>
+        <field name="arch" type="xml">
+            <form string="Organization Beneficiary Form">
+                <sheet>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="category" />
+                            </group>
+                            <group>
+                                <field name="category_male_population" />
+                                <field name="category_female_population" />
+                                <field name="category_family_numbers" />
+                            </group>
+                        </group>
+
+                    </sheet>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

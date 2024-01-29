@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- Attendees Form View -->
+    <record id="organization_fix_assets_Form_view" model="ir.ui.view">
+        <field name="name">Organization Fix Assets </field>
+        <field name="model">organization.fix.assets</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    
+                    <group name="Asset Details" string="Asset Details">
+                        <group>
+
+                            <!-- Common Fields -->
+                            <field name="asset_name" />
+                            <field name="house_block_number" attrs="{'invisible': [('asset_name', '!=', 1 )]}"/>
+                            <field name="no_of_rooms" attrs="{'invisible': [('asset_name', '!=', 1)]}"/>
+                            <field name="total_kitta_number" attrs="{'invisible': [('asset_name', '!=', 3)]}"/>
+                            <field name="vehicle_type" attrs="{'invisible': [('asset_name', '!=', 2)]}"/>
+
+                            <field name="asset_number" />
+                            <field name="asset_total_cost" />
+                            <field name="location_of_asset" />
+
+                            <!-- End Common Fields -->
+
+                        </group>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

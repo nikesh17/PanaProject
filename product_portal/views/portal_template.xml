@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="show_product">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container mt-3">
+                    <title>Negotiation</title>
+                    <table class="table border-bottom">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Internal Reference</th>
+                                <th scope="col">Product Type</th>
+                                <th scope="col">Product Category</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="products" t-as="product">
+                                <tr>
+                                    <td><a t-att-href="'/my/products/%s' %slug(product)"><t t-out="product.name"/></a></td>
+                                    <td><span t-field="product.default_code"/></td>
+                                    <td><span t-field="product.detailed_type"/></td>
+                                    <td><span t-field="product.categ_id"/></td>
+                                    <td><span t-field="product.list_price"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+    <!--<template id="custom_portal_searchbar" inherit_id="portal.portal_searchbar" name="Custom Portal Search Bar">-->
+
+    <!--    <xpath expr="//div[t-attf-class='collapse navbar-collapse' and @id='o_portal_navbar_content']" position="inside">-->
+    <!--        <div t-if="searchbar_filters" class="ms-lg-2">-->
+    <!--            <span class="small me-1 navbar-text">Filter By:</span>-->
+    <!--            <div class="btn-group">-->
+    <!--                <button id="portal_searchbar_filters" data-bs-toggle="dropdown" class="btn btn-secondary btn-sm dropdown-toggle">-->
+    <!--                    <t t-esc="searchbar_filters.get(filterby, searchbar_filters.get('all')).get('label', 'All')"/>-->
+    <!--                </button>-->
+    <!--                <div class="dropdown-menu" aria-labelledby="portal_searchbar_filters">-->
+    <!--                    <a t-att-href="default_url + '?' + keep_query('*', filterby='approved')"-->
+    <!--                       t-attf-class="dropdown-item#{filterby == 'approved' and ' active' or ''}">-->
+    <!--                        <span>Approved</span>-->
+    <!--                    </a>-->
+    <!--                    <a t-att-href="default_url + '?' + keep_query('*', filterby='pending')"-->
+    <!--                       t-attf-class="dropdown-item#{filterby == 'pending' and ' active' or ''}">-->
+    <!--                        <span>Pending</span>-->
+    <!--                    </a>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </xpath>-->
+    <!--</template>-->
+
+
+
+    <!--    inherit portal_my_home template from portal_template.xml-->
+    <template id="portal_my_home" inherit_id="portal.portal_my_home"
+              priority="1" name="Show Product " customize_show="True">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Negotiation Requests</t>
+                <t t-set="url" t-value="'/my/negotiations'"/>
+                <t t-set="placeholder_count" t-value="'product_count'"/>
+            </t>
+        </xpath>
+    </template>
+    <!--portal page-->
+    <!--portal page-->
+    <template id="portal_products" name="Products">
+
+        <!-- Modal -->
+        <div id="new_modal" class="modal fade mt-25" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update your Request</h5>
+                        <!--                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                        <!--                            <span aria-hidden="true">X</span>-->
+                        <!--                        </button>-->
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="expected_price">Expected Price:</label>
+                            <input type="text" class="form-control" id="expected_price" required="true"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer_status">Customer Status:</label>
+                            <select class="form-control" id="customer_status">
+                                <option value="Negotiating">Negotiating</option>
+                                <option value="Locked">Locked</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" t-attf-onclick="close_modal()">Close</button>
+                        <button type="button" class="btn btn-primary" id="save_changes"
+
+                        >Save changes</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Negotiations</t>
+            </t>
+            <t t-if="products" t-call="portal.portal_table">
+
+                <thead>
+                    <tr class="active">
+                        <th>Product Name #</th>
+                        <th class="text-end">Reference No.</th>
+                        <th class="text-end">Quantity</th>
+                        <th class="text-end"> Actual Price</th>
+                        <th class="text-end"> Expected Price</th>
+                        <th class="text-end">Your Status</th>
+                        <th class="text-end">Counter Vendor Rate</th>
+                        <th class="text-end">Final Price</th>
+                        <!--                        <th class="text-end">Counter Vendor Rate</th>-->
+                        <!--                        <th class="text-end">Final Price</th>-->
+                    </tr>
+                </thead>
+                <t t-foreach="products" t-as="product">
+                    <tr>
+                        <td><a t-att-href="'/my/products/%s' %slug(product)">
+                            <t t-out="product.product_name"/></a></td>
+                        <td class="text-end">
+                            <span t-field="product.ref"/>
+
+                        </td>
+                        <td class="text-end"><span t-field="product.quantity"/></td>
+                        <td class="text-end"><span t-field="product.actual_price"/></td>
+                        <td class="text-end"><span t-field="product.expected_price_per_unit"/></td>
+                        <td class="text-end">
+                            <span t-field="product.customer_status"/></td>
+                        <td class="text-center">
+                            <t t-if="product.counter_offer_price_per_unit == 0.0">
+                                Not set
+                            </t>
+                            <t t-else="">
+                                <span t-field="product.counter_offer_price_per_unit"/>
+                            </t>
+                        </td>
+                        <td class="text-center">
+                            <t t-if="product.final_negotiated_price == 0.0">
+                                Not Decided
+                            </t>
+                            <t t-else="">
+                                <span t-field="product.final_negotiated_price"/>
+                            </t>
+                        </td>
+                        <td class="text-end">
+                            <t t-if="product.state == 'Accept'">
+
+                                <b style="color: #28a745">Accepted</b>
+
+                            </t>
+                            <t t-else="">
+                                <!-- Edit button -->
+                                <button t-attf-data-id="{{product.id}}" id="jpt" t-attf-onclick="edit_negotiation_request({{product.id}})" class="btn btn-primary btn-sm edit-product">Update</button>
+                                <!-- Delete button -->
+                                <button t-attf-data-id="{{product.id}}" class="btn btn-danger btn-sm delete-product" t-attf-onclick="delete_record({{product.id}})">Delete</button>
+                            </t>
+                        </td>
+                    </tr>
+                </t>
+            </t>
+            <p t-else="">There are currently no Product for your account.</p>
+        </t>
+    </template>
+    <!--    this is for the product details page-->
+
+    <template id="price_negotiation_request_portal_form_template" >
+        <t t-call="portal.portal_layout">
+            <body data-spy="scroll" data-target=".navspy" data-offset="50">
+                <div class="container o_portal_sidebar"></div>
+                <div class="oe_structure mb32" id="oe_structure.portal_sidebar_1"/>
+            </body>
+        </t>
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <div class="row mt16">
+                <p>On Progress</p>
+                <p>Approved</p>
+            </div>
+
+        </xpath>
+
+    </template>
+
+    <template id="portal_my_home_menu_product" name="Portal layout : products menu entries"
+              inherit_id="portal.portal_breadcrumbs" priority="20">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'product'"
+                t-attf-class="breadcrumb-item #{'active ' if not product else ''}">
+                <a t-if="product" t-attf-href="/my/negotiations">Negotiations</a>
+                <t t-else="">Negotiations</t>
+            </li>
+
+            <li t-if="product" class="breadcrumb-item active">
+                <t t-esc="product.id"/>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="product_detail" name="My product">
+        <t t-call="portal.portal_layout">
+
+            <t t-call="portal.portal_record_layout">
+                <t t-set="card_header">
+                    <h5 class="mb-0">
+                        <small class="text-muted">Product - </small><span t-field="product.product"/>
+                        <span class="float-right">
+                        </span>
+                    </h5>
+                </t>
+                <t t-set="card_body">
+                    <p t-field="product.customer" />
+                    <h3 t-field="product.state" />
+                    <!--                    <h3 t-field="product.state" />-->
+
+                </t>
+
+            </t>
+            <div class="container py-5">
+                <h1> Write Message</h1>
+                <t t-set="object" t-value="product"/>
+                <t t-call="portal.message_thread">
+                </t>
+            </div>
+        </t>
+    </template>
+    <!--    &lt;!&ndash;    edit portal detail page by inheriting portal_my_details_templates&ndash;&gt;-->
+    <template id="portal_my_details_fields" inherit_id="portal.portal_my_details_fields">
+        <xpath expr="//input[@name='csrf_token']" position="before">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <img name="profile" t-att-src="image_data_uri(partner.image_1920)"
+                             class="card-img-top" alt="" width="10%"
+                             data-mimetype="image/png"/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

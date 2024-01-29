@@ -1,0 +1,448 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="test_view" name="Test">
+        <t t-call="website.layout">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+                    <div class="multisteps-form__progress">
+                        <a t-attf-href="/organization/basic-details"
+                            class="multisteps-form__progress-btn js-active"
+                            type="button"
+                            title="page_first">
+                            समितिको विवरण
+                        </a>
+                        <button
+                            class="multisteps-form__progress-btn js-active"
+                            type="button" title="page_third">
+                            भेलाको विवरण
+                        </button>
+                        <a t-attf-href="/organization/project-proposals"
+                            class="multisteps-form__progress-btn"
+                            type="button" title="page_third">
+                            आयोजनाको प्रस्तावहरु
+                        </a>
+                        <a t-attf-href="/organization/member-details"
+                            class="multisteps-form__progress-btn "
+                            type="button"
+                            title="page_second">
+                            समितिको सदस्य विवरण
+                        </a>
+
+                        <a t-attf-href="/organization/attendee-details"
+                            class="multisteps-form__progress-btn "
+                            type="button" title="page_third">
+                            सहभागीहरुको विवरण
+                        </a>
+                        <a t-attf-href="/organization/beneficiary"
+                            class="multisteps-form__progress-btn"
+                            type="button" title="page_four">
+                            लाभग्राहिहरुको विवरण
+                        </a>
+
+                        <button class="multisteps-form__progress-btn"
+                            type="button" title="page_four">बैंकको विवरण
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <style>
+                form.form .form-control {padding: 5px;}
+                form.form .form-lbl {position: relative; margin: 0 0 3px 0; color: #666 !important;
+                text-transform: capitalize; font-weight: 600; width: 100%;}
+                form.form .remove_file_space{padding: 7px 0 !important; border: transparent;
+                background: transparent; }
+                form.form .select2-container--default .select2-selection--single
+                .select2-selection__rendered,
+                form.form .select2-container--default .select2-selection--single
+                .select2-selection__arrow,
+                form.form .select2-container .select2-selection--single{ height: calc(2.25rem +
+                2px); line-height: calc(2.25rem + 2px);}
+                form.form .select2-container .select2-selection--multiple {min-height: calc(2.25rem
+                + 2px); }
+                form.form .select2-container--default.select2-container--focus
+                .select2-selection--multiple {background-color: #fff; border-color: #80bdff;
+                outline: 0; box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); }
+                form.form .select2-container--default .select2-selection--single {border: 1px solid
+                #ced4da; }
+                form.form .select2 img {width: 20px; position: relative; top: -2px; margin-right:
+                5px;}
+
+                .password_eye {position: relative; }
+                .icon-view {position: absolute; right: 15px; top: 10px; color: #202020; font-size:
+                12px}
+
+
+                .date-icon, .time-icon{position: relative;}
+                .date-icon i, .time-icon i {position: absolute; bottom: 10px; right: 10px; }
+                .e-form_container{
+                max-width:1000px;
+                background:#fff;
+                padding:2em;
+                margin-inline:auto;
+                margin-top:30px;
+                border-radius:7px;
+                }
+                .form-lbl{
+                position:relative;
+                display:inline-block;
+                max-width:fit-content;
+                }
+                .form-lbl::after{
+                position:absolute;
+                content:"*";
+                color:green;
+                top:-5px;
+                right:-10px;
+
+                }
+                .action-btn{
+                text-decoration:none;
+                padding:0.7em 1em;
+                border:1px solid grey;
+                border-radius:7px;
+                margin-top:1em;
+                background:#e7f0fe;
+                transition:all 0.7s ease;
+                }
+                .action-btn:hover{
+                animation: myAnim 2s ease 0s 1 normal none;
+
+
+                }
+                .action-btn:active{
+                animation: myAnim 2s ease 0s 1 normal none;
+
+                }
+
+                @keyframes myAnim {
+                0% {
+                transform: scale3d(1, 1, 1);
+                }
+
+                30% {
+                transform: scale3d(1.25, 0.75, 1);
+                }
+
+                40% {
+                transform: scale3d(0.75, 1.25, 1);
+                }
+
+                50% {
+                transform: scale3d(1.15, 0.85, 1);
+                }
+
+                65% {
+                transform: scale3d(0.95, 1.05, 1);
+                }
+
+                75% {
+                transform: scale3d(1.05, 0.95, 1);
+                }
+
+                100% {
+                transform: scale3d(1, 1, 1);
+                }
+                }
+
+                .field-border{
+                position:relative;
+                padding:1em;
+                margin-bottom:2em;
+                }
+                .field-label{
+                position:absolute;
+                left:0;
+                top:-25px;
+                background:#fff;
+                font-weight:500;
+                font-size:1.3em;
+                padding:0.8em;
+                }
+                .row{
+                margin-top:1em;
+                margin-bottom:1em;
+                }
+            </style>
+
+
+            <div class="container e-form_container">
+                <br />
+                <h1 align="center">Employee Registration Form</h1>
+                <br />
+                <form class="form">
+
+                    <div class="fieldset">
+                        <fieldset class="field-border">
+                            <div class="field-label">Personal Details</div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">label</label>
+                                        <input type="text" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Email</label>
+                                        <input type="email" class="form-control" id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Password</label>
+                                        <input type="password" class="form-control" id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group view-password">
+                                        <label class="form-lbl">View Password</label>
+                                        <div class="password_eye">
+                                            <input type="password"
+                                                class="form-control input-password"
+                                                aria-label="password" />
+                                            <a href="JavaScript:void(0);" class="icon-view">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Number</label>
+                                        <input type="number" class="form-control" id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Time</label>
+                                        <input type="time" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-4">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Time</label>
+                                        <input type="time" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Date</label>
+                                        <input type="date" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Date</label>
+                                        <input type="date" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">File</label>
+                                        <input type="file" class="form-control remove_file_space"
+                                            id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                        <fieldset class="field-border">
+                            <div class="field-label">Personal Details</div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">label</label>
+                                        <input type="text" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Email</label>
+                                        <input type="email" class="form-control" id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Password</label>
+                                        <input type="password" class="form-control" id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group view-password">
+                                        <label class="form-lbl">View Password</label>
+                                        <div class="password_eye">
+                                            <input type="password"
+                                                class="form-control input-password"
+                                                aria-label="password" />
+                                            <a href="JavaScript:void(0);" class="icon-view">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Number</label>
+                                        <input type="number" class="form-control" id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Time</label>
+                                        <input type="time" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-4">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Time</label>
+                                        <input type="time" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Date</label>
+                                        <input type="date" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Date</label>
+                                        <input type="date" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">File</label>
+                                        <input type="file" class="form-control remove_file_space"
+                                            id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                        <fieldset class="field-border">
+                            <div class="field-label">Personal Details</div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">label</label>
+                                        <input type="text" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Email</label>
+                                        <input type="email" class="form-control" id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Password</label>
+                                        <input type="password" class="form-control" id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group view-password">
+                                        <label class="form-lbl">View Password</label>
+                                        <div class="password_eye">
+                                            <input type="password"
+                                                class="form-control input-password"
+                                                aria-label="password" />
+                                            <a href="JavaScript:void(0);" class="icon-view">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Number</label>
+                                        <input type="number" class="form-control" id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Time</label>
+                                        <input type="time" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-4">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Time</label>
+                                        <input type="time" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Date</label>
+                                        <input type="date" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">Date</label>
+                                        <input type="date" class="form-control" id="" placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fieldset class="form-group">
+                                        <label class="form-lbl">File</label>
+                                        <input type="file" class="form-control remove_file_space"
+                                            id=""
+                                            placeholder="" />
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                        <div style="width:100%;display:grid;place-items:center;">
+                            <a href="#" class="action-btn btn">
+                                Uhuiiiiii
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

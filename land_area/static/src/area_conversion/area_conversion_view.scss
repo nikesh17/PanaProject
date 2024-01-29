@@ -1,0 +1,72 @@
+ul{
+  list-style-type: none;
+}
+.Heirarchy-tree-ul span{
+  cursor: pointer;
+}
+
+.arrowIcon{
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.search-container{
+  display: flex;
+  span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    padding: 6px;
+  }
+ 
+}
+
+#form_container_id{
+  padding: 5px;
+  .line{
+    padding: 5px;
+    width: 100%;
+    border-bottom:0.5px solid gray ;
+    div{
+      input{
+        width: 65%;
+      }
+    }
+  }
+  .inline{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    div{
+      width: 50%;
+    }
+  }
+}
+
+.header {
+  font-size: medium;
+}
+
+.disabled{
+  color: gray;
+  input{
+    pointer-events:none;
+  }
+}
+// .bkdkk {
+//   margin: 5px; width:100%; 
+// }
+// .bkdkk div {
+//    margin:3px; float:left
+// }
+// .bkdkk div label {
+//   // margin: 5px;
+//   width: 30%;
+//   float: left;
+// }
+// .bkdkk div input {
+//   // margin: 5px;
+//   float: left;
+//   width: 70%;
+// }

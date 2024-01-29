@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <!-- <t t-inherit="web.UserMenu" t-name="web.UserMenu" owl="1">
+        <xpath expr="." position="inside">
+            <t t-esc="user.context.allowed_company_ids"/>
+        </xpath>
+    </t> -->
+
+    <t t-name="farmer.UserCompany" owl="1">
+        <a class="dropdown-item o_menu_brand d-none d-md-block" role="menuitem" tabindex="0" href="#" data-menu-xmlid="farmer.menu_farmer" data-section="286"><t t-esc="company.currentCompany.name"/></a>
+         
+    </t>
+
+</templates>

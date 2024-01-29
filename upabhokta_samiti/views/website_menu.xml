@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <record id="upabhokta_samiti_web_dashboard_menu" model="website.menu">
+            <field name="name">Upabhokta Samiti Dashboard</field>
+            <field name="url">/upabhokta-samiti/dashboard</field>
+            <field name="parent_id" ref="website.main_menu" />
+            <field name="sequence" type="int">2</field>
+            <field name="new_window" eval="False"></field>
+        </record> -->
+
+    <!-- <record id="upabhokta_samiti_web_user_notification" model="website.menu">
+            <field name="name">Notification</field>
+            <field name="url">/upabhokta-samiti/user/notification</field>
+            <field name="parent_id" ref="website.main_menu" />
+            <field name="sequence" type="int">3</field>
+            <field name="new_window" eval="False"></field>
+        </record> -->
+
+    <!-- <record id="registration_menu_" model="website.menu">
+        <field name="name">Register</field>
+        <field name="url">/register</field>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="child_id">ngo_registration_menu,us_registration_menu</field>
+        <field name="sequence" type="int">2</field>
+        <field name="new_window" eval="False"></field>
+
+    </record> -->
+    <!-- <record id="ngo_registration_menu" model="website.menu">
+            <field name="name">NGO</field>
+            <field name="url">/register</field>
+            <field name="parent_id" ref="registration_menu_"/>
+            <field name="sequence" type="int">2</field>
+         
+        </record>
+        <record id="us_registration_menu" model="website.menu">
+            <field name="name">US</field>
+            <field name="url">/register</field>
+            <field name="parent_id" ref="registration_menu_"/>
+            <field name="sequence" type="int">3</field>
+            <field name="new_window" eval="False"></field>
+        </record> -->
+
+    <template id="frontend_layout___" name="Main Frontend Layout" inherit_id="web.frontend_layout">
+        <xpath expr="//div[@id='wrapwrap']" position="attributes">
+            <attribute name="t-attf-class"
+                add="#{request.env['res.lang']._lang_get_direction(request.env.lang) == 'rtl' and 'o_rtl' or ''}"
+                separator=" " />
+            <attribute name="t-attf-class" add="#{'o_portal' if is_portal else ''}" separator=" " />
+        </xpath>
+        <xpath expr="//div[@id='wrapwrap']/header" position="replace">
+            <t t-cache="res_company">
+                <nav class="secondary-nav py-2">
+                    <div>
+                        <a href="/" class="navbar-brand logo brand-logo">
+                            <img src="/upabhokta_samiti/static/src/images/govlogo.png"
+                                t-att-alt="'Logo of %s' % res_company.name"
+                                t-att-title="res_company.name" />
+                        </a>
+                    </div>
+                    <div class="brand-description">
+                        <div>Government of Nepal</div>
+                        <span>Department of Registrar</span>
+                        <span>Online Organization Registration Portal</span>
+                    </div>
+                    <div>
+                        <a href="/" class="navbar-brand logo brand-logo nep-flag">
+                            <img src="/upabhokta_samiti/static/src/images/np_flag.png"
+                                alt="Flag of Nepal" />
+                        </a>
+                    </div>
+                </nav>
+
+                <nav class="navbar navbar-expand primary-nav" id="primaryNav"
+                    style="transition: all 0.3s ease;">
+                    <div class="container nav-container">
+                        <ul id="top_menu" class="nav">
+                            <li class="nav-item">
+                                <a t-attf-href="/" class="nav-link" title="Home" role="navitem">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#"
+                                    id="navbarDropdownMenuLink" title="Register"
+                                    data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Register
+                                </a>
+                                <div class="dropdown-menu" id="dropdownMenu"
+                                    aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/upabhokta-samiti/dashboard">Upabhokta
+                                        Samiti</a>
+                                    <a class="dropdown-item" href="/organization/dashboard">
+                                        Organization</a>
+                                    <a class="dropdown-item" href="/company/dashboard">Company</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a t-attf-href="/user-guide" class="nav-link" title="User Guide"
+                                    role="navitem">User Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a t-attf-href="/terms-conditions" class="nav-link" title="T&amp;C"
+                                    role="navitem">Terms &amp; Conditions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a t-attf-href="/contactus" class="nav-link" title="Contact"
+                                    role="navitem">Contact</a>
+                            </li>
+
+                            <t t-call="portal.placeholder_user_sign_in">
+                                <t t-set="_item_class" t-value="'nav-item'" />
+                                <t t-set="_link_class" t-value="'nav-link'" />
+                            </t>
+                            <t t-call="portal.user_dropdown">
+                                <t t-set="_user_name" t-value="true" />
+                                <t t-set="_item_class" t-value="'nav-item dropdown'" />
+                                <t t-set="_link_class" t-value="'nav-link'" />
+                                <t t-set="_dropdown_menu_class" t-value="'dropdown-menu-end'" />
+                            </t>
+                        </ul>
+                    </div>
+
+                    <i class="fa fa-bars nav-toggle-btn" id="navToggleBtn" aria-hidden="true"></i>
+
+                </nav>
+
+        
+            </t>
+        </xpath>
+        <xpath expr="//div[@id='wrapwrap']/main/t[@t-out='0']" position="before">
+            <div t-if="o_portal_fullwidth_alert"
+                class="alert alert-info alert-dismissible rounded-0 fade show d-print-none css_editable_mode_hidden">
+                <div class="container">
+                    <t t-out="o_portal_fullwidth_alert" />
+                </div>
+            </div>
+        </xpath>
+
+
+    </template>
+
+</odoo>

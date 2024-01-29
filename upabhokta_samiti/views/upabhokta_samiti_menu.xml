@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- Root Menu -->
+    <menuitem
+        id="upabhokta_samiti_backend_menu"
+        name="Upabhokta Samiti"
+        sequence="10"
+        action="upabhokta_samiti_action"
+    />
+    <!-- Actions -->
+    <!-- Upabhokta Samiti Action -->
+    <record id="upabhokta_samiti_action" model="ir.actions.act_window">
+        <field name="name">Upabhokta Samiti List</field>
+        <field name="res_model">upabhokta.samiti.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+
+    <record id="upabhokta_samiti_members" model="ir.actions.act_window">
+        <field name="name">Upabhokta Samiti List</field>
+        <field name="res_model">upabhokta.samiti.formation.members</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+
+    <!-- Configurations -->
+    <!-- Designation Action -->
+    <record id="upabhokta_samiti_organization_designation_representative_action" model="ir.actions.act_window">
+        <field name="name">Organization Designation</field>
+        <field name="res_model">organization.designation.representative</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+    <record id="upabhokta_samiti_organization_designation_organization_action" model="ir.actions.act_window">
+        <field name="name">Organization Designation</field>
+        <field name="res_model">organization.designation.organization</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+    <!-- Beneficiary category -->
+    <record id="beneficiary_category_action" model="ir.actions.act_window">
+        <field name="name">Beneficiary Category</field>
+        <field name="res_model">upabhokta.samiti.beneficiary.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+
+    <!-- Samiti category -->
+    <record id="upabhokta_samiti_category_action" model="ir.actions.act_window">
+        <field name="name">Upabhokta Samiti Category</field>
+        <field name="res_model">upabhokta.samiti.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+
+    <!-- Yojana Type Action -->
+    <record id="organization_yojana_type_action" model="ir.actions.act_window">
+        <field name="name">Organization Yojana</field>
+        <field name="res_model">org.yojana.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+
+    <!-- Yojana Budget Action -->
+    <record id="organization_budget_type_action" model="ir.actions.act_window">
+        <field name="name">Organization Budget</field>
+        <field name="res_model">org.budget.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+
+
+    <!-- Beneficiary Action -->
+    <record id="upabhokta_samiti_beneficiary_action" model="ir.actions.act_window">
+        <field name="name">Beneficiary Action</field>
+        <field name="res_model">upabhokta.samiti.beneficiary</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+
+    <!-- Upabhokta Samiti Formation Members -->
+    <record id="upabhokta_samiti_formation_members_action" model="ir.actions.act_window">
+        <field name="name">Members Action</field>
+        <field name="res_model">upabhokta.samiti.formation.members</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <div class="oe_view_nocontent">
+                Add New
+            </div>
+        </field>
+    </record>
+
+    <!-- Menu Configurations -->
+    <menuitem
+        id="upabhokta_samiti_configurations"
+        name="Configurations"
+        parent="upabhokta_samiti_backend_menu"
+        sequence="21" />
+
+    <!-- Config Submenu -->
+    <menuitem
+        id="upabhokta_samiti_designation_configurations"
+        name="Designations"
+        parent="upabhokta_samiti_configurations"
+        sequence="22"
+    />
+    <menuitem
+        id="upabhokta_samiti_designation_representative_configurations"
+        name="Representative Designations"
+        parent="upabhokta_samiti_designation_configurations"
+        action="upabhokta_samiti_organization_designation_representative_action"
+    />
+    <menuitem
+        id="upabhokta_samiti_designation_org_configurations"
+        name="Organization Designations"
+        parent="upabhokta_samiti_designation_configurations"
+        action="upabhokta_samiti_organization_designation_organization_action"
+    />
+    <menuitem
+        id="org_yojana_type_configurations"
+        name="Yojana Type"
+        parent="upabhokta_samiti_configurations"
+        action="organization_yojana_type_action"
+        sequence="26"
+
+    />
+
+    <menuitem
+        id="org_budget_type_configurations"
+        name="Budget Type"
+        parent="upabhokta_samiti_configurations"
+        action="organization_budget_type_action"
+        sequence="25"
+    />
+
+    <!-- Config Beneficiary -->
+    <menuitem
+        id="org_beneficiary_category_configurations"
+        name="Beneficiary Category"
+        parent="upabhokta_samiti_configurations"
+        action="beneficiary_category_action"
+        sequence="27"
+    />
+
+    <!-- Config Samiti Category -->
+    <menuitem
+        id="upabhokta_samiti_category_configurations"
+        name="Upabhokta Samiti Category"
+        parent="upabhokta_samiti_configurations"
+        action="upabhokta_samiti_category_action"
+        sequence="28"
+    />
+
+</odoo>

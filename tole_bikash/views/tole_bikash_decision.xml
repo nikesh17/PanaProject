@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="tole_bikash_decision_view_tree" model="ir.ui.view">
+        <field name="name">tole_bikash_decision</field>
+        <field name="model">tole.bikash.decision</field>
+        <field name="arch" type="xml">
+            <tree string="Tole Bikash Decision">
+                <field name="decision_name" />
+                <field name="decision_detail" />
+                <field name="decision_document"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="tole_bikash_decision_view_form" model="ir.ui.view">
+        <field name="name">tole_bikash_decision.view.form</field>
+        <field name="model">tole.bikash.decision</field>
+        <field name="arch" type="xml">
+            <form string="Tole Bikash Decision">
+                <sheet>
+                    <group>
+                        <field name="decision_name" />
+                        <field name="decision_detail" />
+                        <field name="decision_document" widget="pdf_viewer"  />
+
+                    </group>
+
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

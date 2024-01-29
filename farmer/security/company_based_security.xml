@@ -1,0 +1,800 @@
+<odoo>
+    <!-- every company is only allowed to view email servers of their own company only -->
+    <record id="company_based_email_server_access_rule" model="ir.rule">
+        <field name="name">Email Server Access Based on allowed companies</field>
+        <field ref="model_ir_mail_server" name="model_id"/>
+        <field name="domain_force">[('company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+    <!-- every company is only allowed to view users of their own company only -->
+    <record id="company_based_user_access_rule" model="ir.rule">
+        <field name="name">User Access Based on allowed companies</field>
+        <field ref="model_res_users" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+    <!-- every company is only allowed to view products of their own company only -->
+    <record id="company_based_user_access_rule" model="ir.rule">
+        <field name="name">Product Access Based on allowed companies</field>
+        <field ref="model_product_template" name="model_id"/>
+        <field name="domain_force">['|',('my_company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+    <record id="company_based_website_access_rule" model="ir.rule">
+        <field name="name">Website Access Based on allowed companies</field>
+        <field ref="website.model_ir_ui_view" name="model_id"/>
+        <!-- <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field> -->
+        <field name="groups" eval="[(4, ref('farmer.group_admin_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+
+
+    <!-- every company is only allowed to view Agriculture Activity of their own company only -->
+    <record id="company_based_agriculture_activity_access_rule" model="ir.rule">
+        <field name="name">Agriculture Activity Access Based on allowed companies</field>
+        <field ref="model_farmer_agriculture_activities" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view seedling.lists.model of their own company only -->
+    <record id="company_based_seedling_lists_model_access_rule" model="ir.rule">
+        <field name="name">Seedling Lists Model Access Based on allowed companies</field>
+        <field ref="model_seedling_lists_model" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view documents.type of their own company only -->
+    <record id="company_based_documents_type_access_rule" model="ir.rule">
+        <field name="name">Document Type Access Based on allowed companies</field>
+        <field ref="model_documents_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.qualification of their own company only -->
+    <record id="company_based_farmer_qualification_access_rule" model="ir.rule">
+        <field name="name">Farmer Qualification Access Based on allowed companies</field>
+        <field ref="model_farmer_qualification" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.occupation of their own company only -->
+    <record id="company_based_farmer_occupation_access_rule" model="ir.rule">
+        <field name="name">Farmer Occupation Access Based on allowed companies</field>
+        <field ref="model_farmer_occupation" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.group.metadata of their own company only -->
+    <record id="company_based_farmer_group_metadata_access_rule" model="ir.rule">
+        <field name="name">Farmer Group metadata Access Based on allowed companies</field>
+        <field ref="model_farmer_group_metadata" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view land.type of their own company only -->
+    <record id="company_based_land_type_access_rule" model="ir.rule">
+        <field name="name">Land Type Access Based on allowed companies</field>
+        <field ref="model_land_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view irrigation.type of their own company only -->
+    <record id="company_based_irrigation_type_access_rule" model="ir.rule">
+        <field name="name">Irrigation type Access Based on allowed companies</field>
+        <field ref="model_irrigation_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view road.type of their own company only -->
+    <record id="company_based_road_type_access_rule" model="ir.rule">
+        <field name="name">Road Type Access Based on allowed companies</field>
+        <field ref="model_road_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view institution.type of their own company only -->
+    <record id="company_based_institution_type_access_rule" model="ir.rule">
+        <field name="name">Institution Type Access Based on allowed companies</field>
+        <field ref="model_institution_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view institution.name of their own company only -->
+    <record id="company_based_institution_name_access_rule" model="ir.rule">
+        <field name="name">Institution Name Access Based on allowed companies</field>
+        <field ref="model_institution_name" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view fish_type of their own company only -->
+    <record id="company_based_fish_type_access_rule" model="ir.rule">
+        <field name="name">Fish Type Access Based on allowed companies</field>
+        <field ref="model_fish_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view crop_name of their own company only -->
+    <record id="company_based_crop_name_access_rule" model="ir.rule">
+        <field name="name">Crop Name Access Based on allowed companies</field>
+        <field ref="model_crop_name" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view crop_type of their own company only -->
+    <record id="company_based_crop_type_access_rule" model="ir.rule">
+        <field name="name">Crop Type Access Based on allowed companies</field>
+        <field ref="model_crop_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view local_production_category of their own company only -->
+    <record id="company_based_local_production_category_access_rule" model="ir.rule">
+        <field name="name">Local Production Category Access Based on allowed companies</field>
+        <field ref="model_local_production_category" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view animal_name of their own company only -->
+    <record id="company_based_animal_name_access_rule" model="ir.rule">
+        <field name="name">Animal Name Access Based on allowed companies</field>
+        <field ref="model_animal_name" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view animal_type of their own company only -->
+    <record id="company_based_animal_type_access_rule" model="ir.rule">
+        <field name="name">Animal Type Access Based on allowed companies</field>
+        <field ref="model_animal_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view animal_purpose of their own company only -->
+    <record id="company_based_animal_purpose_access_rule" model="ir.rule">
+        <field name="name">Animal Purpose Access Based on allowed companies</field>
+        <field ref="model_animal_purpose" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view location_province of their own company only -->
+    <record id="company_based_location_province_access_rule" model="ir.rule">
+        <field name="name">Location Province Access Based on allowed companies</field>
+        <field ref="model_location_province" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view location_district of their own company only -->
+    <record id="company_based_location_district_access_rule" model="ir.rule">
+        <field name="name">Location District Access Based on allowed companies</field>
+        <field ref="model_location_district" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view location_palika of their own company only -->
+    <record id="company_based_location_palika_access_rule" model="ir.rule">
+        <field name="name">Location Palika Access Based on allowed companies</field>
+        <field ref="model_location_palika" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view location_tole of their own company only -->
+    <record id="company_based_location_tole_access_rule" model="ir.rule">
+        <field name="name">Location Tole Access Based on allowed companies</field>
+        <field ref="model_location_tole" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view fiscal_year of their own company only -->
+    <record id="company_based_fiscal_year_access_rule" model="ir.rule">
+        <field name="name">Fiscal year Access Based on allowed companies</field>
+        <field ref="model_fiscal_year" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view organization_type of their own company only -->
+    <record id="company_based_organization_type_access_rule" model="ir.rule">
+        <field name="name">Organization Type Access Based on allowed companies</field>
+        <field ref="model_organization_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view organization_nature of their own company only -->
+    <record id="company_based_organization_nature_access_rule" model="ir.rule">
+        <field name="name">Organization Nature Access Based on allowed companies</field>
+        <field ref="model_organization_nature" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view organization_closing_reason of their own company only -->
+    <record id="company_based_organization_closing_reason_access_rule" model="ir.rule">
+        <field name="name">Organization Closing Reason Access Based on allowed companies</field>
+        <field ref="model_organization_closing_reason" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view programs_year of their own company only -->
+    <record id="company_based_programs_year_access_rule" model="ir.rule">
+        <field name="name">Program year Access Based on allowed companies</field>
+        <field ref="model_programs_year" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view year_program of their own company only -->
+    <record id="company_based_year_program_access_rule" model="ir.rule">
+        <field name="name">Year Program Access Based on allowed companies</field>
+        <field ref="model_year_program" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view program_project of their own company only -->
+    <record id="company_based_program_project_access_rule" model="ir.rule">
+        <field name="name">Program Project Access Based on allowed companies</field>
+        <field ref="model_program_project" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view services_lists of their own company only -->
+    <record id="company_based_services_lists_access_rule" model="ir.rule">
+        <field name="name">Services Lists Access Based on allowed companies</field>
+        <field ref="model_services_lists" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view equipment_lists_model of their own company only -->
+    <record id="company_based_equipment_lists_model_access_rule" model="ir.rule">
+        <field name="name">Equipment Lists Model Access Based on allowed companies</field>
+        <field ref="model_equipment_lists_model" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view fish_larva_lists_model of their own company only -->
+    <record id="company_based_fish_larva_lists_model_access_rule" model="ir.rule">
+        <field name="name">Fish Larva Lists Model Access Based on allowed companies</field>
+        <field ref="model_fish_larva_lists_model" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view expert_type of their own company only -->
+    <record id="company_based_expert_type_access_rule" model="ir.rule">
+        <field name="name">Expert Type Access Based on allowed companies</field>
+        <field ref="model_expert_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view technician_type of their own company only -->
+    <record id="company_based_technician_type_access_rule" model="ir.rule">
+        <field name="name">Technician Type Access Based on allowed companies</field>
+        <field ref="model_technician_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view warehouse_type of their own company only -->
+    <record id="company_based_warehouse_type_access_rule" model="ir.rule">
+        <field name="name">Warehouse Type Access Based on allowed companies</field>
+        <field ref="model_warehouse_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),'|',('company_id','in',(1,False)),'|',('parent_company_id','in',company_ids),('parent_company_id','in',(1,False))]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+
+
+
+    <!-- every company is only allowed to view producer of their own company only -->
+    <record id="company_based_producer_access_rule" model="ir.rule">
+        <field name="name">Producer Access Based on allowed companies</field>
+        <field ref="model_farm_producer" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view household of their own company only -->
+    <record id="company_based_household_access_rule" model="ir.rule">
+        <field name="name">Household Access Based on allowed companies</field>
+        <field ref="model_farm_household" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer of their own company only -->
+    <record id="company_based_farmer_access_rule" model="ir.rule">
+        <field name="name">Farmer Access Based on allowed companies</field>
+        <field ref="model_farm_farmer" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.group.poc of their own company only -->
+    <record id="company_based_farmer_group_poc_access_rule" model="ir.rule">
+        <field name="name">Farmer Group Poc Access Based on allowed companies</field>
+        <field ref="model_farmer_group_poc" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.group.member of their own company only -->
+    <record id="company_based_farmer_group_member_access_rule" model="ir.rule">
+        <field name="name">Farmer Group member Access Based on allowed companies</field>
+        <field ref="model_farmer_group_member" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.group of their own company only -->
+    <record id="company_based_farmer_group_access_rule" model="ir.rule">
+        <field name="name">Farmer Group Access Based on allowed companies</field>
+        <field ref="model_farmer_group" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view associated.institute of their own company only -->
+    <record id="company_based_associated_institute_access_rule" model="ir.rule">
+        <field name="name">Associated Institutions Access Based on allowed companies</field>
+        <field ref="model_associated_institute" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view associated.institute of their own company only -->
+    <record id="company_based_farmer_documents_access_rule" model="ir.rule">
+        <field name="name">Farmer Document Access Based on allowed companies</field>
+        <field ref="model_farmer_documents" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.family of their own company only -->
+    <record id="company_based_farmer_family_access_rule" model="ir.rule">
+        <field name="name">Farmer Family Access Based on allowed companies</field>
+        <field ref="model_farmer_family" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view produce.insurance of their own company only -->
+    <record id="company_based_produce_insurance_access_rule" model="ir.rule">
+        <field name="name">Product insurance Access Based on allowed companies</field>
+        <field ref="model_produce_insurance" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.land of their own company only -->
+    <record id="company_based_farmer_land_access_rule" model="ir.rule">
+        <field name="name">Farmer Land Access Based on allowed companies</field>
+        <field ref="model_farmer_land" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.loan of their own company only -->
+    <record id="company_based_farmer_loan_access_rule" model="ir.rule">
+        <field name="name">Farmer Loan Access Based on allowed companies</field>
+        <field ref="model_farmer_loan" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.fish of their own company only -->
+    <record id="company_based_farmer_fish_access_rule" model="ir.rule">
+        <field name="name">Farmer Fish Access Based on allowed companies</field>
+        <field ref="model_farmer_fish" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.crop of their own company only -->
+    <record id="company_based_farmer_crop_access_rule" model="ir.rule">
+        <field name="name">Farmer Crop Access Based on allowed companies</field>
+        <field ref="model_farmer_crop" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer.animal of their own company only -->
+    <record id="company_based_farmer_animal_access_rule" model="ir.rule">
+        <field name="name">Farmer Animal Access Based on allowed companies</field>
+        <field ref="model_farmer_animal" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view local.production of their own company only -->
+    <record id="company_based_local_production_access_rule" model="ir.rule">
+        <field name="name">Local Production Access Based on allowed companies</field>
+        <field ref="model_local_production" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view request_mixin of their own company only -->
+    <record id="company_based_request_mixin_access_rule" model="ir.rule">
+        <field name="name">Request Mixin Access Based on allowed companies</field>
+        <field ref="model_request_mixin" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view services_request of their own company only -->
+    <record id="company_based_services_request_access_rule" model="ir.rule">
+        <field name="name">Serivice Request Access Based on allowed companies</field>
+        <field ref="model_services_request" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view expert_request of their own company only -->
+    <record id="company_based_expert_request_access_rule" model="ir.rule">
+        <field name="name">Expert Request Access Based on allowed companies</field>
+        <field ref="model_expert_request" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view seedling_request of their own company only -->
+    <record id="company_based_seedling_request_access_rule" model="ir.rule">
+        <field name="name">Seedling Request Access Based on allowed companies</field>
+        <field ref="model_seedling_request" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view equipment_request of their own company only -->
+    <record id="company_based_equipment_request_access_rule" model="ir.rule">
+        <field name="name">Equipment Request Access Based on allowed companies</field>
+        <field ref="model_equipment_request" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view fish_larva_request of their own company only -->
+    <record id="company_based_fish_larva_request_access_rule" model="ir.rule">
+        <field name="name">Fish Larva Request Access Based on allowed companies</field>
+        <field ref="model_fish_larva_request" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view other_request of their own company only -->
+    <record id="company_based_other_request_access_rule" model="ir.rule">
+        <field name="name">Other Request Access Based on allowed companies</field>
+        <field ref="model_other_request" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view profile_update_request of their own company only -->
+    <record id="company_based_profile_update_request_access_rule" model="ir.rule">
+        <field name="name">Profile Update Request Access Based on allowed companies</field>
+        <field ref="model_profile_update_request" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view warehouse_storage_request of their own company only -->
+    <record id="company_based_warehouse_storage_request_access_rule" model="ir.rule">
+        <field name="name">Warehouse Storage Request Access Based on allowed companies</field>
+        <field ref="model_warehouse_storage_request" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view farmer_type of their own company only -->
+    <record id="company_based_farmer_type_access_rule" model="ir.rule">
+        <field name="name">Farmer Type Access Based on allowed companies</field>
+        <field ref="model_farmer_type" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view stock_warehouse of their own company only -->
+    <record id="company_based_stock_warehouse_access_rule" model="ir.rule">
+        <field name="name">Stock Warehouse Access Based on allowed companies</field>
+        <field ref="model_stock_warehouse" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view organization_farmer of their own company only -->
+    <record id="company_based_organization_farmer_access_rule" model="ir.rule">
+        <field name="name">Organization Farmer Access Based on allowed companies</field>
+        <field ref="model_organization_farmer" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view expert_experts of their own company only -->
+    <record id="company_based_expert_experts_access_rule" model="ir.rule">
+        <field name="name">Experts Access Based on allowed companies</field>
+        <field ref="model_expert_experts" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view technician_technicians of their own company only -->
+    <record id="company_based_technician_technicians_access_rule" model="ir.rule">
+        <field name="name">Technicians Access Based on allowed companies</field>
+        <field ref="model_technician_technicians" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view warehouse_location_poc of their own company only -->
+    <record id="company_based_warehouse_location_poc_access_rule" model="ir.rule">
+        <field name="name">Warehouse Location POC Based on allowed companies</field>
+        <field ref="model_warehouse_location_poc" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view warehouse_location_member of their own company only -->
+    <record id="company_based_warehouse_location_member_access_rule" model="ir.rule">
+        <field name="name">Warehouse Location Member Based on allowed companies</field>
+        <field ref="model_warehouse_location_member" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <!-- every company is only allowed to view warehouse_location of their own company only -->
+    <record id="company_based_warehouse_location_access_rule" model="ir.rule">
+        <field name="name">Warehouse Location Based on allowed companies</field>
+        <field ref="model_warehouse_location" name="model_id"/>
+        <field name="domain_force">['|',('company_id','in',company_ids),('parent_company_id','in',company_ids)]</field>
+        <field name="groups" eval="[(4, ref('farmer.group_all_user_no_access'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+</odoo>

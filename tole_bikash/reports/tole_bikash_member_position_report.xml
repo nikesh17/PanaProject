@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Define the paper format -->
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Define the report action -->
+    <record id="report_tole_bikash_member_position" model="ir.actions.report">
+        <field name="name">Tole Bikash Member Position</field>
+        <field name="model">tole.bikash.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tole_bikash.tole_bikash_member_position_report</field>
+        <field name="binding_model_id" ref="model_tole_bikash_info" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <!-- Define the template for the report -->
+    <template id="tole_bikash_member_position_report">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    .centered {
+                        text-align: center;
+                    }
+                    
+                    h3{
+                        font-size:22px;
+                        font-weight:bold
+                     }
+                     h4{
+                        font-size:18px;
+                     }
+                    p{
+                        font-size:16px;
+                    }
+                     td span{
+                        font-size:16px;
+                    }
+                      h2{
+                        font-size:24px;
+                        font-weight:bold;
+                    }
+                           
+                </style>
+                <!-- Loop through records -->
+                <t t-foreach="docs" t-as="o">
+                    <br/>
+                    <!-- Header section -->
+                    <div class="centered">
+                        <h2>अनुसूचि-5</h2>
+                        <h3 style="text-decoration: underline">पदिय जिम्मेवारी तथा विवरण</h3>
+                    </div><br/>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">सि.नं.</th>
+                                <th rowspan="2">नामथर</th>
+                                <th rowspan="2">पद</th>
+                                <th colspan="3">परिवार संख्या</th>
+                                <th rowspan="2">फोन नं</th>
+                            </tr>
+                            <tr>
+                                <th>महिला</th>
+                                <th>पुरुष</th>
+                                <th>जम्मा</th>
+                            </tr>
+                            <tbody style="border-top:none;">
+                                <t t-set="i" t-value="1"/>
+                                <t t-foreach="o.members" t-as="member">
+                                    <td><span t-esc="i"/><t t-set="i" t-value="i+1"/></td>
+                                    <td><span t-esc="member.member_name"/></td>
+                                    <td><span t-esc="member.member_designation.organization_samiti_designations" /></td>
+                                    <td><span t-esc="member.member_family_female" /></td>
+                                    <td><span t-esc="member.member_family_male" /></td>
+                                    <td><span t-esc="member.member_family_total" /></td>
+                                    <td><span t-esc="member.member_phone" /></td>
+                                </t>
+                            </tbody>
+                        </thead>
+                    </table>
+
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

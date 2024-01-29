@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- Organization Beneficiary Tree View -->
+    <record id="organization_renewal_detail_view_tree" model="ir.ui.view">
+        <field name="name">organization.renewal.view.tree</field>
+        <field name="model">organization.renewal</field>
+        <field name="arch" type="xml">
+            <tree string="Organization Renewal Detail Tree">
+                <field name="org_reg_number" />
+                <field name="org_registration_date" />
+                <field name="issued_district" />
+                <field name="issued_office" />
+                <field name="nabikaran_awadi" />
+                <field name="last_nabikaran_date" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Organization Renewal Form View -->
+    <record id="organization_renewal_view_form" model="ir.ui.view">
+    <field name="name">organization.renewal.view.form</field>
+    <field name="model">organization.renewal</field>
+    <field name="arch" type="xml">
+        <form string="Organization Renewal Detail Form">
+            <group>
+                <group>
+                    <field name="org_reg_number" />
+                    <field name="org_registration_date" widget="nepali_datepicker" />
+                    <field name="issued_province" />
+                    <field name="issued_district" />
+                    <field name="issued_palika" />
+
+
+                </group>
+                <group>
+                    <field name="issued_office" />
+                    <field name="nabikaran_awadi" />
+                    <field name="last_nabikaran_date" widget="nepali_datepicker" />
+                </group>
+                
+                
+            </group>
+        </form>
+    </field>
+</record>
+
+</odoo>

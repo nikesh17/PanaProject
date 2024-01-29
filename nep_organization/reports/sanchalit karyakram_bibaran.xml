@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="anusuchi_sat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="org_running_program_schedule_report" model="ir.actions.report">
+        <field name="name"> Sanchalit Program report</field>
+        <field name="model">organization.information</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nep_organization.organization_running_program_schedule_report</field>
+        <field name="binding_model_id" ref="model_organization_information" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <template id="organization_running_program_schedule_report">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+            <style>
+                .centered{
+                    text-align:center;
+                }
+                h3{
+                    font-size:22px;
+                                <!-- font-weight:bold -->
+                    }
+                    h4{
+                        font-size:18px;
+                    }
+                    p {
+                        font-size:14px;
+                    }
+                    * {
+                        line-height: 2;
+                    }
+                     td span {
+                        font-size:14px;
+                    } 
+                    th{
+                        font-size:16px;
+                    }     
+               
+               
+            </style>
+            <br/>   
+            <t t-foreach="docs" t-as="o">
+
+                <div class="centered" >
+                    <h3>अनुसूची-७</h3>
+                    <h3>परिच्छेद ६ नियम २८.२ (४) बमोजिम</h3>
+                    <h3>चालु आ.व.मा संचालित कार्यक्रमको विवरण</h3>
+                    <h3>श्री <span t-field="o.org_municipality.palika_name_np" /></h3>
+                    <h3>गाउँ कार्यपालिकाको कार्यालय</h3>
+                    <h3><span t-field="o.org_municipality.palika_name_np" />, <span t-field="o.org_district.district_name_np" /></h3>
+                    <h3><span t-field="o.org_province.name_np" />, नेपाल ।</h3> <br /><br />
+                    <h3>चालु आ.व.मा संचालित कार्यक्रमको विवरण</h3>
+                </div><br />
+
+                <div class="main_body" style="line-height:2; padding-bottom:60px;">
+                    <!-- Table start -->
+                    <div class="main_body" style="line-height:2; padding-bottom:60px;">
+                        <!-- Table start -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">सि.नं.</th>
+                                    <th rowspan="2">कार्यक्रमको नाम</th>
+                                    <th rowspan="2">कार्यक्रमको अपेक्षा र उद्देश्य</th>
+                                    <th rowspan="2">कार्यक्रम लागु हुने क्षेत्र</th>
+                                    <th colspan="2">कार्यक्रम लागु हुने समय</th>
+                                    <th rowspan="2">कार्यक्रमका लागि बजेट</th>
+                                    <th rowspan="2">साझेदार संस्था</th>
+                                </tr>
+                                <tr>
+                                    <th>देखि</th>
+                                    <th>बाट</th>
+                                </tr>
+                            </thead>
+                            <tbody style="border-top:none; font-size:12px; ">
+                                <t t-set="i" t-value="1" />
+                                <t t-foreach="o.program_ref" t-as="program">
+                                    <tr>
+                                        <td><span t-esc="i" /><t t-set="i" t-value="i+1" /></td>
+                                        <td><span t-field="program.program_name" /></td>
+                                        <td><span t-field="program.program_purpose" /></td>
+                                        <td><span t-field="program.program_location" /></td>
+                                        <td><span t-field="program.program_start_time" /></td>
+                                        <td><span t-field="program.program_end_time" /></td>
+                                        <td><span t-field="program.program_budget" /></td>
+                                        <td><span t-field="program.program_collaborative_organization" /></td>
+
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <!-- Table End -->
+                    </div>
+                    <!-- Table End -->
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row" style="text-align:left">
+                        <div class="col-6" style="text-align:left">        
+                            <h4>विवरण तयार गर्ने </h4>
+                            <p>नाम :</p>
+                            <p>पद :</p>
+                            <p>मिति :</p>
+                            <p>हस्ताक्षर :</p>
+                        </div>
+                        <div class="col-6">
+                            <h4>विवरण प्रमाणित गर्ने</h4>
+                            <p>नाम :</p>
+                            <p>पद :</p>
+                            <p>मिति :</p>
+                            <p>हस्ताक्षर :</p>
+                        </div>
+                    </div>    
+                </div>
+                <br/>
+
+                <div class="centered" >
+                    <h3>संस्थाको छाप:  <img style="width:40px;height:40px;display:inline-block;" t-attf-src="data:image/*;base64,{{o.organization_logo}}"/> </h3>
+                </div>
+            </t>
+            </t>
+        </t>    
+                
+                
+    </template>
+</odoo>

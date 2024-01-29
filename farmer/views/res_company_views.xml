@@ -1,0 +1,100 @@
+<odoo> 
+    <!-- inherite form view of res.company -->
+    <record id="view_res_company_domain_field" model="ir.ui.view">
+        <field name="name">Res Company Inherit to add domain field</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='logo']" position="after">
+                <field name="login_bg_img" widget="image" class="oe_avatar"/>
+            </xpath>
+            <xpath expr="///page[@name='general_info']" position="after">
+                <page name="company_details_other" string="Other Details">
+                    <field name="company_detail_ids"/>
+                </page>
+            </xpath>
+            <xpath expr="////label[@for='street']" position="replace">
+            </xpath>
+            <xpath expr="//div[@class='oe_title']" position="inside">
+                <label for="name_np"/>
+                <h1>
+                    <field name="name_np"/>
+                </h1>
+            </xpath>
+            <xpath expr="////div[@class='o_address_format']" position="replace">                
+                <field name="company_code"/>
+                <field name="fax_number"/>
+                <field name="pan_number"/>
+                <separator name="company_address" string='Address' colspan="2"/>
+                <label string="Address" for="street"/>
+                <field name="street" nolabel="1"/>
+                <!-- <label string="Province" for="province"/> -->
+                <field name="province" options="{'no_create': True}" />
+                <!-- <label string="District" for="district"/> -->
+                <field name="district" domain="[('province_name', '=', province)]" options="{'no_create': True}"/>
+                <!-- <label string="Palika" for="palika"/> -->
+                <field name="palika" domain="[('district_name', '=', district)]" options="{'no_create': True}"/>
+                <!-- <label string="Ward Number" for="ward_no"/> -->
+                <field name="ward_no"/>
+                <!-- <label string="Tole" for="tole"/> -->
+                <field name="tole" domain="[('palika_name', '=', palika)]" options="{'no_create': True}"/>
+                <separator name="company_invoice_tax_detials" string='Invoicing' colspan="2"/>
+                <field name="show_tax" />
+
+            </xpath>
+        </field>
+    </record>
+    <!-- inherite form view of res.user -->
+    <!-- <record id="view_res_user_domain_field" model="ir.ui.view">
+        <field name="name">Res user Inherit to add domain field</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="///field[@name='login']" position="after">
+                <field name="virtual_login"/>
+            </xpath>
+            <xpath expr="///field[@name='login']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record> -->
+
+    <!-- res company detail form veiw -->
+    <record id="view_res_company_detail_form" model="ir.ui.view">
+        <field name="name">Res Company Detail Form View</field>
+        <field name="model">res.company.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="service_type"/>
+                        <field name="start_date_bs" widget="nepali_datepicker" readonly="0"/>
+                        <field name="expiry_date_bs" widget="nepali_datepicker" readonly="0"/>
+                    </group>
+                    <group>
+                        <field name="url"/>
+                        <field name="start_date_ad" readonly="0"/>
+                        <field name="expiry_date_ad" readonly="0" />
+                    </group>
+                    <group>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- res company detail tree veiw -->
+    <record id="view_res_company_detail_tree" model="ir.ui.view">
+        <field name="name">Res Company Detail tree View</field>
+        <field name="model">res.company.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="url"/>
+                <field name="service_type"/>
+                <field name="start_date_bs"/>
+                <field name="expiry_date_bs"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

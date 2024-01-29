@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="paperformat_report_view" model="report.paperformat">
+        <field name="name">A4 Portrait</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False" />
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="org_program_schedule_report" model="ir.actions.report">
+        <field name="name">Program Schedule report</field>
+        <field name="model">organization.information</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nep_organization.organization_program_schedule_report</field>
+        <field name="binding_model_id" ref="model_organization_information" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_report_view" />
+    </record>
+
+    <template id="organization_program_schedule_report">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    @font-face {
+                        font-family: 'kalimati-regular';
+                        src: url('/upabhokta_samiti/static/src/fonts/kalimati_regular.otf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                    }
+
+                        * {
+                            font-family: 'kalimati-regular' !important;
+                        }
+                        .centered{
+                        text-align:center;
+                    }
+                    .main_body{
+                        text-align:left;
+                    }
+                    h3{
+                        font-size:22px;
+                    }
+                    h4{
+                        font-size:18px;
+                    }
+                    td span{
+                        font-size:14px;
+                    }
+                    * {
+                        line-height: 2;
+                    }
+
+                  
+                </style>
+
+                <t t-foreach="docs" t-as="o">
+                    <div class="centered" >
+                        <h3>अनुसूची-2</h3>
+                        <h3>परिच्छेद २  नियम ३ (2) बमोजिम</h3>
+                        <h4><span t-field="o.org_municipality.palika_name_np" /></h4>
+                        <h4><span t-field="o.org_municipality.palika_name_np" /> कार्यालय</h4>
+                        <h4><span t-field="o.org_district.district_name_np" />, <span t-field="o.org_province.name_np" />, नेपाल ।</h4>
+                    </div>
+                    <br /><br /><br />
+                    <div class="centered; font-size:18px; font-weignt:bold;">
+                        <h4>नगर सभामा पेश गर्ने  सस्थाको आगामी बर्षको कार्यक्रम विवरण</h4>
+                        <br />
+                        <br />
+                    </div>
+                    <br />
+                    <div class="main_body" style="line-height:2; padding-bottom:60px;">
+                        <!-- Table start -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">सि.नं.</th>
+                                    <th rowspan="2">कार्यक्रमको नाम</th>
+                                    <th rowspan="2">कार्यक्रमको अपेक्षा र उद्देश्य</th>
+                                    <th rowspan="2">कार्यक्रम लागु हुने क्षेत्र</th>
+                                    <th colspan="2">कार्यक्रम लागु हुने समय</th>
+                                    <th rowspan="2">कार्यक्रमका लागि बजेट</th>
+                                    <th rowspan="2">साझेदार संस्था</th>
+                                </tr>
+                                <tr>
+                                    <th>देखि</th>
+                                    <th>बाट</th>
+                                </tr>
+                            </thead>
+                            <tbody style="border-top:none; font-size:12px; ">
+                                <t t-set="i" t-value="1" />
+                                <t t-foreach="o.program_ref" t-as="program">
+                                    <tr>
+                                        <td><span t-esc="i" /><t t-set="i" t-value="i+1" /></td>
+                                        <td><span t-field="program.program_name" /></td>
+                                        <td><span t-field="program.program_purpose" /></td>
+                                        <td><span t-field="program.program_location" /></td>
+                                        <td><span t-field="program.program_start_time" /></td>
+                                        <td><span t-field="program.program_end_time" /></td>
+                                        <td><span t-field="program.program_budget" /></td>
+                                        <td><span t-field="program.program_collaborative_organization" /></td>
+
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <!-- Table End -->
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

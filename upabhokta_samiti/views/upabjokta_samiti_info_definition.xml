@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- Upabhokta Samiti Info Tree View -->
+    <record id="upabhokta_samiti_info_view_tree" model="ir.ui.view">
+        <field name="name">upabhokta_samiti_info.view.tree</field>
+        <field name="model">upabhokta.samiti.info</field>
+        <field name="arch" type="xml">
+            <tree string="Upabhokta Samiti Info">
+                <field name="upabhokta_samiti_name"></field>
+                <field name="upabhokta_samiti_category"></field>
+                <field name="contact_person_name_" string="Contact Person Name"></field>
+                <field name="yojana_name"></field>
+                <field name="province"></field>
+                <field name="district"></field>
+                <field name="municipality"></field>
+                <field name="upabhokta_samiti_status" string="Status" />
+                <field name="comments" />
+
+            </tree>
+        </field>
+    </record>
+
+    <!-- Upabhokta Samiti Info Form View -->
+    <record id="upabhokta_samiti_info_view_form" model="ir.ui.view">
+        <field name="name">upabhokta_samiti_info.view.form</field>
+        <field name="model">upabhokta.samiti.info</field>
+        <field name="arch" type="xml">
+            <form string="Upabhokta Samiti Info">
+                <header>
+                    <field
+                        name="upabhokta_samiti_status"
+                        widget="statusbar"
+                        nolabel="1"
+                        statusbar_visible="in_review,incomplete_submitted,approved,rejected"
+                        default="in_review"
+                    />
+                </header>
+                <sheet>
+                    <widget name="web_ribbon"
+                        attrs="{'invisible': [('upabhokta_samiti_status', '!=', 'in_review')]}"
+                        title="In Review" bg_color="bg-info" />
+                    <widget name="web_ribbon"
+                        attrs="{'invisible': [('upabhokta_samiti_status', '!=', 'incomplete_submitted')]}"
+                        title="Incomplete Submitted" bg_color="bg-warning" />
+                    <widget name="web_ribbon"
+                        attrs="{'invisible': [('upabhokta_samiti_status', '!=', 'approved')]}"
+                        title="approved" bg_color="bg-success" />
+                    <widget name="web_ribbon"
+                        attrs="{'invisible': [('upabhokta_samiti_status', '!=', 'rejected')]}"
+                        title="Rejected" bg_color="bg-danger" />
+                    <group>
+                        <group name="upabhokta_samiti_name_type"
+                            string="Upabhokta Samiti Details">
+                            <field  name="upabhokta_samiti_name"></field>
+                            <field name="upabhokta_samiti_category"></field>
+                            <field name="upabhokta_samiti_type"></field>
+                            
+                        </group>
+                        <group name="upabhokta_samiti_contact_person"
+                            string="Contact Person Details">
+                            <field name="contact_person_name_"></field>
+                            <field name="contact_person_phone_"></field>
+                            <field name="contact_person_email_"></field>
+                        </group>
+
+                        <group name="Location" string="Location">
+                            <field name="province" />
+                            <field name="district" />
+                            <field name="municipality" />
+                            <field name="ward" />
+                        </group>
+                        <group name="yojana" string="Yojana Name and Purpose">
+                            <field name="yojana_name" />
+                            <field name="yojana_type" />
+                            <field name="yojana_budget_npr" />
+                            <field name="yojana_budget_type" />
+                            <field name="bank_details" />
+                        </group>
+                        <group name="yojana_other_details" string="Other Details">
+                            <field name="upabhokta_samiti_logo" widget="image" />
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <!-- Upabhokta Samiti Members Page -->
+                        <page name="upabhokta_samiti_formation_members"
+                            string="Upabhokta Samiti Members">
+                            <field name="upabhokta_samiti_members_ref"
+                                string="Upabhokta Samiti Members">
+                                <tree>
+                                    <field name="member_full_name"></field>
+                                    <field name="samiti_member_designation"></field>
+                                    <field name="member_address"></field>
+                                    <field name="member_mobile"></field>
+                                    <field name="member_citizenship_number"></field>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <!-- Meeting Attendees Page-->
+                        <page name="Attendees" string="Attendees">
+                            <field name="attendees">
+                                <tree>
+                                    <field name="full_name" />
+                                    <field name="gender" />
+                                    <field name="mobile" />
+                                    <field name="signature" class="tree-image" widget="image" />
+                                </tree>
+                            </field>
+                        </page>
+
+                        <!-- Sabha Details -->
+                        <page name="upabhokta_samiti_sabha_details_page" string="Sabha Details">
+                            <field name="upabhokta_samiti_sabha_details_ref">
+                                <tree>
+                                    <field name="sabha_chairman_fullname"></field>
+                                    <field name="palika_representative_designation" />
+                                    <field name="palika_representative_name" />
+                                    <field name="sabha_date_bs" widget="nepali_datepicker" />
+                                    <field name="chief_guest" />
+                                    <field name="total_attendees" />
+                                </tree>
+                            </field>
+                        </page>
+
+                        <!-- Beneficiary Page -->
+                        <page name="upabhokta_samiti_beneficiary_record" string="Beneficiary">
+                            <field name="beneficiary_ref">
+                                <tree string="Upabhokta Samiti Beneficiary Tree">
+                                    <field name="category" />
+                                    <field name="category_male_population" />
+                                    <field name="category_female_population" />
+                                    <field name="category_family_numbers" />
+                                </tree>
+                            </field>
+                        </page>
+
+                        <!-- Proposal Page -->
+                        <page name="upabhokta_samiti_project_proposals" string="Project Proposals">
+                            <field name="project_proposal_page">
+                                <tree>
+                                    <field name="signed_document" widget="pdf_viewer" />
+                                    <field name="document_name" />
+                                </tree>
+                            </field>
+                        </page>
+
+                        <!-- Anugaman Page -->
+                        <page name="upabhokta_samiti_anugaman" string="Anugaman Team">
+                            <field name="anugaman_teamref_id">
+                                <tree>
+                                    <field name="full_name"></field>
+                                    <field name="member_gender"></field>
+                                    <field name="anugaman_member_designation"></field>
+                                    <field name="member_address"></field>
+                                    <field name="member_mobile"></field>
+                                    <field name="member_telephone_opt"></field>
+                                    <field name="member_citizenship_number"></field>
+                                    <field name="member_citizenship_issued_district"></field>
+                                    <field name="member_citizenship_issued_date_bs"></field>
+                                </tree>
+                            </field>
+                        </page>
+
+                         <!-- Bank Request Page -->
+                         <page name="upabhokta_samiti_bank_request" string="Bank Request">
+                            <field name="bank_details_request_ref">
+                                <tree>
+                                    <field name="signed_document" widget="pdf_viewer" />
+                                    <field name="document_name" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="bank_details" string="Bank Details">
+                            <field name="bank_details_ref">
+                                <tree>
+                                    <field name="bank_name"></field>
+                                    <field name="bank_location"></field>
+                                    <field name="bank_account"></field>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+             
+                      
+                    <group string="Comments">
+                        <field name="comments" string="" placeholder="Comments here..."
+                            class="comments-field"></field>
+                    </group>
+                    <nav class="col-12 button-container">
+                        <button string="Reject" name="set_state_rejected" type="object"
+                            class="oe_highlight btn btn-danger" />
+                        <button string="Insufficient Data" name="set_state_incomplete_submitted"
+                            type="object" class="oe_highlight btn btn-warning" />
+                        <button string="In Review" name="set_state_in_review" type="object"
+                            class="oe_highlight btn btn-info" />
+                        <button string="Approve" name="set_state_verified" type="object"
+                            class="oe_highlight btn btn-success" />
+
+                    </nav>
+                </sheet>
+                <!-- <div class="oe-chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div> -->
+           
+            </form>
+        </field>
+    </record>
+</odoo>

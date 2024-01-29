@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="upabhokta_samiti_anugaman_team_view_tree" model="ir.ui.view">
+        <field name="name">upabhokta_samiti_anugaman_team.view.tree</field>
+        <field name="model">upabhokta.samiti.anugaman.team</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="full_name"></field>
+                <field name="member_gender"></field>
+                <field name="anugaman_member_designation"></field>
+
+                <field name="member_address"></field>
+                <field name="member_mobile"></field>
+                <field name="member_telephone_opt"></field>
+
+                <field name="member_citizenship_number"></field>
+                <field name="member_citizenship_issued_district"></field>
+                <field name="member_citizenship_issued_date_bs" ></field>
+            </tree>
+        </field>
+    </record>
+    <record id="upabhokta_samiti_anugaman_team_view_form" model="ir.ui.view">
+        <field name="name">upabhokta_samiti_anugaman_team.view.form</field>
+        <field name="model">upabhokta.samiti.anugaman.team</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="full_name"></field>
+                            <field name="member_gender"></field>
+                            <field name="anugaman_member_designation"></field>
+                        </group>
+                        <group>
+                            <field name="member_address"></field>
+                            <field name="member_mobile"></field>
+                            <field name="member_telephone_opt"></field>
+                        </group>
+                        <group>
+                            <field name="member_citizenship_number"></field>
+                            <field name="member_citizenship_issued_district"></field>
+                            <field name="member_citizenship_issued_date_bs"
+                                widget="nepali_datepicker"></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
